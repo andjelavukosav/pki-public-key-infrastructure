@@ -1,0 +1,69 @@
+<div class="registration-container">
+  <div class="registration-card">
+    <h2 class="registration-title">Kreirajte nalog</h2>
+    <p class="registration-subtitle">Popunite podatke za registraciju</p>
+
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email adresa</label>
+        <input id="email" formControlName="email" placeholder="vas@email.com" type="email" class="form-input"/>
+        <div class="error" *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+          <span *ngIf="registerForm.get('email')?.hasError('required')">Email je obavezan!</span>
+          <span *ngIf="registerForm.get('email')?.hasError('email')">Email nije validan!</span>
+        </div>
+      </div>
+
+      <!-- Ime i Prezime -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">Ime</label>
+          <input id="firstName" formControlName="firstName" placeholder="Vaše ime" class="form-input"/>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Prezime</label>
+          <input id="lastName" formControlName="lastName" placeholder="Vaše prezime" class="form-input"/>
+        </div>
+      </div>
+
+      <!-- Organizacija -->
+      <div class="form-group">
+        <label for="organization">Organizacija</label>
+        <input id="organization" formControlName="organization" placeholder="Naziv organizacije" class="form-input"/>
+      </div>
+
+      <!-- Lozinka -->
+      <div class="form-group">
+        <label for="password">Lozinka</label>
+        <input id="password" formControlName="password" type="password" placeholder="••••••••" class="form-input"
+               (input)="onPasswordInput()"/>
+        
+        <!-- Pravila lozinke -->
+        <ul class="password-rules">
+          <li [class.valid]="getPasswordRules().minLength">Minimum 8 karaktera</li>
+          <li [class.valid]="getPasswordRules().uppercase">Bar jedno veliko slovo</li>
+          <li [class.valid]="getPasswordRules().number">Bar jedan broj</li>
+        </ul>
+
+        <!-- Strength bar -->
+        <div class="password-strength">
+          <div class="strength-bar" [style.width.%]="getPasswordStrengthPercent()" [style.backgroundColor]="getPasswordStrengthColor()"></div>
+          <small>{{ passwordFeedback }}</small>
+        </div>
+      </div>
+
+      <!-- Potvrda lozinke -->
+      <div class="form-group">
+        <label for="confirmPassword">Potvrdi lozinku</label>
+        <input id="confirmPassword" formControlName="confirmPassword" type="password" placeholder="••••••••" class="form-input"/>
+        <div class="error" *ngIf="registerForm.get('confirmPassword')?.touched && !passwordsMatch()">
+          Lozinke se ne poklapaju!
+        </div>
+      </div>
+
+      <!-- Dugme za registraciju -->
+      <button type="submit" class="submit-button" [disabled]="registerForm.invalid">Registracija</button>
+    </form>
+  </div>
+</div>

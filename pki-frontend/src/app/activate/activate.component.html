@@ -1,0 +1,13 @@
+<div class="activation">
+  <h2>Aktivacija naloga</h2>
+
+  <p *ngIf="loading">Verifikujem nalog...</p>
+
+  <p *ngIf="success" class="ok">
+    ✅ Nalog je uspešno aktiviran! Možete se prijaviti.
+  </p>
+
+  <p *ngIf="error" class="err">
+    ❌ {{ error }}
+  </p>
+</div>

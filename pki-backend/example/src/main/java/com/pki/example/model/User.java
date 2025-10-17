@@ -28,6 +28,17 @@ public class User {
     @Column(nullable = false)
     private String role = "USER"; // za obične korisnike
 
+    @Column(nullable=false)
+    private boolean enabled = false; // aktivira se tek posle verifikacije
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
     public Long getId() {
         return id;
     }

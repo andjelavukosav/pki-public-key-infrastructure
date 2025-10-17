@@ -4,10 +4,7 @@ import com.pki.example.DTO.UserRegistrationDTO;
 import com.pki.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -27,4 +24,15 @@ public class AuthController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @PostMapping("/verify")
+    public ResponseEntity<String> verify(@RequestParam("token") String token) {
+        try {
+            userService.verify(token);
+            return ResponseEntity.ok("Nalog je uspešno aktiviran.");
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
 }

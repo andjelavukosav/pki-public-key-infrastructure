@@ -4,9 +4,12 @@ import com.pki.example.DTO.CertificateRequestDTO;
 import com.pki.example.DTO.CertificateResponseDTO;
 import com.pki.example.config.CustomUserDetails;
 import com.pki.example.model.Certificate;
+import com.pki.example.model.entity.KeyStoreMeta;
 import com.pki.example.repository.CertificateRepository;
+import com.pki.example.repository.KeyStoreRepository;
 import com.pki.example.service.CertificateGenerator;
 import com.pki.example.service.CertificateService;
+import com.pki.example.service.KeyStoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,16 +21,20 @@ import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class CertificateServiceImpl implements CertificateService {
     private final CertificateRepository certificateRepository;
+    private final KeyStoreService keyStoreService;
 
     @Autowired
-    public CertificateServiceImpl(CertificateRepository certificateRepository) {
+    public CertificateServiceImpl(CertificateRepository certificateRepository, KeyStoreService keyStoreService) {
         this.certificateRepository = certificateRepository;
+        this.keyStoreService = keyStoreService;
     }
     public CertificateResponseDTO issueCertificate(CertificateRequestDTO request) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -118,17 +125,17 @@ public class CertificateServiceImpl implements CertificateService {
             certificate.setRevoked(false);
             certificate.setExtensions(String.valueOf(request.extensions)); // možeš JSON stringify ako želiš
 
-        /*    // 1. Cuvanje u keystore
+           // 1. Cuvanje u keystore
             KeyStoreMeta meta = keyStoreService.createAndStoreKeyStore(
                     new X509Certificate[]{x509},
                     subjectKeyPair.getPrivate(),
                     alias,
-                    userId
+                    userId.intValue()
             );
 
 // 2. Certificate entitet čuva samo referencu
             certificate.setKeyStoreMetaId(meta.getId());
-*/
+
             Certificate saved = certificateRepository.save(certificate);
 
             return new CertificateResponseDTO(
@@ -152,7 +159,7 @@ public class CertificateServiceImpl implements CertificateService {
         }
 
 
-      /*  /// KREIRANJE SERTIFIKATA AKO ISSUER POSTOJI STAVLJANJE U LANAC ISPOD ROOT SERTIFIKATA
+        /// KREIRANJE SERTIFIKATA AKO ISSUER POSTOJI STAVLJANJE U LANAC ISPOD ROOT SERTIFIKATA
         Certificate issuer = certificateRepository.findById(request.issuerId).orElseThrow(() -> new RuntimeException("Issuer not found"));
 
         if (issuer.isRevoked()) {
@@ -260,32 +267,6 @@ public class CertificateServiceImpl implements CertificateService {
             throw new RuntimeException("Failed to generate certificate: " + e.getMessage(), e);
         }
 
-//        // 8) Upis u entitet
-//        Certificate certificate = new Certificate();
-//        certificate.setAlias(alias);
-//        certificate.setSerialNumber(serialHex);
-//        certificate.setCn(request.cn);
-//        certificate.setO(request.o);
-//        certificate.setOu(request.ou);
-//        certificate.setC(request.c);
-//        certificate.setIssuer(issuerDn);
-//        certificate.setStartDate(start);
-//        certificate.setEndDate(end);
-//        certificate.setRoot(request.isRoot);
-//        certificate.setIntermediate(request.isIntermediate);
-//        certificate.setEndEntity(request.isEndEntity);
-//        certificate.setCA(request.isCA);
-//        certificate.setRevoked(false);
-//        certificate.setExtensions(String.valueOf(request.extensions)); // možeš JSON stringify ako želiš
-
-//        // 1. Cuvanje u keystore (subject cert i private key)
-//        KeyStoreMeta meta = keyStoreService.createAndStoreKeyStore(
-//                new X509Certificate[]{x509},
-//                subjectKeyPair.getPrivate(),
-//                alias,
-//                userId
-//        );
-
 // KORISTI (novi kod sa chain-om):
         Certificate certificate = new Certificate();
         certificate.setAlias(alias);
@@ -313,7 +294,7 @@ public class CertificateServiceImpl implements CertificateService {
                 chainList.toArray(new X509Certificate[0]),
                 subjectKeyPair.getPrivate(),
                 alias,
-                userId
+                userId.intValue()
         );
 
 // 2. Certificate entitet čuva samo referencu
@@ -338,8 +319,7 @@ public class CertificateServiceImpl implements CertificateService {
                 saved.isEndEntity(),
                 saved.isCA(),
                 saved.isRevoked()
-        );*/
-        return null;
+        );
     }
 
     private static KeyPair generateRsaKeyPair() {
@@ -350,6 +330,86 @@ public class CertificateServiceImpl implements CertificateService {
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("RSA not supported", e);
         }
+    }
+
+    public CertificateResponseDTO getCertificateById(int id) {
+        Certificate c = certificateRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Certificate not found"));
+
+        return new CertificateResponseDTO(
+                c.getId(),
+                c.getAlias(),
+                c.getSerialNumber(),
+                c.getCn(),
+                c.getO(),
+                c.getOu(),
+                c.getC(),
+                c.getIssuer(),
+                c.getStartDate(),
+                c.getEndDate(),
+                c.getIssuerId(),
+                c.isRoot(),
+                c.isIntermediate(),
+                c.isEndEntity(),
+                c.isCA(),
+                c.isRevoked()
+        );
+    }
+
+    private List<X509Certificate> buildCertificateChain(Certificate subject, X509Certificate subjectX509) {
+        List<X509Certificate> chain = new ArrayList<>();
+        chain.add(subjectX509); // Subject cert ide prvi
+
+        Certificate currentIssuer = null;
+        if (subject.getIssuerId() != null) {
+            currentIssuer = certificateRepository.findById(subject.getIssuerId()).orElse(null);
+        }
+
+        // Kreni od issuer-a i idi do root-a
+        while (currentIssuer != null) {
+            try {
+                KeyStoreMeta issuerMeta = keyStoreService.getMetaById(currentIssuer.getKeyStoreMetaId());
+                X509Certificate issuerX509 = keyStoreService.loadCertificate(issuerMeta, currentIssuer.getAlias());
+                chain.add(issuerX509);
+
+                // Ako je root, zaustavi se
+                if (currentIssuer.isRoot()) {
+                    break;
+                }
+
+                // Nastavi sa sledećim issuer-om
+                if (currentIssuer.getIssuerId() != null) {
+                    currentIssuer = certificateRepository.findById(currentIssuer.getIssuerId()).orElse(null);
+                } else {
+                    break;
+                }
+            } catch (Exception e) {
+                throw new RuntimeException("Failed to build certificate chain: " + e.getMessage(), e);
+            }
+        }
+
+        return chain;
+    }
+
+    public List<CertificateResponseDTO> getAllCertificates() {
+        return certificateRepository.findAll().stream().map(c->new CertificateResponseDTO(
+                c.getId(),
+                c.getAlias(),
+                c.getSerialNumber(),
+                c.getCn(),
+                c.getO(),
+                c.getOu(),
+                c.getC(),
+                c.getIssuer(),
+                c.getStartDate(),
+                c.getEndDate(),
+                c.getIssuerId(),
+                c.isRoot(),
+                c.isIntermediate(),
+                c.isEndEntity(),
+                c.isCA(),
+                c.isRevoked()
+        )).collect(Collectors.toList());
     }
 
 }

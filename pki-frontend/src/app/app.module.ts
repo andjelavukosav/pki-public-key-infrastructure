@@ -22,6 +22,10 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { AuthInterceptor } from './auth/interceptor';
+import { CertificateListComponent } from './certificate/certificate-list/certificate-list.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'
 
 @NgModule({
   declarations: [
@@ -34,6 +38,7 @@ import { AuthInterceptor } from './auth/interceptor';
     UserHomeComponent,
     CreateRootCertificateComponent,
     CreateIntermediateCertificateComponent,
+    CertificateListComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,9 @@ import { AuthInterceptor } from './auth/interceptor';
     MatSelectModule,
     MatButtonModule,
     RecaptchaModule,
-
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatSlideToggleModule,
 
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],

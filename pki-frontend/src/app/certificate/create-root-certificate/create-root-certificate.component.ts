@@ -4,11 +4,20 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { CertificateRequest } from '../model/certificateRequest';
 import { CertificateService } from '../service/certificate.service';
 import { UserService } from 'src/app/service/user.service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-create-root-certificate',
   templateUrl: './create-root-certificate.component.html',
-  styleUrls: ['./create-root-certificate.component.css']
+  styleUrls: ['./create-root-certificate.component.css'],
+  animations: [
+    trigger('slideIn', [
+      state('void', style({ transform: 'translateY(0)', opacity: 0 })),
+      transition(':enter', [
+        animate('2.0s ease-out', style({ transform: 'translateY(0)', opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class CreateRootCertificateComponent implements OnInit {
 

@@ -5,16 +5,15 @@ import com.pki.example.DTO.CertificateResponseDTO;
 import com.pki.example.service.CertificateService;
 import com.pki.example.service.CustomLoggerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/certificates")
@@ -94,4 +93,50 @@ public class CertificateController {
         }
         return "UNKNOWN";
     }
+
+    @GetMapping("/id/{id}")
+    public ResponseEntity<CertificateResponseDTO> getById(@PathVariable int id, HttpServletRequest request) {
+        String ipAddress = getClientIpAddress(request);
+        String user = getCurrentUser();
+        String role = getCurrentUserRole();
+
+        try {
+            CertificateResponseDTO cert = certificateService.getCertificateById(id);
+
+            String issuerInfo = cert.getIssuer() != null ? cert.getIssuer() : "SELF_SIGNED";
+
+            loggerService.logCertificateEvent(
+                    "CERTIFICATE_ACCESSED",
+                    user,
+                    role,
+                    "SUCCESS",
+                    "Retrieved certificate details",
+                    ipAddress,
+                    String.valueOf(id),
+                    cert.getCn(),
+                    issuerInfo
+            );
+
+            return ResponseEntity.ok(cert);
+        } catch (Exception e) {
+            loggerService.logCertificateEvent(
+                    "CERTIFICATE_ACCESS_FAILED",
+                    user,
+                    role,
+                    "FAILURE",
+                    "Failed to retrieve certificate: " + e.getMessage(),
+                    ipAddress,
+                    String.valueOf(id),
+                    "UNKNOWN",
+                    "UNKNOWN"
+            );
+            throw e;
+        }
+    }
+
+    @GetMapping(value="/all")
+    public ResponseEntity<List<CertificateResponseDTO>> getAll(HttpServletRequest request) {
+        return ResponseEntity.ok(certificateService.getAllCertificates());
+    }
+
 }

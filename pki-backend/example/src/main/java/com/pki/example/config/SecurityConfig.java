@@ -1,14 +1,19 @@
 package com.pki.example.config;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 // NOVI IMPORT: Za ručno kreiranje RequestMatcher-a
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -18,34 +23,34 @@ import java.util.List;
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfig {
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+
+    private final AuthenticationProvider authenticationProvider;
+
+    private final JwtAuthenticationFilter jwtAuthFilter;
 
     // Definišemo Security Filter Chain
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                // Omogućava CORS podršku. Koristi bean corsConfigurationSource() definisan ispod.
                 .cors(Customizer.withDefaults())
-
-                // Onemogućite CSRF
                 .csrf(csrf -> csrf.disable())
-
-                // Primer autorizacije
+                // .securityMatcher("/api/**")
                 .authorizeHttpRequests(auth -> auth
-                        // REŠENJE: Korišćenje AntPathRequestMatcher
-                        // Kreiramo RequestMatcher za putanju /api/auth/**
-                        .requestMatchers(new AntPathRequestMatcher("/api/auth/**")).permitAll()
-
-                        // Primer dozvole za statičke resurse (opciono):
-                        // .requestMatchers(new AntPathRequestMatcher("/static/**")).permitAll()
-
-                        .anyRequest().authenticated() // Za sve ostale zahteve potrebna je autentifikacija
-                );
+                        .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                        .antMatchers("/api/auth/**").permitAll()
+                        .antMatchers(HttpMethod.GET, "/ws/**").permitAll()
+                        .antMatchers(HttpMethod.POST, "/ws/**").permitAll()
+                        .antMatchers("/ws/**").authenticated()
+                        .anyRequest().authenticated()
+                )
+                .sessionManagement(session -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                )
+                .authenticationProvider(authenticationProvider)
+                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }

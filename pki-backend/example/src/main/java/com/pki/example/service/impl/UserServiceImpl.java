@@ -1,7 +1,8 @@
 package com.pki.example.service.impl;
 
 import com.pki.example.DTO.UserRegistrationDTO;
-import com.pki.example.model.User;
+import com.pki.example.model.entity.User;
+import com.pki.example.model.enums.UserRole;
 import com.pki.example.repository.UserRepository;
 import com.pki.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,10 @@ public class UserServiceImpl implements UserService {
         user.setFirstName(dto.getFirstName());
         user.setLastName(dto.getLastName());
         user.setOrganization(dto.getOrganization());
+        user.setRole(UserRole.USER);
+        //DOK URADIMO VERIFIKACIJU PREKO MEJLA
+        user.setEnabled(true);
+        user.setBlocked(false);
         userRepository.save(user);
     }
 

@@ -5,6 +5,8 @@ import com.pki.example.data.Subject;
 import com.pki.example.data.Certificate;
 import org.bouncycastle.asn1.x500.X500NameBuilder;
 import org.bouncycastle.asn1.x500.style.BCStyle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.security.*;
@@ -16,7 +18,10 @@ import java.util.Date;
 @Component
 public class CertificateExample {
 
+    private static final Logger logger = LoggerFactory.getLogger(CertificateExample.class);
+
     public Subject generateSubject() {
+        logger.info("Generisanje subjekta sertifikata započeto.");
         KeyPair keyPairSubject = generateKeyPair();
 
         //klasa X500NameBuilder pravi X500Name objekat koji predstavlja podatke o vlasniku
@@ -59,10 +64,8 @@ public class CertificateExample {
             SecureRandom random = SecureRandom.getInstance("SHA1PRNG", "SUN");
             keyGen.initialize(2048, random);
             return keyGen.generateKeyPair();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (NoSuchProviderException e) {
-            e.printStackTrace();
+        } catch (NoSuchAlgorithmException | NoSuchProviderException e) {
+            logger.error("Greška pri generisanju para ključeva: {}", e.getMessage(), e);
         }
         return null;
     }
@@ -84,7 +87,7 @@ public class CertificateExample {
             return new com.pki.example.data.Certificate(subject, issuer,
                     "1", startDate, endDate, certificate);
         } catch (ParseException e) {
-            e.printStackTrace();
+            logger.error("Greška pri parsiranju datuma: {}", e.getMessage(), e);
         }
 
         return null;

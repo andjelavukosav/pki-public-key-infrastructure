@@ -1,6 +1,6 @@
 package com.pki.example.config;
 
-import com.pki.example.model.User;
+import com.pki.example.model.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -19,7 +19,7 @@ public class CustomUserDetails implements UserDetails {
     //promijejeno
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_"+user.getRole()));
+        return List.of(new SimpleGrantedAuthority("ROLE_"+user.getRole().name()));
     }
 
     @Override
@@ -44,7 +44,7 @@ public class CustomUserDetails implements UserDetails {
 
     //promijenjeno
     @Override
-    public boolean isEnabled() {return /*user.isVerified();*/true;}
+    public boolean isEnabled() {return user.isEnabled();}
 
     public User getUser() {return user;}
 }

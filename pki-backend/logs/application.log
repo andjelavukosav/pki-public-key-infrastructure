@@ -1,0 +1,1576 @@
+2025-10-18 12:14:14 INFO  [restartedMain] com.pki.example.ExampleApplication - Starting ExampleApplication using Java 17.0.16 on DESKTOP-7P3KPJN with PID 13028 (C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend\example\target\classes started by Andjela Vukosav in C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend)
+2025-10-18 12:14:14 DEBUG [restartedMain] com.pki.example.ExampleApplication - Running with Spring Boot v2.7.10, Spring v5.3.26
+2025-10-18 12:14:14 INFO  [restartedMain] com.pki.example.ExampleApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-18 12:14:14 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-18 12:14:14 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-18 12:14:15 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-18 12:14:15 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 3 JPA repository interfaces.
+2025-10-18 12:14:16 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-18 12:14:16 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-18 12:14:16 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.73]
+2025-10-18 12:14:16 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-18 12:14:16 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2336 ms
+2025-10-18 12:14:16 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-18 12:14:16 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-10-18 12:14:17 INFO  [restartedMain] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-10-18 12:14:17 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-18 12:14:18 ERROR [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:272)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:295)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:252)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:693)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:374)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1707)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:176)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:171)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:156)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4929)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:871)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:795)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:871)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:249)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:428)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:917)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:481)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.pki.example.ExampleApplication.main(ExampleApplication.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2025-10-18 12:14:18 WARN  [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata
+org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:272)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:295)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:252)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:693)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:374)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1707)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:176)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:171)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:156)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4929)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:871)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:795)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:871)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:249)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:428)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:917)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:481)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.pki.example.ExampleApplication.main(ExampleApplication.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2025-10-18 12:14:18 INFO  [restartedMain] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-10-18 12:14:19 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    alter table if exists verification_tokens 
+       drop constraint if exists FK54y8mqsnq1rtyf581sfmrbp4f
+2025-10-18 12:14:19 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-18 12:14:20 ERROR [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:44)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.jdbcStatement(GenerationTargetToDatabase.java:77)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:53)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:387)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:371)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:341)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:235)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:156)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:128)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:157)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:693)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:374)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1707)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:176)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:171)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:156)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4929)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:871)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:795)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:871)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:249)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:428)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:917)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:481)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.pki.example.ExampleApplication.main(ExampleApplication.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2025-10-18 12:14:20 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 28P01
+2025-10-18 12:14:20 ERROR [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper - FATAL: password authentication failed for user "postgres"
+2025-10-18 12:14:20 ERROR [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+2025-10-18 12:14:20 ERROR [restartedMain] o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter' defined in file [C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend\example\target\classes\com\pki\example\config\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'applicationConfig' defined in file [C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend\example\target\classes\com\pki\example\config\ApplicationConfig.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.pki.example.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot create inner bean '(inner bean)#4586741f' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#4586741f': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+2025-10-18 12:14:20 INFO  [restartedMain] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-10-18 12:14:20 WARN  [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2025-10-18 12:14:20 INFO  [restartedMain] o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2025-10-18 12:14:20 ERROR [restartedMain] o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.pki.example.ExampleApplication.main(ExampleApplication.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:142)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:481)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthenticationFilter' defined in file [C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend\example\target\classes\com\pki\example\config\JwtAuthenticationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'applicationConfig' defined in file [C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend\example\target\classes\com\pki\example\config\ApplicationConfig.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.pki.example.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot create inner bean '(inner bean)#4586741f' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#4586741f': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:176)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:171)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:156)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4929)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:871)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:795)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:871)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:249)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:428)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:917)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	... 18 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'applicationConfig' defined in file [C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend\example\target\classes\com\pki\example\config\ApplicationConfig.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.pki.example.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot create inner bean '(inner bean)#4586741f' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#4586741f': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 59 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.pki.example.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot create inner bean '(inner bean)#4586741f' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#4586741f': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:389)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:134)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1707)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1452)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 82 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#4586741f': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:693)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:374)
+	... 96 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 104 common frames omitted
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 111 common frames omitted
+Caused by: org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:71)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.jdbcStatement(GenerationTargetToDatabase.java:77)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:53)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:387)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:371)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:341)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:235)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:156)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:128)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:157)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 115 common frames omitted
+Caused by: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:181)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:44)
+	... 132 common frames omitted
+2025-10-18 12:14:50 INFO  [restartedMain] com.pki.example.ExampleApplication - Starting ExampleApplication using Java 17.0.16 on DESKTOP-7P3KPJN with PID 9092 (C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend\example\target\classes started by Andjela Vukosav in C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend)
+2025-10-18 12:14:50 DEBUG [restartedMain] com.pki.example.ExampleApplication - Running with Spring Boot v2.7.10, Spring v5.3.26
+2025-10-18 12:14:50 INFO  [restartedMain] com.pki.example.ExampleApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-18 12:14:50 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-18 12:14:50 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-18 12:14:50 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-18 12:14:50 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
+2025-10-18 12:14:51 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-18 12:14:51 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-18 12:14:51 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.73]
+2025-10-18 12:14:51 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-18 12:14:51 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1479 ms
+2025-10-18 12:14:51 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-18 12:14:51 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-10-18 12:14:51 INFO  [restartedMain] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-10-18 12:14:52 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-18 12:14:52 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-18 12:14:52 INFO  [restartedMain] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-10-18 12:14:52 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    alter table if exists verification_tokens 
+       drop constraint if exists FK54y8mqsnq1rtyf581sfmrbp4f
+2025-10-18 12:14:52 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    drop table if exists certificate cascade
+2025-10-18 12:14:52 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    drop table if exists users cascade
+2025-10-18 12:14:52 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    drop table if exists verification_tokens cascade
+2025-10-18 12:14:52 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    create table certificate (
+       id int4 generated by default as identity,
+        alias varchar(255),
+        c varchar(255),
+        cn varchar(255),
+        end_date date,
+        extensions TEXT,
+        isca boolean not null,
+        is_end_entity boolean not null,
+        is_intermediate boolean not null,
+        is_root boolean not null,
+        issuer varchar(255),
+        issuer_id int4,
+        key_store_meta_id int4,
+        o varchar(255),
+        ou varchar(255),
+        revoked boolean not null,
+        serial_number varchar(255),
+        start_date date,
+        primary key (id)
+    )
+2025-10-18 12:14:52 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    create table users (
+       id int8 generated by default as identity,
+        blocked boolean not null,
+        email varchar(255) not null,
+        enabled boolean not null,
+        first_name varchar(255) not null,
+        last_name varchar(255) not null,
+        organization varchar(255) not null,
+        password varchar(255) not null,
+        role varchar(255) not null,
+        primary key (id)
+    )
+2025-10-18 12:14:52 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    create table verification_tokens (
+       id int8 generated by default as identity,
+        expires_at timestamp not null,
+        token_hash varchar(128) not null,
+        used boolean not null,
+        user_id int8 not null,
+        primary key (id)
+    )
+2025-10-18 12:14:52 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    alter table if exists users 
+       add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique (email)
+2025-10-18 12:14:52 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    alter table if exists verification_tokens 
+       add constraint UK_clh4tfurdi6ate1t2815l1vn8 unique (token_hash)
+2025-10-18 12:14:52 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    alter table if exists verification_tokens 
+       add constraint FK54y8mqsnq1rtyf581sfmrbp4f 
+       foreign key (user_id) 
+       references users
+2025-10-18 12:14:52 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-10-18 12:14:52 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-18 12:14:53 DEBUG [restartedMain] c.p.e.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-10-18 12:14:53 INFO  [restartedMain] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5051640c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1cd77a4a, org.springframework.security.web.context.SecurityContextPersistenceFilter@79db8c0b, org.springframework.security.web.header.HeaderWriterFilter@2bb4d351, org.springframework.web.filter.CorsFilter@76880172, org.springframework.security.web.authentication.logout.LogoutFilter@44f910b5, com.pki.example.config.JwtAuthenticationFilter@564675ab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e04425e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a9cfe0c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77dfd309, org.springframework.security.web.session.SessionManagementFilter@4331eb9c, org.springframework.security.web.access.ExceptionTranslationFilter@46f2194b, org.springframework.security.web.access.intercept.AuthorizationFilter@3a3ede82]
+2025-10-18 12:14:54 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-10-18 12:14:54 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-18 12:14:54 INFO  [restartedMain] com.pki.example.ExampleApplication - Started ExampleApplication in 4.321 seconds (JVM running for 4.956)
+2025-10-18 12:14:54 INFO  [restartedMain] c.p.e.c.CertificateExample - Generisanje subjekta sertifikata započeto.
+2025-10-18 12:15:14 INFO  [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-18 12:15:14 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-18 12:15:14 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-18 12:15:15 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:15:15 TRACE [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:15:15 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2025-10-18 12:15:45 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:15:45 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:15:45 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2025-10-18 12:15:48 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:15:48 TRACE [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:15:49 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2025-10-18 12:16:26 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-18 12:16:26 INFO  [SpringApplicationShutdownHook] o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-10-18 12:16:26 DEBUG [SpringApplicationShutdownHook] org.hibernate.SQL - 
+    
+    alter table if exists verification_tokens 
+       drop constraint if exists FK54y8mqsnq1rtyf581sfmrbp4f
+2025-10-18 12:16:26 DEBUG [SpringApplicationShutdownHook] org.hibernate.SQL - 
+    
+    drop table if exists certificate cascade
+2025-10-18 12:16:26 DEBUG [SpringApplicationShutdownHook] org.hibernate.SQL - 
+    
+    drop table if exists users cascade
+2025-10-18 12:16:26 DEBUG [SpringApplicationShutdownHook] org.hibernate.SQL - 
+    
+    drop table if exists verification_tokens cascade
+2025-10-18 12:16:26 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-18 12:16:26 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-18 12:16:28 INFO  [restartedMain] com.pki.example.ExampleApplication - Starting ExampleApplication using Java 17.0.16 on DESKTOP-7P3KPJN with PID 11664 (C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend\example\target\classes started by Andjela Vukosav in C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend)
+2025-10-18 12:16:28 DEBUG [restartedMain] com.pki.example.ExampleApplication - Running with Spring Boot v2.7.10, Spring v5.3.26
+2025-10-18 12:16:28 INFO  [restartedMain] com.pki.example.ExampleApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-18 12:16:28 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-18 12:16:28 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-18 12:16:29 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-18 12:16:29 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 3 JPA repository interfaces.
+2025-10-18 12:16:30 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-18 12:16:30 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-18 12:16:30 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.73]
+2025-10-18 12:16:30 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-18 12:16:30 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1453 ms
+2025-10-18 12:16:30 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-18 12:16:30 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-10-18 12:16:30 INFO  [restartedMain] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-10-18 12:16:30 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-18 12:16:30 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-18 12:16:30 INFO  [restartedMain] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-10-18 12:16:31 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    create table certificate (
+       id int4 generated by default as identity,
+        alias varchar(255),
+        c varchar(255),
+        cn varchar(255),
+        end_date date,
+        extensions TEXT,
+        isca boolean not null,
+        is_end_entity boolean not null,
+        is_intermediate boolean not null,
+        is_root boolean not null,
+        issuer varchar(255),
+        issuer_id int4,
+        key_store_meta_id int4,
+        o varchar(255),
+        ou varchar(255),
+        revoked boolean not null,
+        serial_number varchar(255),
+        start_date date,
+        primary key (id)
+    )
+2025-10-18 12:16:31 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    create table users (
+       id int8 generated by default as identity,
+        blocked boolean not null,
+        email varchar(255) not null,
+        enabled boolean not null,
+        first_name varchar(255) not null,
+        last_name varchar(255) not null,
+        organization varchar(255) not null,
+        password varchar(255) not null,
+        role varchar(255) not null,
+        primary key (id)
+    )
+2025-10-18 12:16:31 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    create table verification_tokens (
+       id int8 generated by default as identity,
+        expires_at timestamp not null,
+        token_hash varchar(128) not null,
+        used boolean not null,
+        user_id int8 not null,
+        primary key (id)
+    )
+2025-10-18 12:16:31 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    alter table if exists users 
+       drop constraint if exists UK_6dotkott2kjsp8vw4d0m25fb7
+2025-10-18 12:16:31 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-10-18 12:16:31 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+2025-10-18 12:16:31 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    alter table if exists users 
+       add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique (email)
+2025-10-18 12:16:31 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    alter table if exists verification_tokens 
+       drop constraint if exists UK_clh4tfurdi6ate1t2815l1vn8
+2025-10-18 12:16:31 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2025-10-18 12:16:31 WARN  [restartedMain] o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_clh4tfurdi6ate1t2815l1vn8" of relation "verification_tokens" does not exist, skipping
+2025-10-18 12:16:31 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    alter table if exists verification_tokens 
+       add constraint UK_clh4tfurdi6ate1t2815l1vn8 unique (token_hash)
+2025-10-18 12:16:31 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    alter table if exists verification_tokens 
+       add constraint FK54y8mqsnq1rtyf581sfmrbp4f 
+       foreign key (user_id) 
+       references users
+2025-10-18 12:16:31 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-10-18 12:16:31 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-18 12:16:31 DEBUG [restartedMain] c.p.e.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-10-18 12:16:32 INFO  [restartedMain] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@67ba95c5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e396d76, org.springframework.security.web.context.SecurityContextPersistenceFilter@466d1e80, org.springframework.security.web.header.HeaderWriterFilter@26412ae7, org.springframework.web.filter.CorsFilter@be9d237, org.springframework.security.web.authentication.logout.LogoutFilter@4eb16af2, com.pki.example.config.JwtAuthenticationFilter@5fc42d0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@659cc4ac, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2c454b45, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8858383, org.springframework.security.web.session.SessionManagementFilter@248bbb17, org.springframework.security.web.access.ExceptionTranslationFilter@15dda529, org.springframework.security.web.access.intercept.AuthorizationFilter@606f2eba]
+2025-10-18 12:16:32 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-10-18 12:16:32 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-18 12:16:32 INFO  [restartedMain] com.pki.example.ExampleApplication - Started ExampleApplication in 4.252 seconds (JVM running for 4.857)
+2025-10-18 12:16:34 INFO  [restartedMain] c.p.e.c.CertificateExample - Generisanje subjekta sertifikata započeto.
+2025-10-18 12:16:57 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-18 12:16:57 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-18 12:16:57 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-18 12:16:57 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        user0_.id as col_0_0_ 
+    from
+        users user0_ 
+    where
+        user0_.email=? limit ?
+2025-10-18 12:16:57 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:16:57 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    insert 
+    into
+        users
+        (blocked, email, enabled, first_name, last_name, organization, password, role) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-10-18 12:16:57 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BOOLEAN] - [false]
+2025-10-18 12:16:57 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:16:57 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [BOOLEAN] - [false]
+2025-10-18 12:16:57 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [VARCHAR] - [Andjela]
+2025-10-18 12:16:57 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [5] as [VARCHAR] - [Vukosav]
+2025-10-18 12:16:57 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [FTN]
+2025-10-18 12:16:57 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [7] as [VARCHAR] - [$2a$10$htzF3IAsg.oS3LGjIQ4PRefF6cofwg30QY.n6WUWdo9t0FKNyuXfi]
+2025-10-18 12:16:57 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [8] as [VARCHAR] - [USER]
+2025-10-18 12:16:57 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    insert 
+    into
+        verification_tokens
+        (expires_at, token_hash, used, user_id) 
+    values
+        (?, ?, ?, ?)
+2025-10-18 12:16:57 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2025-10-19T10:16:57.611512500Z]
+2025-10-18 12:16:57 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Erfp8QqXBYpRDTpqPq7UoYStUQtnqXEuWfbDrqFI0ec]
+2025-10-18 12:16:57 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [BOOLEAN] - [false]
+2025-10-18 12:16:57 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+2025-10-18 12:17:15 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
+    select
+        verificati0_.id as id1_2_,
+        verificati0_.expires_at as expires_2_2_,
+        verificati0_.token_hash as token_ha3_2_,
+        verificati0_.used as used4_2_,
+        verificati0_.user_id as user_id5_2_ 
+    from
+        verification_tokens verificati0_ 
+    where
+        verificati0_.token_hash=?
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [Erfp8QqXBYpRDTpqPq7UoYStUQtnqXEuWfbDrqFI0ec]
+2025-10-18 12:17:15 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_0_,
+        user0_.blocked as blocked2_1_0_,
+        user0_.email as email3_1_0_,
+        user0_.enabled as enabled4_1_0_,
+        user0_.first_name as first_na5_1_0_,
+        user0_.last_name as last_nam6_1_0_,
+        user0_.organization as organiza7_1_0_,
+        user0_.password as password8_1_0_,
+        user0_.role as role9_1_0_ 
+    from
+        users user0_ 
+    where
+        user0_.id=?
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-10-18 12:17:15 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
+    update
+        verification_tokens 
+    set
+        expires_at=?,
+        token_hash=?,
+        used=?,
+        user_id=? 
+    where
+        id=?
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2025-10-19T10:16:57.611513Z]
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [Erfp8QqXBYpRDTpqPq7UoYStUQtnqXEuWfbDrqFI0ec]
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [BOOLEAN] - [true]
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - [1]
+2025-10-18 12:17:15 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
+    update
+        users 
+    set
+        blocked=?,
+        email=?,
+        enabled=?,
+        first_name=?,
+        last_name=?,
+        organization=?,
+        password=?,
+        role=? 
+    where
+        id=?
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BOOLEAN] - [false]
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [BOOLEAN] - [true]
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [VARCHAR] - [Andjela]
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [5] as [VARCHAR] - [Vukosav]
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - [FTN]
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [7] as [VARCHAR] - [$2a$10$htzF3IAsg.oS3LGjIQ4PRefF6cofwg30QY.n6WUWdo9t0FKNyuXfi]
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [8] as [VARCHAR] - [USER]
+2025-10-18 12:17:15 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [9] as [BIGINT] - [1]
+2025-10-18 12:17:41 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:17:41 TRACE [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:17:41 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:17:41 TRACE [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:18:18 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:18:18 TRACE [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:18:18 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:18:18 TRACE [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:18:31 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:18:31 TRACE [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:18:31 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.pki.example.exception.BadRequestException: reCAPTCHA verification failed]
+2025-10-18 12:19:15 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        verificati0_.id as id1_2_,
+        verificati0_.expires_at as expires_2_2_,
+        verificati0_.token_hash as token_ha3_2_,
+        verificati0_.used as used4_2_,
+        verificati0_.user_id as user_id5_2_ 
+    from
+        verification_tokens verificati0_ 
+    where
+        verificati0_.token_hash=?
+2025-10-18 12:19:15 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [MJOWm-C7tqzK1fzKKwrGN4KA2kQm3L--4xhpsKtOJ18]
+2025-10-18 12:20:38 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
+    select
+        verificati0_.id as id1_2_,
+        verificati0_.expires_at as expires_2_2_,
+        verificati0_.token_hash as token_ha3_2_,
+        verificati0_.used as used4_2_,
+        verificati0_.user_id as user_id5_2_ 
+    from
+        verification_tokens verificati0_ 
+    where
+        verificati0_.token_hash=?
+2025-10-18 12:20:38 TRACE [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [MJOWm-C7tqzK1fzKKwrGN4KA2kQm3L--4xhpsKtOJ18]
+2025-10-18 12:21:51 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
+    select
+        verificati0_.id as id1_2_,
+        verificati0_.expires_at as expires_2_2_,
+        verificati0_.token_hash as token_ha3_2_,
+        verificati0_.used as used4_2_,
+        verificati0_.user_id as user_id5_2_ 
+    from
+        verification_tokens verificati0_ 
+    where
+        verificati0_.token_hash=?
+2025-10-18 12:21:51 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [MJOWm-C7tqzK1fzKKwrGN4KA2kQm3L--4xhpsKtOJ18]
+2025-10-18 12:22:06 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    select
+        verificati0_.id as id1_2_,
+        verificati0_.expires_at as expires_2_2_,
+        verificati0_.token_hash as token_ha3_2_,
+        verificati0_.used as used4_2_,
+        verificati0_.user_id as user_id5_2_ 
+    from
+        verification_tokens verificati0_ 
+    where
+        verificati0_.token_hash=?
+2025-10-18 12:22:06 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [MJOWm-C7tqzK1fzKKwrGN4KA2kQm3L--4xhpsKtOJ18]
+2025-10-18 12:22:28 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - 
+    select
+        verificati0_.id as id1_2_,
+        verificati0_.expires_at as expires_2_2_,
+        verificati0_.token_hash as token_ha3_2_,
+        verificati0_.used as used4_2_,
+        verificati0_.user_id as user_id5_2_ 
+    from
+        verification_tokens verificati0_ 
+    where
+        verificati0_.token_hash=?
+2025-10-18 12:22:28 TRACE [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [MJOWm-C7tqzK1fzKKwrGN4KA2kQm3L--4xhpsKtOJ18]
+2025-10-18 12:23:03 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - 
+    select
+        verificati0_.id as id1_2_,
+        verificati0_.expires_at as expires_2_2_,
+        verificati0_.token_hash as token_ha3_2_,
+        verificati0_.used as used4_2_,
+        verificati0_.user_id as user_id5_2_ 
+    from
+        verification_tokens verificati0_ 
+    where
+        verificati0_.token_hash=?
+2025-10-18 12:23:03 TRACE [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [MJOWm-C7tqzK1fzKKwrGN4KA2kQm3L--4xhpsKtOJ18]
+2025-10-18 12:23:13 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL - 
+    select
+        verificati0_.id as id1_2_,
+        verificati0_.expires_at as expires_2_2_,
+        verificati0_.token_hash as token_ha3_2_,
+        verificati0_.used as used4_2_,
+        verificati0_.user_id as user_id5_2_ 
+    from
+        verification_tokens verificati0_ 
+    where
+        verificati0_.token_hash=?
+2025-10-18 12:23:13 TRACE [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [MJOWm-C7tqzK1fzKKwrGN4KA2kQm3L--4xhpsKtOJ18]
+2025-10-18 12:23:19 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    select
+        verificati0_.id as id1_2_,
+        verificati0_.expires_at as expires_2_2_,
+        verificati0_.token_hash as token_ha3_2_,
+        verificati0_.used as used4_2_,
+        verificati0_.user_id as user_id5_2_ 
+    from
+        verification_tokens verificati0_ 
+    where
+        verificati0_.token_hash=?
+2025-10-18 12:23:19 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [MJOWm-C7tqzK1fzKKwrGN4KA2kQm3L--4xhpsKtOJ18]
+2025-10-18 12:23:39 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:23:39 TRACE [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:23:39 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:23:39 TRACE [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:23:50 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:23:50 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:23:50 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.RuntimeException: Uexpected principal type: com.pki.example.model.entity.User@1]
+2025-10-18 12:27:07 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:27:07 TRACE [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:27:07 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:27:07 TRACE [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:27:07 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:27:07 TRACE [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:27:16 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:27:16 TRACE [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:27:16 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [java.lang.RuntimeException: Uexpected principal type: com.pki.example.model.entity.User@1]
+2025-10-18 12:30:12 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-18 12:30:12 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-18 12:30:12 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-18 12:30:17 INFO  [restartedMain] com.pki.example.ExampleApplication - Starting ExampleApplication using Java 17.0.16 on DESKTOP-7P3KPJN with PID 21408 (C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend\example\target\classes started by Andjela Vukosav in C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend)
+2025-10-18 12:30:17 DEBUG [restartedMain] com.pki.example.ExampleApplication - Running with Spring Boot v2.7.10, Spring v5.3.26
+2025-10-18 12:30:17 INFO  [restartedMain] com.pki.example.ExampleApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-18 12:30:17 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-18 12:30:17 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-18 12:30:18 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-18 12:30:18 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 54 ms. Found 3 JPA repository interfaces.
+2025-10-18 12:30:18 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-18 12:30:18 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-18 12:30:18 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.73]
+2025-10-18 12:30:18 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-18 12:30:18 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1578 ms
+2025-10-18 12:30:19 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-18 12:30:19 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-10-18 12:30:19 INFO  [restartedMain] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-10-18 12:30:19 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-18 12:30:19 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-18 12:30:19 INFO  [restartedMain] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-10-18 12:30:20 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-10-18 12:30:20 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-18 12:30:20 DEBUG [restartedMain] c.p.e.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-10-18 12:30:21 INFO  [restartedMain] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7aeca903, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2eec4aba, org.springframework.security.web.context.SecurityContextPersistenceFilter@479d8057, org.springframework.security.web.header.HeaderWriterFilter@7cdbea94, org.springframework.web.filter.CorsFilter@5093acd6, org.springframework.security.web.authentication.logout.LogoutFilter@4cd27621, com.pki.example.config.JwtAuthenticationFilter@22b8808d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26edfaaf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4acfac8c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57f359e2, org.springframework.security.web.session.SessionManagementFilter@67187dff, org.springframework.security.web.access.ExceptionTranslationFilter@70c84c09, org.springframework.security.web.access.intercept.AuthorizationFilter@6696585c]
+2025-10-18 12:30:21 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-10-18 12:30:21 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-18 12:30:21 INFO  [restartedMain] com.pki.example.ExampleApplication - Started ExampleApplication in 4.674 seconds (JVM running for 5.318)
+2025-10-18 12:30:22 INFO  [restartedMain] c.p.e.c.CertificateExample - Generisanje subjekta sertifikata započeto.
+2025-10-18 12:30:51 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-18 12:30:51 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-18 12:30:51 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-18 12:30:51 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:30:51 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:30:52 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:30:52 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:30:52 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:30:52 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:31:01 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:31:01 TRACE [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:32:33 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-18 12:32:33 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-18 12:32:33 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-18 12:37:16 INFO  [restartedMain] com.pki.example.ExampleApplication - Starting ExampleApplication using Java 17.0.16 on DESKTOP-7P3KPJN with PID 16300 (C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend\example\target\classes started by Andjela Vukosav in C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend)
+2025-10-18 12:37:16 DEBUG [restartedMain] com.pki.example.ExampleApplication - Running with Spring Boot v2.7.10, Spring v5.3.26
+2025-10-18 12:37:16 INFO  [restartedMain] com.pki.example.ExampleApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-18 12:37:16 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-18 12:37:16 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-18 12:37:17 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-18 12:37:17 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 3 JPA repository interfaces.
+2025-10-18 12:37:19 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-18 12:37:19 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-18 12:37:19 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.73]
+2025-10-18 12:37:19 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-18 12:37:19 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2614 ms
+2025-10-18 12:37:19 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-18 12:37:19 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-10-18 12:37:19 INFO  [restartedMain] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-10-18 12:37:20 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-18 12:37:20 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-18 12:37:20 INFO  [restartedMain] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-10-18 12:37:21 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-10-18 12:37:21 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-18 12:37:21 DEBUG [restartedMain] c.p.e.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-10-18 12:37:22 INFO  [restartedMain] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@665d7a82, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c59fcd0, org.springframework.security.web.context.SecurityContextPersistenceFilter@67ba95c5, org.springframework.security.web.header.HeaderWriterFilter@6c170d60, org.springframework.web.filter.CorsFilter@1a96a3e2, org.springframework.security.web.authentication.logout.LogoutFilter@4157fad3, com.pki.example.config.JwtAuthenticationFilter@5fc42d0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@be9d237, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4bf8a0a1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e1bb285, org.springframework.security.web.session.SessionManagementFilter@606f2eba, org.springframework.security.web.access.ExceptionTranslationFilter@c12e601, org.springframework.security.web.access.intercept.AuthorizationFilter@796e6c1d]
+2025-10-18 12:37:23 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-10-18 12:37:23 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-18 12:37:23 INFO  [restartedMain] com.pki.example.ExampleApplication - Started ExampleApplication in 7.075 seconds (JVM running for 8.03)
+2025-10-18 12:37:24 INFO  [restartedMain] c.p.e.c.CertificateExample - Generisanje subjekta sertifikata započeto.
+2025-10-18 12:38:08 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-18 12:38:08 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-18 12:38:08 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-10-18 12:38:09 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:38:09 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:38:10 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:38:10 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:38:10 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2025-10-18 12:38:31 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:38:31 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:38:32 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:38:32 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:38:32 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:38:32 TRACE [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:38:41 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    select
+        user0_.id as id1_1_,
+        user0_.blocked as blocked2_1_,
+        user0_.email as email3_1_,
+        user0_.enabled as enabled4_1_,
+        user0_.first_name as first_na5_1_,
+        user0_.last_name as last_nam6_1_,
+        user0_.organization as organiza7_1_,
+        user0_.password as password8_1_,
+        user0_.role as role9_1_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 12:38:41 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 12:38:42 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    insert 
+    into
+        certificate
+        (alias, c, cn, end_date, extensions, isca, is_end_entity, is_intermediate, is_root, issuer, issuer_id, key_store_meta_id, o, ou, revoked, serial_number, start_date) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [cert-480e3630c5a0]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [RS]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [jajsj]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [DATE] - [2026-10-18]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [5] as [CLOB] - [{}]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [6] as [BOOLEAN] - [false]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [7] as [BOOLEAN] - [false]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [8] as [BOOLEAN] - [false]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [9] as [BOOLEAN] - [true]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [10] as [VARCHAR] - [CN=jajsj, O=jajjs, OU=jajaj, C=RS]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [11] as [INTEGER] - [null]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [12] as [INTEGER] - [null]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [13] as [VARCHAR] - [jajjs]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [14] as [VARCHAR] - [jajaj]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [15] as [BOOLEAN] - [false]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [16] as [VARCHAR] - [480e3630c5a0]
+2025-10-18 12:38:42 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [17] as [DATE] - [2025-10-18]

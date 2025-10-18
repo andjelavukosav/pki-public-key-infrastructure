@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { AuthService } from 'src/app/service/auth.service';
 import { CertificateRequest } from '../model/certificateRequest';
 import { CertificateService } from '../service/certificate.service';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-create-root-certificate',
@@ -18,7 +18,7 @@ export class CreateRootCertificateComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private certificateService: CertificateService,
-    private authService: AuthService,
+    private authService: UserService,
     private snackBar: MatSnackBar
   ) {}
 
@@ -59,9 +59,8 @@ export class CreateRootCertificateComponent implements OnInit {
       extensions: this.fb.control({})
     });
 
-    //OVOOOOO TREBA OTKOMENTARISATI KADA SE SPOJI
-    //const currentUser = this.authService.getCurrentUser();
-    this.userId = 10;/*currentUser ? currentUser.userId : null;*/
+    const currentUser = this.authService.getAuthenticatedUser();
+    this.userId = currentUser ? currentUser.id : null;
   }
 
   onSubmit() {

@@ -28,4 +28,8 @@ export class NavBarComponent implements OnInit {
     this.userService.clearUser();
     this.router.navigate(['']);
   }
+
+  isLoggedAdmin(): boolean{
+    return this.user?.role==='ADMIN';
+  }
 }

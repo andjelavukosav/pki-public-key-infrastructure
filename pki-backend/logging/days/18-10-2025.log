@@ -1,0 +1,51 @@
+{
+  "timestamp" : "2025-10-18T10:23:50.587Z",
+  "eventType" : "CERTIFICATE_ISSUE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760783030587-729",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "FAILURE",
+  "message" : "Failed to issue certificate: Uexpected principal type: com.pki.example.model.entity.User@1 | CertID: N/A | CN: skksk | Issuer: SELF_SIGNED",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-18T10:27:16.587Z",
+  "eventType" : "CERTIFICATE_ISSUE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760783236587-463",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "FAILURE",
+  "message" : "Failed to issue certificate: Uexpected principal type: com.pki.example.model.entity.User@1 | CertID: N/A | CN: kakk | Issuer: SELF_SIGNED",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-18T10:31:01.832Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760783461832-582",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 0 | CN: jsjsj | Issuer: SELF_SIGNED",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-18T10:38:42.989Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760783922989-827",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 1 | CN: jajsj | Issuer: SELF_SIGNED",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}

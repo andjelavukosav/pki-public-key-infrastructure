@@ -10,6 +10,7 @@
     <ng-container *ngIf="user">
       <span class="user-greeting">Hello, {{ user?.email }}</span>
       <button class="nav-button logout-button" (click)="logout()">Logout</button>
+      <button mat-raised-button *ngIf="isLoggedAdmin()" class="create-root-certificate-button" [routerLink]="['createRootCertificate']">Create root certificate</button>
     </ng-container>
   </div>
 </nav>

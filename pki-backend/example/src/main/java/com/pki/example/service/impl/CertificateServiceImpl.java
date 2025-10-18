@@ -4,8 +4,10 @@ import com.pki.example.DTO.CertificateRequestDTO;
 import com.pki.example.DTO.CertificateResponseDTO;
 import com.pki.example.config.CustomUserDetails;
 import com.pki.example.model.Certificate;
+import com.pki.example.repository.CertificateRepository;
 import com.pki.example.service.CertificateGenerator;
 import com.pki.example.service.CertificateService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -21,23 +23,31 @@ import java.util.Map;
 
 @Service
 public class CertificateServiceImpl implements CertificateService {
+    private final CertificateRepository certificateRepository;
 
-
+    @Autowired
+    public CertificateServiceImpl(CertificateRepository certificateRepository) {
+        this.certificateRepository = certificateRepository;
+    }
     public CertificateResponseDTO issueCertificate(CertificateRequestDTO request) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         Object principal = auth.getPrincipal();
-        Integer userId = null;
+        Long userId;
 
-        if (principal instanceof CustomUserDetails) {
-            userId = Math.toIntExact(((CustomUserDetails) principal).getUser().getId());
-        } else if (principal instanceof Integer) {
-            userId = (Integer) principal;
+        if (principal instanceof CustomUserDetails cud) {
+            userId = cud.getUser().getId();
+        } else if (principal instanceof com.pki.example.model.entity.User u) {
+            userId = u.getId();
+        } else if (principal instanceof Integer i) {
+            userId = i.longValue();
         } else {
-            throw new RuntimeException("Uexpected principal type: " + principal);
+            throw new RuntimeException("Unexpected principal type: " + principal.getClass());
         }
 
-        String role = auth.getAuthorities().iterator().next().getAuthority().replace("ROLE_", "");
+        String role = auth.getAuthorities().isEmpty()
+                ? null
+                : auth.getAuthorities().iterator().next().getAuthority().replace("ROLE_", "");
 
         if (request.issuerId == null) {
             if (!"ADMIN".equals(role)) {
@@ -118,7 +128,7 @@ public class CertificateServiceImpl implements CertificateService {
 
 // 2. Certificate entitet čuva samo referencu
             certificate.setKeyStoreMetaId(meta.getId());
-
+*/
             Certificate saved = certificateRepository.save(certificate);
 
             return new CertificateResponseDTO(
@@ -142,7 +152,7 @@ public class CertificateServiceImpl implements CertificateService {
         }
 
 
-        /// KREIRANJE SERTIFIKATA AKO ISSUER POSTOJI STAVLJANJE U LANAC ISPOD ROOT SERTIFIKATA
+      /*  /// KREIRANJE SERTIFIKATA AKO ISSUER POSTOJI STAVLJANJE U LANAC ISPOD ROOT SERTIFIKATA
         Certificate issuer = certificateRepository.findById(request.issuerId).orElseThrow(() -> new RuntimeException("Issuer not found"));
 
         if (issuer.isRevoked()) {
@@ -329,10 +339,8 @@ public class CertificateServiceImpl implements CertificateService {
                 saved.isCA(),
                 saved.isRevoked()
         );*/
-
-        }
-        return new CertificateResponseDTO();
-}
+        return null;
+    }
 
     private static KeyPair generateRsaKeyPair() {
         try {

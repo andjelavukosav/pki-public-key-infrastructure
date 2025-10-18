@@ -1,6 +1,6 @@
 package com.pki.example.repository;
 
-import com.pki.example.model.User;
+import com.pki.example.model.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

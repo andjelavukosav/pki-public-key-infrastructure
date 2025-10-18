@@ -1,16 +1,22 @@
 package com.pki.example.service.impl;
 
 import com.pki.example.DTO.UserRegistrationDTO;
-import com.pki.example.model.User;
-import com.pki.example.model.VerificationToken;
+
+import com.pki.example.model.entity.User;
+import com.pki.example.model.entity.VerificationToken;
+import com.pki.example.model.enums.UserRole;
 import com.pki.example.repository.UserRepository;
 import com.pki.example.repository.VerificationTokenRepository;
 import com.pki.example.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.security.SecureRandom;
+import java.util.Base64;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.security.SecureRandom;
@@ -19,6 +25,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.Base64;
 
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepo;
@@ -28,16 +35,6 @@ public class UserServiceImpl implements UserService {
 
     @Value("${app.frontend.base-url}")
     private String frontendBaseUrl;
-
-    public UserServiceImpl(UserRepository userRepo,
-                           VerificationTokenRepository tokenRepo,
-                           PasswordEncoder passwordEncoder,
-                           JavaMailSender mailSender) {
-        this.userRepo = userRepo;
-        this.tokenRepo = tokenRepo;
-        this.passwordEncoder = passwordEncoder;
-        this.mailSender = mailSender;
-    }
 
     @Override
     @Transactional
@@ -52,7 +49,9 @@ public class UserServiceImpl implements UserService {
         u.setFirstName(dto.getFirstName());
         u.setLastName(dto.getLastName());
         u.setOrganization(dto.getOrganization());
+        u.setRole(UserRole.USER);
         u.setEnabled(false);
+        u.setBlocked(false);
 
         userRepo.save(u);
 
@@ -106,6 +105,7 @@ public class UserServiceImpl implements UserService {
         System.out.println("[VERIFY] ✅ Token validan! Korisnik aktiviran: " + u.getEmail());
         System.out.println("============================================");
     }
+
 
     private String generateToken() {
         byte[] buf = new byte[32];

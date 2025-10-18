@@ -1,4 +1,4 @@
-package com.pki.example.model;
+package com.pki.example.model.entity;
 
 import javax.persistence.*;
 import java.time.Instant;

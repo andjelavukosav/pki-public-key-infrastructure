@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { UserHomeComponent } from './user-home/user-home.component';
 import { ActivateComponent } from './activate/activate.component';
 import { CreateRootCertificateComponent } from './certificate/create-root-certificate/create-root-certificate.component';
 
@@ -8,8 +10,10 @@ const routes: Routes = [
     { path: 'register', component: UserRegistrationComponent },
     { path: 'activate', component: ActivateComponent },
     { path: 'createRootCertificate', component:CreateRootCertificateComponent},
-
-
+    { path: 'login', component: UserLoginComponent},
+    { path: 'user-home', component: UserHomeComponent},
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    { path: '**', redirectTo: 'login' },
 ];
 
 @NgModule({

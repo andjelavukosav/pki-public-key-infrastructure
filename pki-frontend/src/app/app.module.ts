@@ -6,8 +6,12 @@ import { AppComponent } from './app.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { AuthInterceptor } from './auth/interceptor';
+import { UserHomeComponent } from './user-home/user-home.component';
 import { ActivateComponent } from './activate/activate.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -25,15 +29,22 @@ import { CreateIntermediateCertificateComponent } from './certificate/create-int
     UserRegistrationComponent,
     HomePageComponent,
     NavBarComponent,
+<<<<<<< HEAD
     ActivateComponent,
     CreateRootCertificateComponent,
     CreateIntermediateCertificateComponent
+=======
+    UserLoginComponent,
+    UserHomeComponent,
+    ActivateComponent,
+>>>>>>> development
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+<<<<<<< HEAD
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatTableModule,   // ⬅️ OVO je ključno
@@ -43,8 +54,11 @@ import { CreateIntermediateCertificateComponent } from './certificate/create-int
     MatButtonModule
 
 
+=======
+    RecaptchaModule,
+>>>>>>> development
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,6 +12,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { AuthInterceptor } from './auth/interceptor';
 import { UserHomeComponent } from './user-home/user-home.component';
+import { ActivateComponent } from './activate/activate.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UserHomeComponent } from './user-home/user-home.component';
     HomePageComponent,
     NavBarComponent,
     UserLoginComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    ActivateComponent,
   ],
   imports: [
     BrowserModule,

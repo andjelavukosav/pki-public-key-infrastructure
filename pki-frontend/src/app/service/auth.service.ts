@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserRegistration } from '../model/user-registration';
 import { LoginRequest } from '../model/user-login-request';
@@ -21,7 +21,13 @@ export class AuthService {
   // Metoda koja šalje POST zahtev na backend
   register(user: UserRegistration): Observable<any> {
     return this.http.post(`${this.baseUrl}/register`, user, { responseType: 'text' });
-    }
+  }
+
+  verify(token: string): Observable<any> {
+    const params = new HttpParams().set('token', token);
+    return this.http.post(this.baseUrl + '/verify', null, { params, responseType: 'text' as 'json' });
+  }
+
 
   login(payload: LoginRequest): Observable<LoginResponse>{
     return this.http.post<LoginResponse>(`${this.baseUrl}/login`, payload);

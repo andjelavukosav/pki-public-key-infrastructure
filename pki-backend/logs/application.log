@@ -3650,3 +3650,44 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'ma
         certificat0_.start_date as start_d18_0_ 
     from
         certificate certificat0_
+2025-10-18 14:43:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - 
+    select
+        user0_.id as id1_2_,
+        user0_.blocked as blocked2_2_,
+        user0_.email as email3_2_,
+        user0_.enabled as enabled4_2_,
+        user0_.first_name as first_na5_2_,
+        user0_.last_name as last_nam6_2_,
+        user0_.organization as organiza7_2_,
+        user0_.password as password8_2_,
+        user0_.role as role9_2_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-18 14:43:46 TRACE [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-18 14:43:46 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_,
+        certificat0_.alias as alias2_0_,
+        certificat0_.c as c3_0_,
+        certificat0_.cn as cn4_0_,
+        certificat0_.end_date as end_date5_0_,
+        certificat0_.extensions as extensio6_0_,
+        certificat0_.isca as isca7_0_,
+        certificat0_.is_end_entity as is_end_e8_0_,
+        certificat0_.is_intermediate as is_inter9_0_,
+        certificat0_.is_root as is_root10_0_,
+        certificat0_.issuer as issuer11_0_,
+        certificat0_.issuer_id as issuer_12_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_,
+        certificat0_.o as o14_0_,
+        certificat0_.ou as ou15_0_,
+        certificat0_.revoked as revoked16_0_,
+        certificat0_.serial_number as serial_17_0_,
+        certificat0_.start_date as start_d18_0_ 
+    from
+        certificate certificat0_
+2025-10-18 14:51:33 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-18 14:51:33 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-18 14:51:33 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

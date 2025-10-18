@@ -1,0 +1,38 @@
+<div class="container">
+  <h2 class="title">📜 Certificates</h2>
+
+  <mat-progress-spinner *ngIf="loading" mode="indeterminate"></mat-progress-spinner>
+
+  <div class="grid" *ngIf="!loading">
+    <mat-card *ngFor="let cert of certificates" class="certificate-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>{{ cert.alias }}</mat-card-title>
+        <mat-card-subtitle>Serial: {{ cert.serialNumber }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p><b>Common Name (CN):</b> {{ cert.cn }}</p>
+        <p><b>Organization (O):</b> {{ cert.o }}</p>
+        <p><b>Organization Unit (OU):</b> {{ cert.ou }}</p>
+        <p><b>Country (C):</b> {{ cert.c }}</p>
+        <p><b>Issuer:</b> {{ cert.issuer }}</p>
+        <p><b>Valid From:</b> {{ cert.startDate | date }}</p>
+        <p><b>Valid To:</b> {{ cert.endDate | date }}</p>
+        <p><b>Root:</b> {{ cert.root ? 'Yes' : 'No' }}</p>
+        <p><b>Intermediate:</b> {{ cert.intermediate ? 'Yes' : 'No' }}</p>
+        <p><b>EE:</b> {{ cert.endEntity ? 'Yes' : 'No' }}</p>
+        <p><b>CA:</b> {{ cert.ca ? 'Yes' : 'No' }}</p>
+        <p><b>Status:</b> {{ cert.revoked ? 'Revoked' : 'Active' }}</p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button *ngIf="cert.root" mat-raised-button class="certButtons" color="primary" (click)="createIntermediate(cert)">
+          Create Intermediate
+        </button>
+        <button *ngIf="cert.intermediate" mat-raised-button class="certButtons" color="accent" (click)="createEndEntity(cert)">
+          Create End Entity
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

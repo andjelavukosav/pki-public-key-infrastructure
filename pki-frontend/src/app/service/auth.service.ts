@@ -22,5 +22,10 @@ export class AuthService {
     return this.http.post(this.baseUrl + '/verify', null, { params, responseType: 'text' as 'json' });
   }
 
+  getToken():string|null{
+    return localStorage.getItem('jwtToken')
+  }
+
+
 
 }

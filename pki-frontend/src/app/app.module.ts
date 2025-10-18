@@ -6,23 +6,30 @@ import { AppComponent } from './app.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { AuthInterceptor } from './auth/interceptor';
+import { UserHomeComponent } from './user-home/user-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserRegistrationComponent,
     HomePageComponent,
-    NavBarComponent
+    NavBarComponent,
+    UserLoginComponent,
+    UserHomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RecaptchaModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

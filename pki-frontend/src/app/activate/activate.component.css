@@ -1,0 +1,16 @@
+.activation {
+  max-width: 520px;
+  margin: 40px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.ok {
+  color: green;
+  font-weight: bold;
+}
+
+.err {
+  color: red;
+  font-weight: bold;
+}

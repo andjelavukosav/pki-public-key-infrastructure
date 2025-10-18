@@ -1,0 +1,83 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="login-title">Prijava na sistem</h2>
+    <p class="login-subtitle">Unesite svoje podatke za pristup</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email adresa</label>
+        <input
+          id="email"
+          type="email"
+          class="form-input"
+          placeholder="vas@email.com"
+          formControlName="email"
+          autocomplete="username"
+          [attr.aria-invalid]="email.invalid && (email.dirty || email.touched)"
+        />
+        <div class="error" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <span *ngIf="email.hasError('required')">Email je obavezan!</span>
+          <span *ngIf="email.hasError('email')">Email nije validan!</span>
+        </div>
+      </div>
+
+      <!-- Lozinka -->
+      <div class="form-group">
+        <label for="password">Lozinka</label>
+        <div class="password-wrap">
+          <input
+            id="password"
+            [type]="showPassword ? 'text' : 'password'"
+            class="form-input"
+            placeholder="••••••••"
+            formControlName="password"
+            autocomplete="current-password"
+            [attr.aria-invalid]="password.invalid && (password.dirty || password.touched)"
+          />
+          <button type="button" class="toggle-btn" (click)="toggleShowPassword()" aria-label="Prikaži/sakrij lozinku">
+            {{ showPassword ? 'Sakrij' : 'Prikaži' }}
+          </button>
+        </div>
+        <div class="error" *ngIf="password.invalid && (password.dirty || password.touched)">
+          <span *ngIf="password.hasError('required')">Lozinka je obavezna!</span>
+          <span *ngIf="password.hasError('minlength')">Minimum 8 karaktera.</span>
+        </div>
+      </div>
+
+      <!-- Zapamti me + Zaboravljena lozinka -->
+      <div class="form-row space-between">
+        <label class="checkbox">
+          <input type="checkbox" formControlName="rememberMe" />
+          <span>Zapamti me</span>
+        </label>
+        <a class="link" (click)="onForgotPassword()">Zaboravili ste lozinku?</a>
+      </div>
+
+      <!-- reCAPTCHA (V2 checkbox) -->
+      <div class="form-group">
+        <re-captcha
+          [siteKey]="recaptchaSiteKey"
+          (resolved)="onCaptchaResolved($event)"
+          #captchaRef>
+        </re-captcha>
+        <div class="error" *ngIf="captchaError">
+          Potvrdite da niste robot.
+        </div>
+      </div>
+
+      <!-- Global error -->
+      <div class="error global" *ngIf="formError">{{ formError }}</div>
+
+      <!-- Submit -->
+      <button
+        type="submit"
+        class="submit-button"
+        [disabled]="loginForm.invalid || submitting">
+        <span *ngIf="!submitting">Prijava</span>
+        <span *ngIf="submitting" class="spinner"></span>
+      </button>
+    </form>
+  </div>
+</div>

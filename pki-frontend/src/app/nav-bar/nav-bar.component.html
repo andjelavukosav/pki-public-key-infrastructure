@@ -1,6 +1,12 @@
 <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: #f0f0f0;">
-  <p></p>
+    <div class="navbar-right">
+    <!-- Ako korisnik nije ulogovan -->
+    <ng-container *ngIf="!user">
+      <button class="nav-button" [routerLink]="['/register']">Register</button>
+      <button class="nav-button" [routerLink]="['/login']">Login</button>
+    </ng-container>
 
+<<<<<<< HEAD
   <!-- Dugme za registraciju -->
   <button style="padding: 5px 10px; cursor: pointer;" [routerLink]="['/register']">
     Registracija
@@ -8,4 +14,14 @@
   <button style="position: fixed; top: 10px; left: 10px; padding: 5px 10px; cursor: pointer;" [routerLink]="['/csr-request']">
     CSR request
   </button>
+=======
+    <!-- Ako je korisnik ulogovan -->
+    <ng-container *ngIf="user">
+      <span class="user-greeting">Hello, {{ user?.email }}</span>
+      <button class="nav-button logout-button" (click)="logout()">Logout</button>
+      <button class="nav-button logout-button"  *ngIf="isLoggedAdmin()" [routerLink]="['createRootCertificate']">Create root certificate</button>
+      <button class="nav-button logout-button" *ngIf="isLoggedAdmin()" [routerLink]="['certificateList']">All certificates</button>
+    </ng-container>
+  </div>
+>>>>>>> 739e58a5cfd59f9638d8d99c4cdbae22874207e3
 </nav>

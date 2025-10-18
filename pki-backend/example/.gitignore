@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+# Ignoriši logs folder
+logs/
+
+# Sertifikati i keystore fajlovi
+*.cer
+*.jks

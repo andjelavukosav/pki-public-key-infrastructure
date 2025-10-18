@@ -1,9 +1,11 @@
 package com.pki.example.controller;
 
+import com.pki.example.DTO.ResetPasswordRequest;
 import com.pki.example.DTO.UserRegistrationDTO;
 import com.pki.example.auth.AuthenticationRequest;
 import com.pki.example.auth.AuthenticationResponse;
 import com.pki.example.auth.AuthenticationService;
+import com.pki.example.service.EmailService;
 import com.pki.example.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -19,6 +22,7 @@ public class AuthController {
 
     private final UserService userService;
     private final AuthenticationService authenticationService;
+    private final EmailService emailService;
 
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody @Valid UserRegistrationDTO dto) {
@@ -36,9 +40,6 @@ public class AuthController {
         return ResponseEntity.ok(response);
     }
 
-
-
-
     @PostMapping("/verify")
     public ResponseEntity<String> verify(@RequestParam("token") String token) {
         try {
@@ -48,5 +49,23 @@ public class AuthController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @PostMapping("/forgot-password")
+    public ResponseEntity<?> recoverAccount(@RequestBody Map<String, String>request){
+        String email = request.get("email");
+        String token = userService.sendPasswordResetLink(email);
+
+        if(token != null){
+            userService.sendResetPasswordEmailAfterCommit(email, token);
+        }
+        return ResponseEntity.ok(Map.of("message","If there is an account with that email, a recovery link has been sent."));
+    }
+
+    @PostMapping("/reset-password")
+    public ResponseEntity<?> resetPassword(@RequestBody ResetPasswordRequest request) {
+        userService.resetPassword(request.getRawToken(), request.getNewPassword());
+        return ResponseEntity.ok(Map.of("message", "Password is successfully reset."));
+    }
+
 
 }

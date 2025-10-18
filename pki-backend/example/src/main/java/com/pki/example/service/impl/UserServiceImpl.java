@@ -2,27 +2,34 @@ package com.pki.example.service.impl;
 
 import com.pki.example.DTO.UserRegistrationDTO;
 
+import com.pki.example.model.entity.PasswordResetToken;
 import com.pki.example.model.entity.User;
 import com.pki.example.model.entity.VerificationToken;
 import com.pki.example.model.enums.UserRole;
+import com.pki.example.repository.PasswordResetTokenRepository;
 import com.pki.example.repository.UserRepository;
 import com.pki.example.repository.VerificationTokenRepository;
+import com.pki.example.service.EmailService;
 import com.pki.example.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
+import java.time.LocalDateTime;
 import java.util.Base64;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityNotFoundException;
 import java.security.SecureRandom;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Base64;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -33,8 +40,17 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
     private final JavaMailSender mailSender;
 
+    private final EmailService emailService;
+    private final PasswordResetTokenRepository passwordResetTokenRepo;
+
     @Value("${app.frontend.base-url}")
     private String frontendBaseUrl;
+
+    @Override
+    public User findByEmail(String email) {
+        return userRepo.findByEmail(email)
+                .orElseThrow(() -> new EntityNotFoundException("User not found"));
+    }
 
     @Override
     @Transactional
@@ -106,6 +122,52 @@ public class UserServiceImpl implements UserService {
         System.out.println("============================================");
     }
 
+    @Override
+    @Transactional
+    public String sendPasswordResetLink(String email) {
+        try{
+            User user = findByEmail(email);
+
+            String token = generateToken();
+            String hashedToken = hashToken(token);
+
+            PasswordResetToken passToken = new PasswordResetToken();
+            passToken.setToken(hashedToken); //on se cuva u bazi
+            passToken.setExpiryDate(LocalDateTime.now().plusMinutes(30));
+            user.addPasswordResetToken(passToken);
+            passwordResetTokenRepo.save(passToken);
+            return token; // plain text se salje mejlom
+        } catch (EntityNotFoundException e) {
+            // Ne otkrivamo da li email postoji
+            // Samo ignorisemo i ne bacamo dalje
+            return null;
+        }
+    }
+
+    @Async
+    public void sendResetPasswordEmailAfterCommit(String email, String token) {
+        String resetLink = "http://localhost:4200/reset-password?token=" + token;
+        emailService.sendResetPasswordEmail(email, resetLink);
+    }
+
+    @Override
+    @Transactional
+    public void resetPassword(String rawToken, String newPassword) {
+        String hashedToken = hashToken(rawToken);
+
+        PasswordResetToken token = passwordResetTokenRepo.findByToken(hashedToken)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid token."));
+
+        if(token.getExpiryDate().isBefore(LocalDateTime.now())){
+            throw new IllegalArgumentException("Token has expired.");
+        }
+
+        User user = token.getUser();
+        user.setPassword(passwordEncoder.encode(newPassword));
+
+        // Jednokratni token → briše se nakon korišćenja
+        user.removePasswordResetToken(token);
+    }
 
     private String generateToken() {
         byte[] buf = new byte[32];

@@ -116,7 +116,7 @@ export class UserLoginComponent {
   }
 
   onForgotPassword(){
-
+    this.router.navigate(['forgot-password'])
   }
 
 }

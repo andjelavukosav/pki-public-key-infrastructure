@@ -13,6 +13,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
 import { AuthInterceptor } from './auth/interceptor';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { ActivateComponent } from './activate/activate.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ActivateComponent } from './activate/activate.component';
     UserLoginComponent,
     UserHomeComponent,
     ActivateComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,

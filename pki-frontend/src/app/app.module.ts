@@ -19,13 +19,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { CreateRootCertificateComponent } from './certificate/create-root-certificate/create-root-certificate.component';
 import { CreateIntermediateCertificateComponent } from './certificate/create-intermediate-certificate/create-intermediate-certificate.component';
 import { UserLoginComponent } from './user-login/user-login.component';
-import { UserHomeComponent } from './user-home/user-home.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { AuthInterceptor } from './auth/interceptor';
+
+import { UserHomeComponent } from './user-home/user-home.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+
 import { CertificateListComponent } from './certificate/certificate-list/certificate-list.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle'
+
 
 @NgModule({
   declarations: [
@@ -36,6 +41,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle'
     ActivateComponent,
     UserLoginComponent,
     UserHomeComponent,
+    ActivateComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
     CreateRootCertificateComponent,
     CreateIntermediateCertificateComponent,
     CertificateListComponent,

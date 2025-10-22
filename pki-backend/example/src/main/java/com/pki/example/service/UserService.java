@@ -8,4 +8,8 @@ public interface UserService {
     void verify(String rawToken);
     User findByEmail(String email);
     User findById(Integer id);
+
+    String sendPasswordResetLink(String email);
+    void sendResetPasswordEmailAfterCommit(String email, String token);
+    void resetPassword(String rawToken, String newPassword);
 }

@@ -5,6 +5,8 @@ import { CsrRequestComponent } from './componets/csr-request/csr-request.compone
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { ActivateComponent } from './activate/activate.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { CreateRootCertificateComponent } from './certificate/create-root-certificate/create-root-certificate.component';
 import { CreateIntermediateCertificateComponent } from './certificate/create-intermediate-certificate/create-intermediate-certificate.component';
 import { CertificateListComponent } from './certificate/certificate-list/certificate-list.component';
@@ -17,9 +19,11 @@ const routes: Routes = [
     { path: 'certificateList', component:CertificateListComponent},
     { path: 'login', component: UserLoginComponent},
     { path: 'user-home', component: UserHomeComponent},
-    { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: '**', redirectTo: 'login' },
     { path: 'csr-request', component: CsrRequestComponent },
+    { path: 'forgot-password', component: ForgotPasswordComponent},
+    { path: 'reset-password', component: ResetPasswordComponent},
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    //{ path: '**', redirectTo: 'login' },
 
 ];
 

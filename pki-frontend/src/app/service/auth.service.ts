@@ -28,9 +28,16 @@ export class AuthService {
     return this.http.post(this.baseUrl + '/verify', null, { params, responseType: 'text' as 'json' });
   }
 
-
   login(payload: LoginRequest): Observable<LoginResponse>{
     return this.http.post<LoginResponse>(`${this.baseUrl}/login`, payload);
+  }
+
+  forgotPassword(email: string): Observable<{message: string}> {
+    return this.http.post<{message: string}>(`${this.baseUrl}/forgot-password`, { email });
+  }
+
+  resetPassword(token: string, newPassword: string): Observable<{message: string}>{
+    return this.http.post<{message: string}>(`${this.baseUrl}/reset-password`, { rawToken: token, newPassword });
   }
 
   setToken(token: string): void {

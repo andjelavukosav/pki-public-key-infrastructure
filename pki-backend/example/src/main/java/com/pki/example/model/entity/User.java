@@ -9,7 +9,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @SuperBuilder
 @NoArgsConstructor
@@ -53,6 +55,18 @@ public class User implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_" +  role.name()));
+    }
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private Set<PasswordResetToken> tokenForRecoverAccount = new HashSet<>();
+
+    public void addPasswordResetToken(PasswordResetToken token) {
+        tokenForRecoverAccount.add(token);
+        token.setUser(this);
+    }
+    public void removePasswordResetToken(PasswordResetToken token) {
+        tokenForRecoverAccount.remove(token);
+        token.setUser(null);
     }
 
     @Override

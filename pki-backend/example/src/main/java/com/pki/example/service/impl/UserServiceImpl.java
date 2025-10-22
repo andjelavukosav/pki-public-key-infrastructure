@@ -132,4 +132,14 @@ public class UserServiceImpl implements UserService {
                 link + "\n\nLink važi 24h i može se iskoristiti samo jednom.");
         mailSender.send(msg);
     }
+
+    public User findByEmail(String email)
+    {
+        return userRepo.findUserByEmail(email);
+    }
+
+    public User findById(Integer id)
+    {
+        return userRepo.findUserById(id);
+    }
 }

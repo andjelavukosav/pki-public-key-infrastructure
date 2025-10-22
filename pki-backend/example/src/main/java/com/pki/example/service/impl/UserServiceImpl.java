@@ -195,10 +195,7 @@ public class UserServiceImpl implements UserService {
         mailSender.send(msg);
     }
 
-    public User findByEmail(String email)
-    {
-        return userRepo.findUserByEmail(email);
-    }
+
 
     public User findById(Integer id)
     {

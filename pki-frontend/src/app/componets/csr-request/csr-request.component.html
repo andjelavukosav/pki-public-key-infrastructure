@@ -1,0 +1,30 @@
+<div class="csr-container">
+  <div class="csr-card">
+    <h1 class="csr-title">Submit a CSR request</h1>
+
+    <form (ngSubmit)="onSubmit()" #csrForm="ngForm">
+      <div class="form-group">
+        <label for="csrFile">CSR file (.pem /.csr)</label>
+        <input type="file" id="csrFile" accept=".csr,.pem" (change)="onFileSelected($event)" required />
+      </div>
+
+      <div class="form-group">
+        <label for="ca">Select CA</label>
+        <select id="ca" [(ngModel)]="selectedCA" name="selectedCaId" required>
+          <option *ngFor="let ca of caList" [value]="ca.id">{{ ca.alias }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="duration">Requested Duration (days)</label>
+        <input type="number" id="duration" [(ngModel)]="duration" name="requestedDurationDays" required />
+      </div>
+
+      <button class="submit-button" type="submit" [disabled]="!csrForm.form.valid">
+        Submit CSR
+      </button>
+
+      <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+    </form>
+  </div>
+</div>

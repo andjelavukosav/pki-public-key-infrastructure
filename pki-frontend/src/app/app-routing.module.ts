@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { CsrRequestComponent } from './componets/csr-request/csr-request.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { ActivateComponent } from './activate/activate.component';
@@ -11,17 +12,19 @@ import { CreateIntermediateCertificateComponent } from './certificate/create-int
 import { CertificateListComponent } from './certificate/certificate-list/certificate-list.component';
 
 const routes: Routes = [
-  { path: 'register', component: UserRegistrationComponent },
-  { path: 'activate', component: ActivateComponent },
-  { path: 'login', component: UserLoginComponent},
-  { path: 'user-home', component: UserHomeComponent},
-  { path: 'forgot-password', component: ForgotPasswordComponent},
-  { path: 'reset-password', component: ResetPasswordComponent},
-  { path: 'createRootCertificate', component:CreateRootCertificateComponent},
-  { path: 'create-intermediate', component:CreateIntermediateCertificateComponent},
-  { path: 'certificateList', component:CertificateListComponent},
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: '**', redirectTo: 'login' },
+    { path: 'register', component: UserRegistrationComponent },
+    { path: 'activate', component: ActivateComponent },
+    { path: 'createRootCertificate', component:CreateRootCertificateComponent},
+    {path: 'create-intermediate', component:CreateIntermediateCertificateComponent},
+    { path: 'certificateList', component:CertificateListComponent},
+    { path: 'login', component: UserLoginComponent},
+    { path: 'user-home', component: UserHomeComponent},
+    { path: 'csr-request', component: CsrRequestComponent },
+    { path: 'forgot-password', component: ForgotPasswordComponent},
+    { path: 'reset-password', component: ResetPasswordComponent},
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    //{ path: '**', redirectTo: 'login' },
+
 ];
 
 @NgModule({

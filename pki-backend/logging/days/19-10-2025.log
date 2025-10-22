@@ -1,0 +1,77 @@
+{
+  "timestamp" : "2025-10-19T14:26:04.110Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760883964110-728",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 1 | CN: Sertifikat1 | Issuer: CN=Sertifikat1, O=FTN, OU=IT, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-19T14:26:58.477Z",
+  "eventType" : "CERTIFICATE_ISSUE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760884018477-637",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "FAILURE",
+  "message" : "Failed to issue certificate: Issuer is not a CA; cannot issue new certificates. | CertID: N/A | CN: C1 | Issuer: Issuer ID: 1",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-19T14:27:33.436Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760884053436-452",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 2 | CN: C1 | Issuer: SELF_SIGNED",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-19T14:27:44.064Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760884064064-393",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 2 | CN: C1 | Issuer: CN=C1, O=FTN, OU=IT, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-19T14:27:48.889Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760884068889-70",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 2 | CN: C1 | Issuer: CN=C1, O=FTN, OU=IT, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-19T14:28:08.050Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760884088050-625",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 3 | CN: C2 | Issuer: Issuer ID: 2",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}

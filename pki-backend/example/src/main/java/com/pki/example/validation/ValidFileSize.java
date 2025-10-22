@@ -1,0 +1,16 @@
+package com.pki.example.validation;
+
+
+import javax.validation.Constraint;
+import java.lang.annotation.*;
+
+@Documented
+@Constraint(validatedBy = FileSizeValidator.class)
+@Target({ElementType.FIELD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface ValidFileSize {
+    String message() default "File size must not exceed 1MB";
+    long maxSizeInBytes() default 1024 * 1024; // 1MB default
+    Class<?>[] groups() default {};
+    //Class<? extends Payload>[] payload() default {};
+}

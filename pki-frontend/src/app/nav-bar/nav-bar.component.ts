@@ -29,6 +29,10 @@ export class NavBarComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  csrRequest() {
+    this.router.navigate(['csr-request']);
+  }
+
   isLoggedAdmin(): boolean{
     return this.user?.role==='ADMIN';
   }

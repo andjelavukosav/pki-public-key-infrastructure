@@ -4,9 +4,10 @@ import com.pki.example.DTO.UserRegistrationDTO;
 import com.pki.example.model.entity.User;
 
 public interface UserService {
-    User findByEmail(String email);
     void registerUser(UserRegistrationDTO dto);
     void verify(String rawToken);
+    User findByEmail(String email);
+    User findById(Integer id);
 
     String sendPasswordResetLink(String email);
     void sendResetPasswordEmailAfterCommit(String email, String token);

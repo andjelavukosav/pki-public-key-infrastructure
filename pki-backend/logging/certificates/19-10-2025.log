@@ -1,0 +1,89 @@
+{
+  "timestamp" : "2025-10-19T14:26:04.110Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760883964110-728",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "1",
+  "certificateCN" : "Sertifikat1",
+  "issuerAlias" : "CN=Sertifikat1, O=FTN, OU=IT, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-19T14:26:58.477Z",
+  "eventType" : "CERTIFICATE_ISSUE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760884018477-637",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "FAILURE",
+  "message" : "Failed to issue certificate: Issuer is not a CA; cannot issue new certificates.",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "C1",
+  "issuerAlias" : "Issuer ID: 1"
+}
+
+{
+  "timestamp" : "2025-10-19T14:27:33.436Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760884053436-452",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "2",
+  "certificateCN" : "C1",
+  "issuerAlias" : "SELF_SIGNED"
+}
+
+{
+  "timestamp" : "2025-10-19T14:27:44.064Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760884064064-393",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "2",
+  "certificateCN" : "C1",
+  "issuerAlias" : "CN=C1, O=FTN, OU=IT, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-19T14:27:48.889Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760884068889-70",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "2",
+  "certificateCN" : "C1",
+  "issuerAlias" : "CN=C1, O=FTN, OU=IT, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-19T14:28:08.050Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760884088050-625",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "3",
+  "certificateCN" : "C2",
+  "issuerAlias" : "Issuer ID: 2"
+}

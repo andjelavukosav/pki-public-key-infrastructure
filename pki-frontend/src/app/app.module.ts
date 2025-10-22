@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { CsrRequestComponent } from './componets/csr-request/csr-request.component';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { ActivateComponent } from './activate/activate.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -38,6 +39,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle'
     UserRegistrationComponent,
     HomePageComponent,
     NavBarComponent,
+    CsrRequestComponent,
     ActivateComponent,
     UserLoginComponent,
     UserHomeComponent,
@@ -53,6 +55,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle'
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatTableModule,   

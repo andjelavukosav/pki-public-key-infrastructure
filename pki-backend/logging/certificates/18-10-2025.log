@@ -222,3 +222,18 @@
   "certificateCN" : "DALJE IDEi",
   "issuerAlias" : "Issuer ID: 9"
 }
+
+{
+  "timestamp" : "2025-10-18T17:00:23.208Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1760806823208-56",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "1",
+  "certificateCN" : "Sertifikat1",
+  "issuerAlias" : "SELF_SIGNED"
+}

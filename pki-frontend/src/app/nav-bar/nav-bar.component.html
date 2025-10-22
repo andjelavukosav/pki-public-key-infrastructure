@@ -12,6 +12,7 @@
       <button class="nav-button logout-button" (click)="logout()">Logout</button>
       <button class="nav-button logout-button"  *ngIf="isLoggedAdmin()" [routerLink]="['createRootCertificate']">Create root certificate</button>
       <button class="nav-button logout-button" *ngIf="isLoggedAdmin()" [routerLink]="['certificateList']">All certificates</button>
+      <button class="nav-button logout-button" (click)="csrRequest()">CSR</button>
     </ng-container>
   </div>
 </nav>

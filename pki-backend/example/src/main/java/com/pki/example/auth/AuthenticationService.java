@@ -5,12 +5,15 @@ import com.pki.example.exception.BadRequestException;
 import com.pki.example.model.enums.UserRole;
 import com.pki.example.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.modelmapper.ModelMapper;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -55,4 +58,6 @@ public class AuthenticationService {
                 .message("Login successful")
                 .build();
     }
+
+
 }

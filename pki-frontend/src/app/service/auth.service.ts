@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserRegistration } from '../model/user-registration';
 import { LoginRequest } from '../model/user-login-request';
@@ -80,6 +80,16 @@ export class AuthService {
       console.error('Greska prilikom dekodovanja tokena.', err);
       return { error: 'Nevalidan token' };
     }
+  }
+
+  getAuthHeaders(): HttpHeaders {
+    const token = this.getToken();
+    let headers = new HttpHeaders();
+    if(token)
+    {
+      headers=headers.set('Authorization',`Bearer ${token}`);
+    }
+    return headers;
   }
 
 }

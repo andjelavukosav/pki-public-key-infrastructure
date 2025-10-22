@@ -1,0 +1,25 @@
+{
+  "timestamp" : "2025-10-22T16:30:43.147Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761150643147-456",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 7 | CN: inter | Issuer: CN=inter, O=inter, OU=inter, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-22T16:31:09.176Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761150669176-239",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 11 | CN: organi | Issuer: Issuer ID: 7",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}

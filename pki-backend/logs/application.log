@@ -295,3 +295,856 @@
         certificat0_.start_date as start_d18_0_ 
     from
         certificate certificat0_
+2025-10-22 18:11:19 INFO  [restartedMain] com.pki.example.ExampleApplication - Starting ExampleApplication using Java 17.0.16 on DESKTOP-7P3KPJN with PID 6100 (C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend\example\target\classes started by Andjela Vukosav in C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend)
+2025-10-22 18:11:19 DEBUG [restartedMain] com.pki.example.ExampleApplication - Running with Spring Boot v2.7.10, Spring v5.3.26
+2025-10-22 18:11:19 INFO  [restartedMain] com.pki.example.ExampleApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-22 18:11:19 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-22 18:11:19 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-22 18:11:20 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-22 18:11:20 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 7 JPA repository interfaces.
+2025-10-22 18:11:21 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-22 18:11:21 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-22 18:11:21 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.73]
+2025-10-22 18:11:21 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-22 18:11:21 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1765 ms
+2025-10-22 18:11:21 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-22 18:11:21 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-10-22 18:11:21 INFO  [restartedMain] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-10-22 18:11:21 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-22 18:11:21 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-22 18:11:21 INFO  [restartedMain] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-10-22 18:11:23 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-10-22 18:11:23 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-22 18:11:23 DEBUG [restartedMain] c.p.e.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-10-22 18:11:24 INFO  [restartedMain] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@24f89f34, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3e6a75ac, org.springframework.security.web.context.SecurityContextPersistenceFilter@3987d6d6, org.springframework.security.web.header.HeaderWriterFilter@8462494, org.springframework.web.filter.CorsFilter@7d9a7465, org.springframework.security.web.authentication.logout.LogoutFilter@6120bb93, com.pki.example.config.JwtAuthenticationFilter@552a37bf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f2f0b9c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23af88bb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e811f6e, org.springframework.security.web.session.SessionManagementFilter@4ab16992, org.springframework.security.web.access.ExceptionTranslationFilter@6412b47f, org.springframework.security.web.access.intercept.AuthorizationFilter@657feee1]
+2025-10-22 18:11:24 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-10-22 18:11:24 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-22 18:11:24 INFO  [restartedMain] com.pki.example.ExampleApplication - Started ExampleApplication in 5.803 seconds (JVM running for 6.571)
+2025-10-22 18:11:25 INFO  [restartedMain] c.p.e.c.CertificateExample - Generisanje subjekta sertifikata započeto.
+2025-10-22 18:11:36 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-22 18:11:36 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-22 18:11:36 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-22 18:11:36 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - 
+    select
+        user0_.id as id1_5_,
+        user0_.blocked as blocked2_5_,
+        user0_.email as email3_5_,
+        user0_.enabled as enabled4_5_,
+        user0_.first_name as first_na5_5_,
+        user0_.last_name as last_nam6_5_,
+        user0_.organization as organiza7_5_,
+        user0_.password as password8_5_,
+        user0_.role as role9_5_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:11:36 TRACE [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:11:36 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - 
+    select
+        user0_.id as id1_5_,
+        user0_.blocked as blocked2_5_,
+        user0_.email as email3_5_,
+        user0_.enabled as enabled4_5_,
+        user0_.first_name as first_na5_5_,
+        user0_.last_name as last_nam6_5_,
+        user0_.organization as organiza7_5_,
+        user0_.password as password8_5_,
+        user0_.role as role9_5_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:11:36 TRACE [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:11:40 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    select
+        user0_.id as id1_5_,
+        user0_.blocked as blocked2_5_,
+        user0_.email as email3_5_,
+        user0_.enabled as enabled4_5_,
+        user0_.first_name as first_na5_5_,
+        user0_.last_name as last_nam6_5_,
+        user0_.organization as organiza7_5_,
+        user0_.password as password8_5_,
+        user0_.role as role9_5_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:11:40 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:11:40 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_,
+        certificat0_.alias as alias2_0_,
+        certificat0_.c as c3_0_,
+        certificat0_.cn as cn4_0_,
+        certificat0_.end_date as end_date5_0_,
+        certificat0_.extensions as extensio6_0_,
+        certificat0_.isca as isca7_0_,
+        certificat0_.is_end_entity as is_end_e8_0_,
+        certificat0_.is_intermediate as is_inter9_0_,
+        certificat0_.is_root as is_root10_0_,
+        certificat0_.issuer as issuer11_0_,
+        certificat0_.issuer_id as issuer_12_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_,
+        certificat0_.o as o14_0_,
+        certificat0_.ou as ou15_0_,
+        certificat0_.revoked as revoked16_0_,
+        certificat0_.serial_number as serial_17_0_,
+        certificat0_.start_date as start_d18_0_ 
+    from
+        certificate certificat0_
+2025-10-22 18:13:34 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
+    select
+        user0_.id as id1_5_,
+        user0_.blocked as blocked2_5_,
+        user0_.email as email3_5_,
+        user0_.enabled as enabled4_5_,
+        user0_.first_name as first_na5_5_,
+        user0_.last_name as last_nam6_5_,
+        user0_.organization as organiza7_5_,
+        user0_.password as password8_5_,
+        user0_.role as role9_5_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:13:34 TRACE [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:13:34 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_,
+        certificat0_.alias as alias2_0_,
+        certificat0_.c as c3_0_,
+        certificat0_.cn as cn4_0_,
+        certificat0_.end_date as end_date5_0_,
+        certificat0_.extensions as extensio6_0_,
+        certificat0_.isca as isca7_0_,
+        certificat0_.is_end_entity as is_end_e8_0_,
+        certificat0_.is_intermediate as is_inter9_0_,
+        certificat0_.is_root as is_root10_0_,
+        certificat0_.issuer as issuer11_0_,
+        certificat0_.issuer_id as issuer_12_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_,
+        certificat0_.o as o14_0_,
+        certificat0_.ou as ou15_0_,
+        certificat0_.revoked as revoked16_0_,
+        certificat0_.serial_number as serial_17_0_,
+        certificat0_.start_date as start_d18_0_ 
+    from
+        certificate certificat0_
+2025-10-22 18:21:09 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL - 
+    select
+        user0_.id as id1_5_,
+        user0_.blocked as blocked2_5_,
+        user0_.email as email3_5_,
+        user0_.enabled as enabled4_5_,
+        user0_.first_name as first_na5_5_,
+        user0_.last_name as last_nam6_5_,
+        user0_.organization as organiza7_5_,
+        user0_.password as password8_5_,
+        user0_.role as role9_5_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:21:09 TRACE [http-nio-8080-exec-8] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:21:09 DEBUG [http-nio-8080-exec-8] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_,
+        certificat0_.alias as alias2_0_,
+        certificat0_.c as c3_0_,
+        certificat0_.cn as cn4_0_,
+        certificat0_.end_date as end_date5_0_,
+        certificat0_.extensions as extensio6_0_,
+        certificat0_.isca as isca7_0_,
+        certificat0_.is_end_entity as is_end_e8_0_,
+        certificat0_.is_intermediate as is_inter9_0_,
+        certificat0_.is_root as is_root10_0_,
+        certificat0_.issuer as issuer11_0_,
+        certificat0_.issuer_id as issuer_12_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_,
+        certificat0_.o as o14_0_,
+        certificat0_.ou as ou15_0_,
+        certificat0_.revoked as revoked16_0_,
+        certificat0_.serial_number as serial_17_0_,
+        certificat0_.start_date as start_d18_0_ 
+    from
+        certificate certificat0_
+2025-10-22 18:27:35 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-22 18:27:35 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-22 18:27:35 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-10-22 18:27:57 INFO  [restartedMain] com.pki.example.ExampleApplication - Starting ExampleApplication using Java 17.0.16 on DESKTOP-7P3KPJN with PID 11928 (C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend\example\target\classes started by Andjela Vukosav in C:\Users\Andjela Vukosav\Desktop\pki-public key infrastructure\pki-backend)
+2025-10-22 18:27:57 DEBUG [restartedMain] com.pki.example.ExampleApplication - Running with Spring Boot v2.7.10, Spring v5.3.26
+2025-10-22 18:27:57 INFO  [restartedMain] com.pki.example.ExampleApplication - No active profile set, falling back to 1 default profile: "default"
+2025-10-22 18:27:57 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-22 18:27:57 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-22 18:27:58 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-22 18:27:58 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 83 ms. Found 8 JPA repository interfaces.
+2025-10-22 18:27:59 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-10-22 18:27:59 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-22 18:27:59 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.73]
+2025-10-22 18:27:59 INFO  [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-10-22 18:27:59 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1766 ms
+2025-10-22 18:27:59 INFO  [restartedMain] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-22 18:27:59 INFO  [restartedMain] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+2025-10-22 18:28:00 INFO  [restartedMain] o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-10-22 18:28:00 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-10-22 18:28:00 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-10-22 18:28:00 INFO  [restartedMain] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2025-10-22 18:28:01 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    create table certificate_template (
+       id int8 generated by default as identity,
+        common_name_regex varchar(255),
+        name varchar(255),
+        subject_alt_name_regex varchar(255),
+        ttl_days int4,
+        issuer_certificate_id int4,
+        owner_id int8,
+        primary key (id)
+    )
+2025-10-22 18:28:01 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    create table template_extended_key_usage (
+       template_id int8 not null,
+        usage varchar(255)
+    )
+2025-10-22 18:28:01 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    create table template_key_usage (
+       template_id int8 not null,
+        usage varchar(255)
+    )
+2025-10-22 18:28:01 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    alter table if exists certificate_template 
+       add constraint FK7o2rqjy7fc7181yd77nn4hm3d 
+       foreign key (issuer_certificate_id) 
+       references certificate
+2025-10-22 18:28:01 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    alter table if exists certificate_template 
+       add constraint FK750a1ghq3nvm4w3mbr2t19sod 
+       foreign key (owner_id) 
+       references users
+2025-10-22 18:28:01 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    alter table if exists template_extended_key_usage 
+       add constraint FK8s9puc1jyrcdvi1cox8nr4fwu 
+       foreign key (template_id) 
+       references certificate_template
+2025-10-22 18:28:01 DEBUG [restartedMain] org.hibernate.SQL - 
+    
+    alter table if exists template_key_usage 
+       add constraint FKfi2noh41rfx65fvdlimjpql4f 
+       foreign key (template_id) 
+       references certificate_template
+2025-10-22 18:28:01 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-10-22 18:28:01 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-22 18:28:01 DEBUG [restartedMain] c.p.e.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-10-22 18:28:02 INFO  [restartedMain] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4918ea44, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5dcc0f4, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a6d0792, org.springframework.security.web.header.HeaderWriterFilter@6244040c, org.springframework.web.filter.CorsFilter@7f6c18ea, org.springframework.security.web.authentication.logout.LogoutFilter@6990bac5, com.pki.example.config.JwtAuthenticationFilter@687d5a90, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29d70da0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b67d860, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1baeb8f2, org.springframework.security.web.session.SessionManagementFilter@6c672ff1, org.springframework.security.web.access.ExceptionTranslationFilter@4f5e3aa0, org.springframework.security.web.access.intercept.AuthorizationFilter@67d57ba8]
+2025-10-22 18:28:02 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-10-22 18:28:02 INFO  [restartedMain] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-10-22 18:28:02 INFO  [restartedMain] com.pki.example.ExampleApplication - Started ExampleApplication in 5.364 seconds (JVM running for 6.172)
+2025-10-22 18:28:04 INFO  [restartedMain] c.p.e.c.CertificateExample - Generisanje subjekta sertifikata započeto.
+2025-10-22 18:28:52 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-22 18:28:52 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-10-22 18:28:52 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-10-22 18:28:53 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:28:53 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:28:53 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_,
+        certificat0_.alias as alias2_0_,
+        certificat0_.c as c3_0_,
+        certificat0_.cn as cn4_0_,
+        certificat0_.end_date as end_date5_0_,
+        certificat0_.extensions as extensio6_0_,
+        certificat0_.isca as isca7_0_,
+        certificat0_.is_end_entity as is_end_e8_0_,
+        certificat0_.is_intermediate as is_inter9_0_,
+        certificat0_.is_root as is_root10_0_,
+        certificat0_.issuer as issuer11_0_,
+        certificat0_.issuer_id as issuer_12_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_,
+        certificat0_.o as o14_0_,
+        certificat0_.ou as ou15_0_,
+        certificat0_.revoked as revoked16_0_,
+        certificat0_.serial_number as serial_17_0_,
+        certificat0_.start_date as start_d18_0_ 
+    from
+        certificate certificat0_
+2025-10-22 18:29:12 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:29:12 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:29:13 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:29:13 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:29:13 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:29:13 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:29:19 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:29:19 TRACE [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:29:19 DEBUG [http-nio-8080-exec-5] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_,
+        certificat0_.alias as alias2_0_,
+        certificat0_.c as c3_0_,
+        certificat0_.cn as cn4_0_,
+        certificat0_.end_date as end_date5_0_,
+        certificat0_.extensions as extensio6_0_,
+        certificat0_.isca as isca7_0_,
+        certificat0_.is_end_entity as is_end_e8_0_,
+        certificat0_.is_intermediate as is_inter9_0_,
+        certificat0_.is_root as is_root10_0_,
+        certificat0_.issuer as issuer11_0_,
+        certificat0_.issuer_id as issuer_12_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_,
+        certificat0_.o as o14_0_,
+        certificat0_.ou as ou15_0_,
+        certificat0_.revoked as revoked16_0_,
+        certificat0_.serial_number as serial_17_0_,
+        certificat0_.start_date as start_d18_0_ 
+    from
+        certificate certificat0_
+2025-10-22 18:30:25 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:30:25 TRACE [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:30:25 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_,
+        certificat0_.alias as alias2_0_,
+        certificat0_.c as c3_0_,
+        certificat0_.cn as cn4_0_,
+        certificat0_.end_date as end_date5_0_,
+        certificat0_.extensions as extensio6_0_,
+        certificat0_.isca as isca7_0_,
+        certificat0_.is_end_entity as is_end_e8_0_,
+        certificat0_.is_intermediate as is_inter9_0_,
+        certificat0_.is_root as is_root10_0_,
+        certificat0_.issuer as issuer11_0_,
+        certificat0_.issuer_id as issuer_12_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_,
+        certificat0_.o as o14_0_,
+        certificat0_.ou as ou15_0_,
+        certificat0_.revoked as revoked16_0_,
+        certificat0_.serial_number as serial_17_0_,
+        certificat0_.start_date as start_d18_0_ 
+    from
+        certificate certificat0_
+2025-10-22 18:30:38 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:30:38 TRACE [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:30:38 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:30:38 TRACE [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:30:38 DEBUG [http-nio-8080-exec-10] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:30:38 TRACE [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:30:41 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:30:41 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:30:41 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_,
+        certificat0_.alias as alias2_0_,
+        certificat0_.c as c3_0_,
+        certificat0_.cn as cn4_0_,
+        certificat0_.end_date as end_date5_0_,
+        certificat0_.extensions as extensio6_0_,
+        certificat0_.isca as isca7_0_,
+        certificat0_.is_end_entity as is_end_e8_0_,
+        certificat0_.is_intermediate as is_inter9_0_,
+        certificat0_.is_root as is_root10_0_,
+        certificat0_.issuer as issuer11_0_,
+        certificat0_.issuer_id as issuer_12_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_,
+        certificat0_.o as o14_0_,
+        certificat0_.ou as ou15_0_,
+        certificat0_.revoked as revoked16_0_,
+        certificat0_.serial_number as serial_17_0_,
+        certificat0_.start_date as start_d18_0_ 
+    from
+        certificate certificat0_
+2025-10-22 18:30:43 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:30:43 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:30:43 TRACE [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:30:43 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:30:43 DEBUG [http-nio-8080-exec-6] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_0_,
+        certificat0_.alias as alias2_0_0_,
+        certificat0_.c as c3_0_0_,
+        certificat0_.cn as cn4_0_0_,
+        certificat0_.end_date as end_date5_0_0_,
+        certificat0_.extensions as extensio6_0_0_,
+        certificat0_.isca as isca7_0_0_,
+        certificat0_.is_end_entity as is_end_e8_0_0_,
+        certificat0_.is_intermediate as is_inter9_0_0_,
+        certificat0_.is_root as is_root10_0_0_,
+        certificat0_.issuer as issuer11_0_0_,
+        certificat0_.issuer_id as issuer_12_0_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_0_,
+        certificat0_.o as o14_0_0_,
+        certificat0_.ou as ou15_0_0_,
+        certificat0_.revoked as revoked16_0_0_,
+        certificat0_.serial_number as serial_17_0_0_,
+        certificat0_.start_date as start_d18_0_0_ 
+    from
+        certificate certificat0_ 
+    where
+        certificat0_.id=?
+2025-10-22 18:30:43 TRACE [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2025-10-22 18:30:43 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_2_,
+        certificat0_.common_name_regex as common_n2_2_,
+        certificat0_.issuer_certificate_id as issuer_c6_2_,
+        certificat0_.name as name3_2_,
+        certificat0_.owner_id as owner_id7_2_,
+        certificat0_.subject_alt_name_regex as subject_4_2_,
+        certificat0_.ttl_days as ttl_days5_2_ 
+    from
+        certificate_template certificat0_ 
+    left outer join
+        certificate certificat1_ 
+            on certificat0_.issuer_certificate_id=certificat1_.id 
+    where
+        certificat1_.id=?
+2025-10-22 18:30:43 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2025-10-22 18:31:06 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:31:06 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:31:06 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_0_,
+        certificat0_.alias as alias2_0_0_,
+        certificat0_.c as c3_0_0_,
+        certificat0_.cn as cn4_0_0_,
+        certificat0_.end_date as end_date5_0_0_,
+        certificat0_.extensions as extensio6_0_0_,
+        certificat0_.isca as isca7_0_0_,
+        certificat0_.is_end_entity as is_end_e8_0_0_,
+        certificat0_.is_intermediate as is_inter9_0_0_,
+        certificat0_.is_root as is_root10_0_0_,
+        certificat0_.issuer as issuer11_0_0_,
+        certificat0_.issuer_id as issuer_12_0_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_0_,
+        certificat0_.o as o14_0_0_,
+        certificat0_.ou as ou15_0_0_,
+        certificat0_.revoked as revoked16_0_0_,
+        certificat0_.serial_number as serial_17_0_0_,
+        certificat0_.start_date as start_d18_0_0_ 
+    from
+        certificate certificat0_ 
+    where
+        certificat0_.id=?
+2025-10-22 18:31:06 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2025-10-22 18:31:08 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    select
+        keystoreme0_.id as id1_4_0_,
+        keystoreme0_.encrypted_password as encrypte2_4_0_,
+        keystoreme0_.path as path3_4_0_ 
+    from
+        key_store_meta keystoreme0_ 
+    where
+        keystoreme0_.id=?
+2025-10-22 18:31:08 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [6]
+2025-10-22 18:31:08 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_0_,
+        certificat0_.alias as alias2_0_0_,
+        certificat0_.c as c3_0_0_,
+        certificat0_.cn as cn4_0_0_,
+        certificat0_.end_date as end_date5_0_0_,
+        certificat0_.extensions as extensio6_0_0_,
+        certificat0_.isca as isca7_0_0_,
+        certificat0_.is_end_entity as is_end_e8_0_0_,
+        certificat0_.is_intermediate as is_inter9_0_0_,
+        certificat0_.is_root as is_root10_0_0_,
+        certificat0_.issuer as issuer11_0_0_,
+        certificat0_.issuer_id as issuer_12_0_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_0_,
+        certificat0_.o as o14_0_0_,
+        certificat0_.ou as ou15_0_0_,
+        certificat0_.revoked as revoked16_0_0_,
+        certificat0_.serial_number as serial_17_0_0_,
+        certificat0_.start_date as start_d18_0_0_ 
+    from
+        certificate certificat0_ 
+    where
+        certificat0_.id=?
+2025-10-22 18:31:08 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [7]
+2025-10-22 18:31:08 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    select
+        keystoreme0_.id as id1_4_0_,
+        keystoreme0_.encrypted_password as encrypte2_4_0_,
+        keystoreme0_.path as path3_4_0_ 
+    from
+        key_store_meta keystoreme0_ 
+    where
+        keystoreme0_.id=?
+2025-10-22 18:31:08 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - [6]
+2025-10-22 18:31:09 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    insert 
+    into
+        key_store_meta
+        (encrypted_password, path) 
+    values
+        (?, ?)
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [CLOB] - [283HGnt9DWMHHCbD7SnWSIb3KOpyBkZ3Uo7azDCsR5no0+xtPF23y1xcyYq7WkYKRo6wqwtfcC5Mi0UHD/62qA==]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [.\keystores\keystore-1761150668928-2855.p12]
+2025-10-22 18:31:09 DEBUG [http-nio-8080-exec-7] org.hibernate.SQL - 
+    insert 
+    into
+        certificate
+        (alias, c, cn, end_date, extensions, isca, is_end_entity, is_intermediate, is_root, issuer, issuer_id, key_store_meta_id, o, ou, revoked, serial_number, start_date) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [cert-1e458638699c]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [RS]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [organi]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [DATE] - [2026-03-26]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [5] as [CLOB] - [{}]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [6] as [BOOLEAN] - [false]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [7] as [BOOLEAN] - [true]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [8] as [BOOLEAN] - [false]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [9] as [BOOLEAN] - [false]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [10] as [VARCHAR] - [CN=inter, O=inter, OU=inter, C=RS]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [11] as [INTEGER] - [7]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [12] as [INTEGER] - [10]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [13] as [VARCHAR] - [org]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [14] as [VARCHAR] - [org]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [15] as [BOOLEAN] - [false]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [16] as [VARCHAR] - [1e458638699c]
+2025-10-22 18:31:09 TRACE [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder - binding parameter [17] as [DATE] - [2025-10-22]
+2025-10-22 18:31:13 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:31:13 TRACE [http-nio-8080-exec-9] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:31:13 DEBUG [http-nio-8080-exec-9] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_,
+        certificat0_.alias as alias2_0_,
+        certificat0_.c as c3_0_,
+        certificat0_.cn as cn4_0_,
+        certificat0_.end_date as end_date5_0_,
+        certificat0_.extensions as extensio6_0_,
+        certificat0_.isca as isca7_0_,
+        certificat0_.is_end_entity as is_end_e8_0_,
+        certificat0_.is_intermediate as is_inter9_0_,
+        certificat0_.is_root as is_root10_0_,
+        certificat0_.issuer as issuer11_0_,
+        certificat0_.issuer_id as issuer_12_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_,
+        certificat0_.o as o14_0_,
+        certificat0_.ou as ou15_0_,
+        certificat0_.revoked as revoked16_0_,
+        certificat0_.serial_number as serial_17_0_,
+        certificat0_.start_date as start_d18_0_ 
+    from
+        certificate certificat0_
+2025-10-22 18:32:14 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:32:14 TRACE [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:32:14 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_,
+        certificat0_.alias as alias2_0_,
+        certificat0_.c as c3_0_,
+        certificat0_.cn as cn4_0_,
+        certificat0_.end_date as end_date5_0_,
+        certificat0_.extensions as extensio6_0_,
+        certificat0_.isca as isca7_0_,
+        certificat0_.is_end_entity as is_end_e8_0_,
+        certificat0_.is_intermediate as is_inter9_0_,
+        certificat0_.is_root as is_root10_0_,
+        certificat0_.issuer as issuer11_0_,
+        certificat0_.issuer_id as issuer_12_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_,
+        certificat0_.o as o14_0_,
+        certificat0_.ou as ou15_0_,
+        certificat0_.revoked as revoked16_0_,
+        certificat0_.serial_number as serial_17_0_,
+        certificat0_.start_date as start_d18_0_ 
+    from
+        certificate certificat0_
+2025-10-22 18:39:22 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:39:22 TRACE [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:39:22 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_,
+        certificat0_.alias as alias2_0_,
+        certificat0_.c as c3_0_,
+        certificat0_.cn as cn4_0_,
+        certificat0_.end_date as end_date5_0_,
+        certificat0_.extensions as extensio6_0_,
+        certificat0_.isca as isca7_0_,
+        certificat0_.is_end_entity as is_end_e8_0_,
+        certificat0_.is_intermediate as is_inter9_0_,
+        certificat0_.is_root as is_root10_0_,
+        certificat0_.issuer as issuer11_0_,
+        certificat0_.issuer_id as issuer_12_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_,
+        certificat0_.o as o14_0_,
+        certificat0_.ou as ou15_0_,
+        certificat0_.revoked as revoked16_0_,
+        certificat0_.serial_number as serial_17_0_,
+        certificat0_.start_date as start_d18_0_ 
+    from
+        certificate certificat0_
+2025-10-22 18:39:30 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    select
+        user0_.id as id1_8_,
+        user0_.blocked as blocked2_8_,
+        user0_.email as email3_8_,
+        user0_.enabled as enabled4_8_,
+        user0_.first_name as first_na5_8_,
+        user0_.last_name as last_nam6_8_,
+        user0_.organization as organiza7_8_,
+        user0_.password as password8_8_,
+        user0_.role as role9_8_ 
+    from
+        users user0_ 
+    where
+        user0_.email=?
+2025-10-22 18:39:30 TRACE [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [andjelavukosav3@gmail.com]
+2025-10-22 18:39:30 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - 
+    select
+        certificat0_.id as id1_0_,
+        certificat0_.alias as alias2_0_,
+        certificat0_.c as c3_0_,
+        certificat0_.cn as cn4_0_,
+        certificat0_.end_date as end_date5_0_,
+        certificat0_.extensions as extensio6_0_,
+        certificat0_.isca as isca7_0_,
+        certificat0_.is_end_entity as is_end_e8_0_,
+        certificat0_.is_intermediate as is_inter9_0_,
+        certificat0_.is_root as is_root10_0_,
+        certificat0_.issuer as issuer11_0_,
+        certificat0_.issuer_id as issuer_12_0_,
+        certificat0_.key_store_meta_id as key_sto13_0_,
+        certificat0_.o as o14_0_,
+        certificat0_.ou as ou15_0_,
+        certificat0_.revoked as revoked16_0_,
+        certificat0_.serial_number as serial_17_0_,
+        certificat0_.start_date as start_d18_0_ 
+    from
+        certificate certificat0_
+2025-10-22 19:32:38 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49m7s742ms37µs200ns).
+2025-10-22 22:33:24 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m43s190ms237µs400ns).
+2025-10-22 22:33:28 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-22 22:33:28 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-10-22 22:33:28 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

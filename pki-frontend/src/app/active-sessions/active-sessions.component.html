@@ -1,0 +1,19 @@
+<div class="sessions-container" *ngIf="!loading; else loadingTpl">
+  <h2>Aktivne sesije</h2>
+
+  <div *ngFor="let s of sessions" class="session-card" [class.current]="s.sessionId === currentSessionId">
+    <div>
+      <strong>{{ s.device }}</strong>
+      <p>{{ s.ipAddress }}</p>
+      <p>Poslednja aktivnost: {{ s.lastActivity | date:'short' }}</p>
+      <span *ngIf="s.sessionId === currentSessionId">(trenutna sesija)</span>
+    </div>
+    <button (click)="revoke(s.sessionId)" [disabled]="s.sessionId === currentSessionId">Odjavi</button>
+  </div>
+
+  <button (click)="revokeAll()" class="logout-all">Odjavi sa svih drugih sesija</button>
+</div>
+
+<ng-template #loadingTpl>
+  <p>Učitavanje...</p>
+</ng-template>

@@ -11,6 +11,7 @@ import { CreateRootCertificateComponent } from './certificate/create-root-certif
 import { CreateIntermediateCertificateComponent } from './certificate/create-intermediate-certificate/create-intermediate-certificate.component';
 import { CertificateListComponent } from './certificate/certificate-list/certificate-list.component';
 import { CaCertificateListComponent } from './certificate/ca-certificate-list/ca-certificate-list.component';
+import { CreateTemplateComponent } from './certificate/create-template/create-template.component';
 
 const routes: Routes = [
     { path: 'register', component: UserRegistrationComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
     { path: 'reset-password', component: ResetPasswordComponent},
     { path: 'ca-certificateList', component:CaCertificateListComponent},
     { path: '', redirectTo: 'login', pathMatch: 'full' },
+    { path: 'create-template', component:CreateTemplateComponent},
     //{ path: '**', redirectTo: 'login' },
 
 ];

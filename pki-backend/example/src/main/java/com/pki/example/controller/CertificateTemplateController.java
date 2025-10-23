@@ -18,7 +18,7 @@ public class CertificateTemplateController {
 
     @PostMapping("/create")
     public ResponseEntity<CertificateTemplate> createTemplate(
-            @RequestParam Integer userId,
+            @RequestParam Long userId,
             @RequestBody CertificateTemplateDTO dto) {
         return ResponseEntity.ok(service.createTemplate(userId, dto));
     }

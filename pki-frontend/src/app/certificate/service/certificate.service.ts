@@ -4,8 +4,8 @@ import { CertificateResponse } from '../model/certificateResponse';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from 'src/app/service/auth.service';
 import { Observable } from 'rxjs';
-import { CertificateTemplate } from '../model/CertificateTemplate';
 import { UserService } from 'src/app/service/user.service';
+import { CertificateTemplate } from '../model/CertificateTemplate';
 
 @Injectable({
   providedIn: 'root'
@@ -22,11 +22,24 @@ export class CertificateService {
 
   createTemplate(template: CertificateTemplate) {
     const headers = this.authService.getAuthHeaders();
-    const userId = this.userService.getAuthenticatedUser();
+    const user = this.userService.getAuthenticatedUser();
+    const userId = user?.id; // uzimamo samo ID, ne ceo objekat
 
-      const params = { userId: userId?.toString() || ''}
-    return this.http.post(`${this.apiTemplateUrl}/create`, template, {params, headers});
+    if (!userId) {
+      throw new Error('User not authenticated');
+    }
+
+    // Params za @RequestParam
+    const params = { userId: userId.toString() };
+
+    // POST sa body i params
+    return this.http.post<CertificateTemplate>(
+      `${this.apiTemplateUrl}/create`,
+      template, 
+      { headers, params }
+    );
   }
+
 
   private getAuthHeaders(): HttpHeaders {
     const token = this.authService.getToken();

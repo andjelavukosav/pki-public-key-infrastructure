@@ -477,3 +477,78 @@
   "certificateCN" : "N/A",
   "issuerAlias" : "N/A"
 }
+
+{
+  "timestamp" : "2025-10-23T22:50:32.164Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761259832164-791",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-23T23:09:13.238Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761260953239-693",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-23T23:18:00.726Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761261480726-117",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-23T23:20:16.769Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761261616769-911",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-23T23:27:20.009Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761262040009-951",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}

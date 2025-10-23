@@ -21,14 +21,11 @@ public class CertificateTemplateService {
     private CertificateTemplateRepository repo;
 
     @Autowired
-    private CertificateService certificateService;
-
-    @Autowired
     private CertificateRepository certificateRepository;
     @Autowired
     private UserService userService;
 
-    public CertificateTemplate createTemplate(Integer userId, CertificateTemplateDTO dto) {
+    public CertificateTemplate createTemplate(Long userId, CertificateTemplateDTO dto) {
         Certificate issuer = certificateRepository.findById(dto.getIssuerId())
                 .orElseThrow(() -> new RuntimeException("Issuer not found"));
         User owner = userService.findById(userId);//.orElseThrow(() -> new RuntimeException("User not found"));

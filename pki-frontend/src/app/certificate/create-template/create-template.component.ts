@@ -11,8 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CreateTemplateComponent {
 
-issuerId!: number;
-templateForm!: FormGroup;
+  issuerId!: number;
+  templateForm!: FormGroup;
   keyUsageOptions: string[] = [
     'digitalSignature',
     'nonRepudiation',
@@ -44,9 +44,10 @@ templateForm!: FormGroup;
 
     this.templateForm = this.fb.group({
       name: ['', [Validators.required, Validators.maxLength(50)]],
+     // caIssuer: ['', Validators.required],
       ttlDays: [365, [Validators.required, Validators.min(1)]],
-      commonNameRegex: ['^[a-zA-Z0-9.-]+$', Validators.required],
-      subjectAltNameRegex: ['^[a-zA-Z0-9.-]+$', Validators.required],
+      commonNameRegex: ['', Validators.required],  // PRAZNO umesto hardcoded regex
+      subjectAltNameRegex: ['', Validators.required],  // PRAZNO umesto hardcoded regex
       keyUsage: this.fb.array([]),
       extendedKeyUsage: this.fb.array([])
     });
@@ -63,7 +64,7 @@ templateForm!: FormGroup;
 
     const dto = {
       ...this.templateForm.value,
-      issuerId: this.issuerId // ovde dodaj
+      issuerId: this.issuerId
     };
 
     this.certService.createTemplate(dto).subscribe({

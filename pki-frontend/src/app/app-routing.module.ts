@@ -10,6 +10,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { CreateRootCertificateComponent } from './certificate/create-root-certificate/create-root-certificate.component';
 import { CreateIntermediateCertificateComponent } from './certificate/create-intermediate-certificate/create-intermediate-certificate.component';
 import { CertificateListComponent } from './certificate/certificate-list/certificate-list.component';
+import { ActiveSessionsComponent } from './active-sessions/active-sessions.component';
 
 const routes: Routes = [
     { path: 'register', component: UserRegistrationComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path: 'csr-request', component: CsrRequestComponent },
     { path: 'forgot-password', component: ForgotPasswordComponent},
     { path: 'reset-password', component: ResetPasswordComponent},
+    { path: 'active-sessions', component: ActiveSessionsComponent},
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     //{ path: '**', redirectTo: 'login' },
 

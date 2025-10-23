@@ -30,7 +30,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { CertificateListComponent } from './certificate/certificate-list/certificate-list.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle'
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { ActiveSessionsComponent } from './active-sessions/active-sessions.component'
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle'
     CreateRootCertificateComponent,
     CreateIntermediateCertificateComponent,
     CertificateListComponent,
+    ActiveSessionsComponent,
   ],
   imports: [
     BrowserModule,

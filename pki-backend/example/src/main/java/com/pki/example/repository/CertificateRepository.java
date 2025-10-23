@@ -12,6 +12,9 @@ public interface CertificateRepository extends JpaRepository<Certificate, Intege
     @Query("SELECT c FROM Certificate c WHERE c.o = :organization AND c.isCA = true AND c.isIntermediate = true")
     List<Certificate> findAllByOrganization(@Param("organization") String organization);
 
+    @Query("SELECT c FROM Certificate c WHERE c.o = :organization")
+    List<Certificate> findAllByOrganizationList(@Param("organization") String organization);
+
     @Query("""
         SELECT c FROM Certificate c
         WHERE c.id IN (

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -417,4 +418,25 @@ public class CertificateServiceImpl implements CertificateService {
         )).collect(Collectors.toList());
     }
 
+    @Transactional(readOnly = true)
+    public List<CertificateResponseDTO> getAllCACertificatesByOrg(String organization) {
+        return certificateRepository.findAllByOrganizationList(organization).stream().map(c->new CertificateResponseDTO(
+                c.getId(),
+                c.getAlias(),
+                c.getSerialNumber(),
+                c.getCn(),
+                c.getO(),
+                c.getOu(),
+                c.getC(),
+                c.getIssuer(),
+                c.getStartDate(),
+                c.getEndDate(),
+                c.getIssuerId(),
+                c.isRoot(),
+                c.isIntermediate(),
+                c.isEndEntity(),
+                c.isCA(),
+                c.isRevoked()
+        )).collect(Collectors.toList());
+    }
 }

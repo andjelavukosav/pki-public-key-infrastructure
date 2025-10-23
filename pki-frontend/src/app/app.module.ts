@@ -31,9 +31,9 @@ import { CertificateListComponent } from './certificate/certificate-list/certifi
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { CreateEeCertificateComponent } from './certificate/create-ee-certificate/create-ee-certificate.component';
 import { CreateTemplateComponent } from './certificate/create-template/create-template.component'
-import{MatCheckboxModule} from '@angular/material/checkbox'
+import{MatCheckboxModule} from '@angular/material/checkbox';
+import { CaCertificateListComponent } from './certificate/ca-certificate-list/ca-certificate-list.component'
 
 
 @NgModule({
@@ -52,8 +52,8 @@ import{MatCheckboxModule} from '@angular/material/checkbox'
     CreateRootCertificateComponent,
     CreateIntermediateCertificateComponent,
     CertificateListComponent,
-    CreateEeCertificateComponent,
     CreateTemplateComponent,
+    CaCertificateListComponent,
   ],
   imports: [
     BrowserModule,

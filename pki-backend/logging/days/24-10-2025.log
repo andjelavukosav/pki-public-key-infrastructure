@@ -1,0 +1,415 @@
+{
+  "timestamp" : "2025-10-23T22:02:58.267Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761256978267-893",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:03:04.113Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761256984113-912",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 22 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:03:09.925Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761256989925-827",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:03:12.301Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761256992301-410",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 22 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:03:27.294Z",
+  "eventType" : "CERTIFICATE_ISSUE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257007294-467",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "FAILURE",
+  "message" : "Failed to issue certificate: End-entity certificate can only be issued by an intermediate certificate. Issuer (ID: 22) is not an intermediate certificate. | CertID: N/A | CN: end  | Issuer: Issuer ID: 22",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:03:40.328Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257020328-828",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 26 | CN: end  | Issuer: Issuer ID: 22",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:03:43.614Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257023614-701",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:03:48.239Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257028239-369",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 23 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:03:54.299Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257034299-526",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:04:07.627Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257047627-216",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 24 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=US",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:04:18.376Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257058376-98",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 27 | CN: end | Issuer: Issuer ID: 24",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:04:23.252Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257063253-953",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:04:42.296Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257082296-377",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 23 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:04:57.121Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257097121-617",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 28 | CN: mora  | Issuer: Issuer ID: 23",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:04:59.879Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257099879-764",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:13:50.131Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257630132-873",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:13:52.899Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257632899-655",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 23 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:14:11.139Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257651139-157",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 29 | CN: proba | Issuer: Issuer ID: 23",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:14:58.913Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257698913-304",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 23 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:15:46.722Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257746722-771",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:15:49.855Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257749855-881",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 24 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=US",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:16:04.642Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761257764642-298",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 30 | CN: mo no  | Issuer: Issuer ID: 24",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:21:57.354Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761258117354-51",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 24 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=US",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:22:21.829Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761258141829-530",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:22:23.640Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761258143640-124",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 23 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:23:24.232Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761258204232-894",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 23 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:24:05.374Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761258245374-924",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:24:07.678Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761258247678-26",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 24 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=US",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:24:43.111Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761258283111-179",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:24:45.851Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761258285851-417",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 23 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:24:58.525Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761258298525-694",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 31 | CN: DA  | Issuer: Issuer ID: 23",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T22:25:00.782Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761258300783-860",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}

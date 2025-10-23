@@ -10,7 +10,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { CreateRootCertificateComponent } from './certificate/create-root-certificate/create-root-certificate.component';
 import { CreateIntermediateCertificateComponent } from './certificate/create-intermediate-certificate/create-intermediate-certificate.component';
 import { CertificateListComponent } from './certificate/certificate-list/certificate-list.component';
-import { CreateEeCertificateComponent } from './certificate/create-ee-certificate/create-ee-certificate.component';
+import { CaCertificateListComponent } from './certificate/ca-certificate-list/ca-certificate-list.component';
 
 const routes: Routes = [
     { path: 'register', component: UserRegistrationComponent },
@@ -23,7 +23,7 @@ const routes: Routes = [
     { path: 'csr-request', component: CsrRequestComponent },
     { path: 'forgot-password', component: ForgotPasswordComponent},
     { path: 'reset-password', component: ResetPasswordComponent},
-    {path: 'create-endEntity', component:CreateEeCertificateComponent},
+    { path: 'ca-certificateList', component:CaCertificateListComponent},
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     //{ path: '**', redirectTo: 'login' },
 

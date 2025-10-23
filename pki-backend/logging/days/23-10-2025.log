@@ -296,3 +296,159 @@
   "ipAddress" : "0:0:0:0:0:0:0:1",
   "userAgent" : null
 }
+
+{
+  "timestamp" : "2025-10-23T21:15:51.034Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761254151034-179",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 22 | CN: FTN | Issuer: SELF_SIGNED",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T21:15:58.818Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761254158818-923",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 22 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T21:16:14.940Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761254174940-538",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 23 | CN: FTN | Issuer: Issuer ID: 22",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T21:35:38.959Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761255338959-653",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T21:37:36.102Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761255456102-530",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 23 | CN: FTN | Issuer: CN=FTN, O=FTN, OU=FTN, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T21:37:56.342Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761255476342-949",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 24 | CN: FTN | Issuer: Issuer ID: 23",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T21:38:32.605Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761255512605-456",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T21:47:17.644Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761256037644-955",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully | CertID: 25 | CN: rot | Issuer: SELF_SIGNED",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T21:47:23.487Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761256043487-316",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details | CertID: 25 | CN: rot | Issuer: CN=rot, O=root, OU=root, C=RS",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T21:47:46.803Z",
+  "eventType" : "CERTIFICATE_ISSUE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761256066803-36",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "FAILURE",
+  "message" : "Failed to issue certificate: End-entity certificate can only be issued by an intermediate certificate. Issuer (ID: 25) is not an intermediate certificate. | CertID: N/A | CN: prona | Issuer: Issuer ID: 25",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T21:50:31.035Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761256231035-218",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}
+
+{
+  "timestamp" : "2025-10-23T21:55:56.059Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761256556059-898",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN | CertID: N/A | CN: N/A | Issuer: N/A",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "userAgent" : null
+}

@@ -51,5 +51,14 @@ export class CertificateService {
   return this.http.get<CertificateTemplate[]>(`${this.apiTemplateUrl}/by-issuer/${issuerId}`);
 }
   
+  getCACertificatesByOrg(): Observable<any[]> {
+    const headers = this.authService.getAuthHeaders();
+    const userId = this.userService.getAuthenticatedUser()?.id;
+
+    // 1) konvertuj broj u string
+    const params = { userId: userId?.toString() || '' };
+
+    return this.http.get<any[]>(`${this.apiUrl}/caOrg`, { headers, params });
+  }
 
 }

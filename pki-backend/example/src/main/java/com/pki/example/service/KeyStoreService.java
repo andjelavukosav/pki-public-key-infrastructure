@@ -36,7 +36,8 @@ public class KeyStoreService {
             X509Certificate[] chain,
             PrivateKey privateKey,
             String alias,
-            Integer createdBy
+            Integer createdBy,
+            boolean isEndEntity
     ) {
         try {
             // 1) generate random keystore password
@@ -48,7 +49,14 @@ public class KeyStoreService {
             // 2) create keystore (PKCS12)
             KeyStore ks = KeyStore.getInstance("PKCS12");
             ks.load(null, null);
-            ks.setKeyEntry(alias, privateKey, ksPassword.toCharArray(), chain);
+
+            if (isEndEntity) {
+                // ⚠️ EE sertifikati – čuvaj bez privatnog ključa
+                ks.setCertificateEntry(alias, chain[0]);
+            } else {
+                // ✅ CA sertifikati – čuvaj sa privatnim ključem i kompletnim chain-om
+                ks.setKeyEntry(alias, privateKey, ksPassword.toCharArray(), chain);
+            }
 
             // ensure dir exists
             Path dir = Paths.get(keystoreDir);
@@ -56,23 +64,13 @@ public class KeyStoreService {
 
             String filename = "keystore-" + System.currentTimeMillis() + "-" + sr.nextInt(9999) + ".p12";
             Path file = dir.resolve(filename);
+
             try (FileOutputStream fos = new FileOutputStream(file.toFile())) {
                 ks.store(fos, ksPassword.toCharArray());
             }
 
             // 3) encrypt ksPassword with master passphrase
-
-            System.out.println("========== KeyStore DEBUG ==========");
-            System.out.println("Keystore path: " + file.toString());
-            System.out.println("Master passphrase (iz .env): " + masterPassphrase);
-            System.out.println("Keystore password (pre enkripcije): " + ksPassword);
-
-
             String encryptedPassword = CryptoUtils.encryptWithPassword(ksPassword.getBytes("UTF-8"), masterPassphrase.toCharArray());
-
-            System.out.println("Encrypted password (Base64, upisana u bazu): " + encryptedPassword);
-            System.out.println("=====================================");
-
 
             // 4) persist KeyStoreMeta
             KeyStoreMeta meta = new KeyStoreMeta();

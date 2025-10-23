@@ -26,13 +26,17 @@
       </mat-card-content>
 
       <mat-card-actions>
-        <button *ngIf="cert.root" mat-raised-button class="certButtons" color="primary" (click)="createIntermediate(cert)">
-          Create Intermediate
-        </button>
-        <button *ngIf="cert.intermediate" mat-raised-button class="certButtons" color="accent" (click)="createEndEntity(cert)">
-          Create End Entity
-        </button>
-      </mat-card-actions>
+      <button
+        mat-raised-button
+        class="certButtons"
+        color="primary"
+        (click)="createIntermediate(cert)"
+        [disabled]="!cert.ca"
+      >
+        Create Intermediate or End-Entity
+      </button>
+    </mat-card-actions>
+
     </mat-card>
   </div>
 </div>

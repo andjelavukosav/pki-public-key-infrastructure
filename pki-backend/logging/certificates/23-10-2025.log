@@ -1,0 +1,344 @@
+{
+  "timestamp" : "2025-10-23T18:57:55.246Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761245875246-340",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "6",
+  "certificateCN" : "root",
+  "issuerAlias" : "CN=root, O=root, OU=root, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-23T18:58:04.776Z",
+  "eventType" : "CERTIFICATE_ISSUE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761245884776-354",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "FAILURE",
+  "message" : "Failed to issue certificate: Issuer is not a CA; cannot issue new certificates.",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "JJj",
+  "issuerAlias" : "Issuer ID: 6"
+}
+
+{
+  "timestamp" : "2025-10-23T18:58:32.251Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761245912251-179",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "12",
+  "certificateCN" : "test",
+  "issuerAlias" : "SELF_SIGNED"
+}
+
+{
+  "timestamp" : "2025-10-23T18:58:43.178Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761245923178-785",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "12",
+  "certificateCN" : "test",
+  "issuerAlias" : "CN=test, O=test, OU=test, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-23T19:00:04.573Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761246004573-932",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "9",
+  "certificateCN" : "moze dalje",
+  "issuerAlias" : "CN=moze dalje, O=moxe, OU=MJ, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-23T19:00:14.237Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761246014237-994",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "13",
+  "certificateCN" : "aja",
+  "issuerAlias" : "Issuer ID: 9"
+}
+
+{
+  "timestamp" : "2025-10-23T19:02:20.633Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761246140633-83",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "9",
+  "certificateCN" : "moze dalje",
+  "issuerAlias" : "CN=moze dalje, O=moxe, OU=MJ, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-23T19:03:09.071Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761246189071-629",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "7",
+  "certificateCN" : "inter",
+  "issuerAlias" : "CN=inter, O=inter, OU=inter, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-23T19:03:20.994Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761246200994-752",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "9",
+  "certificateCN" : "moze dalje",
+  "issuerAlias" : "CN=moze dalje, O=moxe, OU=MJ, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-23T19:03:33.818Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761246213818-436",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "14",
+  "certificateCN" : "inter7",
+  "issuerAlias" : "Issuer ID: 9"
+}
+
+{
+  "timestamp" : "2025-10-23T19:04:03.901Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761246243901-41",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "14",
+  "certificateCN" : "inter7",
+  "issuerAlias" : "CN=moze dalje, O=moxe, OU=MJ, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-23T19:05:03.387Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761246303387-271",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "9",
+  "certificateCN" : "moze dalje",
+  "issuerAlias" : "CN=moze dalje, O=moxe, OU=MJ, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-23T19:05:19.648Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761246319648-220",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "15",
+  "certificateCN" : "medi",
+  "issuerAlias" : "Issuer ID: 9"
+}
+
+{
+  "timestamp" : "2025-10-23T19:28:08.868Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761247688868-211",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "16",
+  "certificateCN" : "ja sam prvi root",
+  "issuerAlias" : "SELF_SIGNED"
+}
+
+{
+  "timestamp" : "2025-10-23T19:28:18.318Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761247698318-204",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "16",
+  "certificateCN" : "ja sam prvi root",
+  "issuerAlias" : "CN=ja sam prvi root, O=ja sam prvi root, OU=rooot, C=US"
+}
+
+{
+  "timestamp" : "2025-10-23T19:28:51.189Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761247731189-773",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "17",
+  "certificateCN" : "ja sam prvi intermidier",
+  "issuerAlias" : "Issuer ID: 16"
+}
+
+{
+  "timestamp" : "2025-10-23T19:37:03.364Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761248223365-587",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "18",
+  "certificateCN" : "prvi root",
+  "issuerAlias" : "SELF_SIGNED"
+}
+
+{
+  "timestamp" : "2025-10-23T19:37:12.067Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761248232067-400",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "18",
+  "certificateCN" : "prvi root",
+  "issuerAlias" : "CN=prvi root, O=prvi root, OU=root, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-23T19:37:40.157Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761248260157-774",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "19",
+  "certificateCN" : "prvi iner",
+  "issuerAlias" : "Issuer ID: 18"
+}
+
+{
+  "timestamp" : "2025-10-23T19:39:22.359Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761248362359-183",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "19",
+  "certificateCN" : "prvi iner",
+  "issuerAlias" : "CN=prvi root, O=prvi root, OU=root, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-23T19:39:43.295Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761248383295-219",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "20",
+  "certificateCN" : "drugi int",
+  "issuerAlias" : "Issuer ID: 19"
+}
+
+{
+  "timestamp" : "2025-10-23T19:39:47.444Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761248387444-221",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "20",
+  "certificateCN" : "drugi int",
+  "issuerAlias" : "CN=prvi iner, O=prvi inter, OU=prvi inter, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-23T19:40:03.183Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761248403183-31",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "21",
+  "certificateCN" : "end",
+  "issuerAlias" : "Issuer ID: 20"
+}

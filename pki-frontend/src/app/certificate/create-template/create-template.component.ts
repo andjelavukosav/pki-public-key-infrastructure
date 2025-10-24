@@ -44,7 +44,6 @@ export class CreateTemplateComponent {
 
     this.templateForm = this.fb.group({
       name: ['', [Validators.required, Validators.maxLength(50)]],
-     // caIssuer: ['', Validators.required],
       ttlDays: [365, [Validators.required, Validators.min(1)]],
       commonNameRegex: ['', Validators.required],  // PRAZNO umesto hardcoded regex
       subjectAltNameRegex: ['', Validators.required],  // PRAZNO umesto hardcoded regex

@@ -9,6 +9,7 @@
     <!-- Ako je korisnik ulogovan -->
     <ng-container *ngIf="user">
       <span class="user-greeting">Hello, {{ user?.email }}</span>
+      <button class="nav-button" [routerLink]="['/active-sessions']">Active Sessions</button>
       <button class="nav-button logout-button" (click)="logout()">Logout</button>
       <button class="nav-button logout-button"  *ngIf="isLoggedAdmin()" [routerLink]="['createRootCertificate']">Create root certificate</button>
       <button class="nav-button logout-button" *ngIf="isLoggedAdmin()" [routerLink]="['certificateList']">All certificates</button>

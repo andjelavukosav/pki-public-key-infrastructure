@@ -78,12 +78,15 @@ export class UserLoginComponent {
       next: (response: LoginResponse) => {
 
         this.authService.setToken(response.token);
+
+        sessionStorage.setItem('currentSessionId', response.sessionId);        
         
         // Dekodovanje tokena da bi se autentifikovao korisnik
         const { user, error} = this.authService.decodeToken(response.token);
         if (error) {
           this.formError = error;
           this.authService.clearToken();
+          sessionStorage.removeItem('currentSessionId');
           this.captchaRef?.reset();
           this.captchaToken = null;
           this.submitting = false;

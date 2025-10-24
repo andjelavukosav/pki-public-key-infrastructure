@@ -34,6 +34,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { CreateTemplateComponent } from './certificate/create-template/create-template.component'
 import{MatCheckboxModule} from '@angular/material/checkbox';
 import { CaCertificateListComponent } from './certificate/ca-certificate-list/ca-certificate-list.component'
+import { ActiveSessionsComponent } from './active-sessions/active-sessions.component'
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { CaCertificateListComponent } from './certificate/ca-certificate-list/ca
     CertificateListComponent,
     CreateTemplateComponent,
     CaCertificateListComponent,
+    ActiveSessionsComponent,
   ],
   imports: [
     BrowserModule,

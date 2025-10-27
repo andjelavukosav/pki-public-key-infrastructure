@@ -1,5 +1,27 @@
 <form [formGroup]="intermediateForm" (ngSubmit)="onSubmit()">
   <div class="form-container" @slideIn>
+
+    <!-- 🔹 Dropdown za izbor šablona -->
+    <mat-form-field appearance="fill">
+      <mat-label>Select Template (optional)</mat-label>
+      <mat-select [(value)]="selectedTemplateId" (selectionChange)="onTemplateSelected($event.value)">
+        <mat-option *ngFor="let t of templates" [value]="t.id">
+          {{ t.name }}
+        </mat-option>
+      </mat-select>
+      <mat-hint>Odaberi šablon da automatski popuniš formu</mat-hint>
+    </mat-form-field>
+
+    <!-- 🔹 Ovdje dodaj ovaj deo -->
+    <div *ngIf="selectedTemplate" class="template-details">
+      <h4>Template Details:</h4>
+      <p><strong>TTL:</strong> {{ selectedTemplate.ttlDays }} days</p>
+      <p><strong>Key Usage:</strong> {{ selectedTemplate.keyUsage.join(', ') }}</p>
+      <p><strong>Extended Key Usage:</strong> {{ selectedTemplate.extendedKeyUsage.join(', ') }}</p>
+    </div>
+
+
+
     <mat-label>Subject</mat-label>
 
     <mat-form-field>
@@ -7,6 +29,7 @@
       <input matInput formControlName="cn" type="text" placeholder="e.g., Intermediate CA" maxlength="64"/>
       <mat-error *ngIf="hasError('cn')">{{ getErrorMessage('cn') }}</mat-error>
     </mat-form-field>
+
 
     <mat-form-field>
       <mat-label>Organization (O)</mat-label>

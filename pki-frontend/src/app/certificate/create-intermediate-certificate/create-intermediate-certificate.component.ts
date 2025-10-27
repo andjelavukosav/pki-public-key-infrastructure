@@ -17,6 +17,9 @@ export class CreateIntermediateCertificateComponent implements OnInit{
   issuerId!: number;
   maxDays!: number;
 
+  templates: any[] = [];
+  selectedTemplateId: number | null = null;
+  
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -79,7 +82,78 @@ export class CreateIntermediateCertificateComponent implements OnInit{
 
     const currentUser = this.authService.getAuthenticatedUser();
     this.userId = currentUser ? currentUser.id : null;
+    this.loadTemplates();
   }
+
+  loadTemplates(): void {
+    const issuerId = this.issuerId; // već imaš issuer-a ako se radi o intermediate sertifikatu
+
+    this.certificateService.getTemplatesByIssuer(issuerId).subscribe({
+      next: (data) => {
+        this.templates = data;
+        console.log('Loaded templates:', data);
+      },
+      error: (err) => console.error('Error loading templates', err)
+    });
+  }
+
+  // onTemplateSelected(templateId: number): void {
+  //   const template = this.templates.find(t => t.id === templateId);
+  //   if (!template) return;
+
+  //   // Popuni formu sa vrednostima iz šablona
+  //   this.intermediateForm.patchValue({
+  //     durationInDays: template.ttlDays,
+  //     extensions: {
+  //       keyUsage: template.keyUsage,
+  //       extendedKeyUsage: template.extendedKeyUsage
+  //     }
+  //   });
+
+  //   // Ako želiš regex validaciju:
+  //   if (template.commonNameRegex) {
+  //     this.intermediateForm.get('cn')?.setValidators([
+  //       Validators.required,
+  //       Validators.pattern(template.commonNameRegex)
+  //     ]);
+  //   }
+
+  //   if (template.subjectAltNameRegex) {
+  //     this.intermediateForm.get('subjectAltName')?.setValidators([
+  //       Validators.pattern(template.subjectAltNameRegex)
+  //     ]);
+  //   }
+
+  //   this.intermediateForm.updateValueAndValidity();
+  // }
+
+  onTemplateSelected(templateId: number): void {
+    const template = this.templates.find(t => t.id === templateId);
+    if (!template) return;
+
+    // Patchuj CN polje u formi - uzmi vrednost iz commonNameRegex
+    // Ako regex izgleda kao "*.example.com", možeš ostaviti ceo string ili uzeti primer vrednosti
+    let cnExample = template.commonNameRegex;
+
+    // Opcionalno: ako regex ima wildcard, zameni ga nečim konkretnim za prikaz
+    // npr. "*.example.com" -> "my.example.com"
+    if (cnExample.startsWith('*')) {
+      cnExample = cnExample.replace('*', 'my');
+    }
+
+    this.intermediateForm.patchValue({
+      cn: cnExample,
+      durationInDays: template.ttlDays,
+      extensions: {
+        keyUsage: template.keyUsage,
+        extendedKeyUsage: template.extendedKeyUsage
+      }
+    });
+
+    // Ne dodaj validator pattern odmah ako samo želiš da popuniš CN
+    this.intermediateForm.updateValueAndValidity();
+  }
+
 
   onSubmit() {
     if (this.intermediateForm.invalid) {
@@ -145,6 +219,10 @@ export class CreateIntermediateCertificateComponent implements OnInit{
   hasError(fieldName: string): boolean {
     const control = this.intermediateForm.get(fieldName);
     return !!(control && control.invalid && control.touched);
+  }
+
+  get selectedTemplate() {
+    return this.templates.find(t => t.id === this.selectedTemplateId);
   }
 
 }

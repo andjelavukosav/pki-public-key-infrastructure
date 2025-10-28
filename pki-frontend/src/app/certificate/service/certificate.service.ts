@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CertificateRequest } from '../model/certificateRequest';
-import { CertificateResponse } from '../model/certificateResponse';
+import { CertificateRequest } from '../model/certificate-request';
+import { CertificateResponse } from '../model/certificate-response';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from 'src/app/service/auth.service';
 import { Observable } from 'rxjs';
@@ -34,5 +34,10 @@ export class CertificateService {
 
   getCertificates(): Observable<CertificateResponse[]>{
     return this.http.get<CertificateResponse[]>(`${this.apiUrl}/all`,{headers:this.getAuthHeaders()});
+  }
+
+   getCACertificates(): Observable<CertificateResponse[]>{
+    console.log("d")
+    return this.http.get<CertificateResponse[]>(`${this.apiUrl}/ca`,{headers:this.getAuthHeaders()});
   }
 }

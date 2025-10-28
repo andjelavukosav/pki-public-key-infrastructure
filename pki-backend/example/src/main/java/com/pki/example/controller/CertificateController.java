@@ -140,4 +140,24 @@ public class CertificateController {
         return ResponseEntity.ok(certificateService.getAllCertificates());
     }
 
+    @GetMapping(value="/ca")
+    public ResponseEntity<List<CertificateResponseDTO>> getAllCACertificates(HttpServletRequest request) {
+        String ipAddress = getClientIpAddress(request);
+        String user = getCurrentUser();
+        String role = getCurrentUserRole();
+
+        loggerService.logCertificateEvent(
+                "CA_CERTIFICATE_LIST_ACCESSED",
+                user,
+                role,
+                "SUCCESS",
+                "Retrieved all CA certificates",
+                ipAddress,
+                "N/A",
+                "N/A",
+                "N/A"
+        );
+
+        return ResponseEntity.ok(certificateService.getAllCACertificates());
+    }
 }

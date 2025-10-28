@@ -1,0 +1,209 @@
+{
+  "timestamp" : "2025-10-24T00:05:24.944Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761264324945-948",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-24T00:07:17.231Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761264437231-179",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-24T00:23:46.156Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761265426157-848",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-24T01:33:45.307Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761269625307-316",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-24T01:34:38.232Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761269678232-178",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-24T01:34:51.508Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761269691508-157",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "1",
+  "certificateCN" : "Sertifikat1",
+  "issuerAlias" : "CN=Sertifikat1, O=FTN, OU=IT, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-24T01:35:49.564Z",
+  "eventType" : "CERTIFICATE_ISSUE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761269749564-146",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "FAILURE",
+  "message" : "Failed to issue certificate: Issuer is not a CA; cannot issue new certificates.",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "CA-Sertifikat",
+  "issuerAlias" : "Issuer ID: 1"
+}
+
+{
+  "timestamp" : "2025-10-24T01:37:39.527Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761269859527-637",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "4",
+  "certificateCN" : "RootS",
+  "issuerAlias" : "SELF_SIGNED"
+}
+
+{
+  "timestamp" : "2025-10-24T01:37:57.227Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761269877227-640",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-24T01:58:44.607Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761271124607-238",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-24T01:59:04.279Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761271144279-637",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-24T01:59:08.930Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761271148930-517",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-24T02:09:04.255Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761271744255-169",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-24T02:09:24.901Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761271764901-510",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}

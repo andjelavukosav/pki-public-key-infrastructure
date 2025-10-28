@@ -33,6 +33,10 @@ export class NavBarComponent implements OnInit {
     this.router.navigate(['csr-request']);
   }
 
+  csrPending() {
+    this.router.navigate(['csr-pending']);
+  }
+
   isLoggedAdmin(): boolean{
     return this.user?.role==='ADMIN';
   }

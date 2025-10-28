@@ -21,4 +21,5 @@ public interface CertificateRepository extends JpaRepository<Certificate, Intege
         )
     """)
     List<Certificate> findEndEntityCertificatesByUserId(@Param("userId") Integer userId);
+    List<Certificate> findByIsCATrue();
 }

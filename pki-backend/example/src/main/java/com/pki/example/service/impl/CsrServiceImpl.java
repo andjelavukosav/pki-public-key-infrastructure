@@ -47,6 +47,7 @@ public class CsrServiceImpl implements CsrService {
 
     @Autowired
     private UserService userService;
+
     static {
         // register BouncyCastle once when class loads
         if (Security.getProvider("BC") == null) {
@@ -66,7 +67,7 @@ public class CsrServiceImpl implements CsrService {
         CsrParseResult parseResult = parseCSRFromPEM(pemContent);
 
         // 4. Validuj odabrani CA
-        Certificate selectedCA = certificateRepository.findById(Math.toIntExact(request.getSelectedCaId()))
+        Certificate selectedCA = certificateRepository.findById(request.getSelectedCaId())
                 .orElseThrow(() -> new RuntimeException("Selected CA not found"));
 
         validateCACanIssue(selectedCA);
@@ -90,8 +91,10 @@ public class CsrServiceImpl implements CsrService {
 
         CertificateSigningRequest saved = csrRepository.save(csr);
 
+        Long id = saved.getId().longValue();
+
         return new CsrUploadResponseDTO(
-                saved.getId(),
+                id,
                 "CSR uploaded successfully. Awaiting admin approval."
         );
     }
@@ -216,26 +219,24 @@ public class CsrServiceImpl implements CsrService {
 
     @Transactional()
     public List<CertificateSigningRequest> getPendingCSRsForCAOrganization(String organization) {
-        // Nađi sve CA sertifikate iz te organizacije
         List<Certificate> caCerts = certificateRepository.findAllByOrganization(organization);
 
         if (caCerts.isEmpty()) {
             return Collections.emptyList();
         }
 
-        // Izvuci njihove ID-jeve i konvertuj iz int → Long
-        List<Long> caIds = caCerts.stream()
-                .map(cert -> Long.valueOf(cert.getId())) // direktno pretvaranje iz int u Long
+        // Sada je Certificate.getId() već Integer, tako da ne treba konverzija
+        List<Integer> caIds = caCerts.stream()
+                .map(Certificate::getId)
                 .collect(Collectors.toList());
 
-        // Vrati CSR-ove koji čekaju obradu i vezani su za neki od CA-ova
         return csrRepository.findBySelectedCaIdInAndStatus(caIds, CsrStatus.PENDING);
     }
 
-
     @Transactional
     public void processCSRDecision(CsrDecisionDTO decision, String processedByEmail) {
-        CertificateSigningRequest csr = csrRepository.findById(decision.getCsrId())
+
+        CertificateSigningRequest csr = csrRepository.findById(decision.getCsrId().intValue())
                 .orElseThrow(() -> new RuntimeException("CSR not found"));
 
         if (!csr.getStatus().equals(CsrStatus.PENDING)) {
@@ -245,9 +246,8 @@ public class CsrServiceImpl implements CsrService {
         User processedBy = userService.findByEmail(processedByEmail);
 
         if (decision.isApproved()) {
-            // 1. Kreiraj novi sertifikat
             CertificateRequestDTO certReq = new CertificateRequestDTO();
-            certReq.setIssuerId((int)(long)csr.getSelectedCaId());
+            certReq.setIssuerId(csr.getSelectedCaId());  // Sada je već Integer
             certReq.setCn(extractCNFromSubject(csr.getSubject()));
             certReq.setO(extractOFromSubject(csr.getSubject()));
             certReq.setOu(extractOUFromSubject(csr.getSubject()));
@@ -259,10 +259,9 @@ public class CsrServiceImpl implements CsrService {
 
             CertificateResponseDTO issuedCert = certificateService.issueCertificate(certReq);
 
-            csr.setIssuedCertificateId((long)issuedCert.getId());
+            csr.setIssuedCertificateId(issuedCert.getId());
             csr.setStatus(CsrStatus.ISSUED);
         } else {
-            // Odbijeno
             csr.setStatus(CsrStatus.REJECTED);
             csr.setRejectionReason(decision.getRejectionReason());
         }
@@ -270,6 +269,7 @@ public class CsrServiceImpl implements CsrService {
         csr.setProcessedAt(LocalDateTime.now());
         csrRepository.save(csr);
     }
+
 
     private String extractField(String subject, String field) {
         if (subject == null) return null;

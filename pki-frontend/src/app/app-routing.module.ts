@@ -10,6 +10,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { CreateRootCertificateComponent } from './certificate/create-root-certificate/create-root-certificate.component';
 import { CreateIntermediateCertificateComponent } from './certificate/create-intermediate-certificate/create-intermediate-certificate.component';
 import { CertificateListComponent } from './certificate/certificate-list/certificate-list.component';
+import { PendingCsrListComponent } from './componets/pending-csr-list/pending-csr-list.component';
 
 const routes: Routes = [
     { path: 'register', component: UserRegistrationComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
     { path: 'login', component: UserLoginComponent},
     { path: 'user-home', component: UserHomeComponent},
     { path: 'csr-request', component: CsrRequestComponent },
+    { path: 'csr-pending', component: PendingCsrListComponent},
     { path: 'forgot-password', component: ForgotPasswordComponent},
     { path: 'reset-password', component: ResetPasswordComponent},
     { path: '', redirectTo: 'login', pathMatch: 'full' },

@@ -8,9 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface CsrRepository extends JpaRepository<CertificateSigningRequest,Long> {
+public interface CsrRepository extends JpaRepository<CertificateSigningRequest, Integer> {
     @Query("SELECT c FROM CertificateSigningRequest c WHERE c.selectedCaId IN :caIds AND c.status = :status")
-    List<CertificateSigningRequest> findBySelectedCaIdInAndStatus(
-            @Param("caIds") List<Long> caIds,
-            @Param("status") CsrStatus status);
+    List<CertificateSigningRequest> findBySelectedCaIdInAndStatus(List<Integer> caIds, CsrStatus status);
 }

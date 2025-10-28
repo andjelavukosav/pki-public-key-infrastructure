@@ -156,49 +156,61 @@ export class CreateIntermediateCertificateComponent implements OnInit{
 
 
   onSubmit() {
-    if (this.intermediateForm.invalid) {
-      this.intermediateForm.markAllAsTouched();
-      this.snackBar.open('Please fix all errors before submitting', 'Close', {
-        duration: 3000,
-        horizontalPosition: 'center'
-      });
-      return;
-    }
-
-    if (this.userId !== null) {
-      const dto: CertificateRequest = {
-        cn: this.intermediateForm.value.cn,
-        o: this.intermediateForm.value.o,
-        ou: this.intermediateForm.value.ou,
-        c: this.intermediateForm.value.c,
-        issuerId: this.issuerId,
-        durationInDays: this.intermediateForm.value.durationInDays,
-        isRoot: false,
-        isIntermediate: true,
-        isEndEntity: false,
-        isCA: this.intermediateForm.value.isCA,
-        extensions: this.intermediateForm.value.extensions || {}
-      };
-
-      this.certificateService.issueCertificate(dto).subscribe({
-        next: res => {
-          console.log('Intermediate certificate issued' + res);
-          this.snackBar.open('Intermediate certificate created', 'Close', {
-            duration: 4000,
-            horizontalPosition: 'center'
-          });
-          this.intermediateForm.reset({ durationInDays: 1, isCA: true });
-        },
-        error: err => {
-          console.error('Error during making certificate', err);
-          this.snackBar.open('Error during certificate issue', 'Close', {
-            duration: 4000,
-            horizontalPosition: 'center'
-          });
-        }
-      });
-    }
+  if (this.intermediateForm.invalid) {
+    this.intermediateForm.markAllAsTouched();
+    this.snackBar.open('Please fix all errors before submitting', 'Close', {
+      duration: 3000,
+      horizontalPosition: 'center'
+    });
+    return;
   }
+
+  if (this.userId !== null) {
+    const formExtensions = this.intermediateForm.value.extensions || {};
+    const formattedExtensions: { [key: string]: string } = {};
+
+    Object.keys(formExtensions).forEach(key => {
+      const value = formExtensions[key];
+      if (Array.isArray(value)) {
+        formattedExtensions[key] = value.join(','); // npr. "digitalSignature,keyEncipherment"
+      } else {
+        formattedExtensions[key] = value;
+      }
+    });
+
+    const dto: CertificateRequest = {
+      cn: this.intermediateForm.value.cn,
+      o: this.intermediateForm.value.o,
+      ou: this.intermediateForm.value.ou,
+      c: this.intermediateForm.value.c,
+      issuerId: this.issuerId,
+      durationInDays: this.intermediateForm.value.durationInDays,
+      isRoot: false,
+      isIntermediate: true,
+      isEndEntity: false,
+      isCA: this.intermediateForm.value.isCA,
+      extensions: formattedExtensions
+    };
+
+    this.certificateService.issueCertificate(dto).subscribe({
+      next: res => {
+        console.log('Intermediate certificate issued', res);
+        this.snackBar.open('Intermediate certificate created', 'Close', {
+          duration: 4000,
+          horizontalPosition: 'center'
+        });
+        this.intermediateForm.reset({ durationInDays: 1, isCA: true });
+      },
+      error: err => {
+        console.error('Error during making certificate', err);
+        this.snackBar.open('Error during certificate issue', 'Close', {
+          duration: 4000,
+          horizontalPosition: 'center'
+        });
+      }
+    });
+  }
+}
 
   getErrorMessage(fieldName: string): string {
     const control = this.intermediateForm.get(fieldName);

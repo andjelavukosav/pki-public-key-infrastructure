@@ -93,7 +93,7 @@ export class CreateRootCertificateComponent implements OnInit {
         isRoot: true,
         isIntermediate: false,
         isEndEntity: false,
-        isCA: this.rootForm.value.isCA,
+        isCA: true,
         extensions: this.rootForm.value.extensions || {}
       };
 

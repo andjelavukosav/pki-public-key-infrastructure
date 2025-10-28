@@ -2,9 +2,8 @@ package com.pki.example.controller;
 
 import com.pki.example.DTO.ResetPasswordRequest;
 import com.pki.example.DTO.UserRegistrationDTO;
-import com.pki.example.auth.AuthenticationRequest;
-import com.pki.example.auth.AuthenticationResponse;
-import com.pki.example.auth.AuthenticationService;
+import com.pki.example.auth.*;
+import com.pki.example.model.entity.User;
 import com.pki.example.service.EmailService;
 import com.pki.example.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.security.Principal;
+import java.util.List;
 import java.util.Map;
 
 
@@ -24,6 +26,7 @@ public class AuthController {
     private final UserService userService;
     private final AuthenticationService authenticationService;
     private final EmailService emailService;
+    private final SessionRegistry sessionRegistry;
 
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody @Valid UserRegistrationDTO dto) {
@@ -36,8 +39,10 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<AuthenticationResponse> login(@RequestBody AuthenticationRequest request){
-        AuthenticationResponse response = authenticationService.authenticate(request);
+    public ResponseEntity<AuthenticationResponse> login(
+            @RequestBody AuthenticationRequest request,
+            HttpServletRequest httpRequest) {
+        AuthenticationResponse response = authenticationService.authenticate(request, httpRequest);
         return ResponseEntity.ok(response);
     }
 
@@ -67,6 +72,5 @@ public class AuthController {
         userService.resetPassword(request.getRawToken(), request.getNewPassword());
         return ResponseEntity.ok(Map.of("message", "Password is successfully reset."));
     }
-
 
 }

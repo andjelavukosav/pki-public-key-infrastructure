@@ -10,5 +10,6 @@ public interface CertificateService {
     CertificateResponseDTO getCertificateById(int id);
     List<CertificateResponseDTO> getAllCertificates();
     List<CertificateResponseDTO> getAllCACertificates();
+    List<CertificateResponseDTO> getAllCACertificatesByOrg(String organization);
 
 }

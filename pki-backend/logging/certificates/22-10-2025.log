@@ -1,239 +1,29 @@
 {
-  "timestamp" : "2025-10-22T18:01:58.825Z",
+  "timestamp" : "2025-10-22T16:30:43.147Z",
   "eventType" : "CERTIFICATE_ACCESSED",
   "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761156118826-220",
-  "user" : "biljakatanic7@gmail.com",
+  "eventId" : "1761150643147-456",
+  "user" : "andjelavukosav3@gmail.com",
   "role" : "ROLE_ADMIN",
   "result" : "SUCCESS",
   "message" : "Retrieved certificate details",
   "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "1",
-  "certificateCN" : "Sertifikat1",
-  "issuerAlias" : "CN=Sertifikat1, O=FTN, OU=IT, C=RS"
+  "certificateId" : "7",
+  "certificateCN" : "inter",
+  "issuerAlias" : "CN=inter, O=inter, OU=inter, C=RS"
 }
 
 {
-  "timestamp" : "2025-10-22T18:02:25.493Z",
-  "eventType" : "CERTIFICATE_ISSUE_FAILED",
+  "timestamp" : "2025-10-22T16:31:09.176Z",
+  "eventType" : "CERTIFICATE_ISSUED",
   "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761156145493-639",
-  "user" : "biljakatanic7@gmail.com",
-  "role" : "ROLE_ADMIN",
-  "result" : "FAILURE",
-  "message" : "Failed to issue certificate: Issuer is not a CA; cannot issue new certificates.",
-  "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "CAAAAA",
-  "issuerAlias" : "Issuer ID: 1"
-}
-
-{
-  "timestamp" : "2025-10-22T18:02:36.428Z",
-  "eventType" : "CERTIFICATE_ISSUE_FAILED",
-  "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761156156428-163",
-  "user" : "biljakatanic7@gmail.com",
-  "role" : "ROLE_ADMIN",
-  "result" : "FAILURE",
-  "message" : "Failed to issue certificate: Issuer is not a CA; cannot issue new certificates.",
-  "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "CAAAAA",
-  "issuerAlias" : "Issuer ID: 1"
-}
-
-{
-  "timestamp" : "2025-10-22T18:03:02.474Z",
-  "eventType" : "CERTIFICATE_ISSUE_FAILED",
-  "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761156182474-676",
-  "user" : "biljakatanic7@gmail.com",
-  "role" : "ROLE_ADMIN",
-  "result" : "FAILURE",
-  "message" : "Failed to issue certificate: Issuer is not a CA; cannot issue new certificates.",
-  "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "CA",
-  "issuerAlias" : "Issuer ID: 1"
-}
-
-{
-  "timestamp" : "2025-10-22T18:08:45.509Z",
-  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
-  "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761156525509-576",
-  "user" : "biljakatanic7@gmail.com",
+  "eventId" : "1761150669176-239",
+  "user" : "andjelavukosav3@gmail.com",
   "role" : "ROLE_ADMIN",
   "result" : "SUCCESS",
-  "message" : "Retrieved all CA certificates",
+  "message" : "Certificate issued successfully",
   "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "N/A",
-  "issuerAlias" : "N/A"
-}
-
-{
-  "timestamp" : "2025-10-22T18:09:18.538Z",
-  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
-  "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761156558539-825",
-  "user" : "biljakatanic7@gmail.com",
-  "role" : "ROLE_ADMIN",
-  "result" : "SUCCESS",
-  "message" : "Retrieved all CA certificates",
-  "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "N/A",
-  "issuerAlias" : "N/A"
-}
-
-{
-  "timestamp" : "2025-10-22T18:12:20.044Z",
-  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
-  "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761156740044-565",
-  "user" : "biljakatanic7@gmail.com",
-  "role" : "ROLE_ADMIN",
-  "result" : "SUCCESS",
-  "message" : "Retrieved all CA certificates",
-  "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "N/A",
-  "issuerAlias" : "N/A"
-}
-
-{
-  "timestamp" : "2025-10-22T18:19:51.104Z",
-  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
-  "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761157191104-187",
-  "user" : "biljakatanic7@gmail.com",
-  "role" : "ROLE_ADMIN",
-  "result" : "SUCCESS",
-  "message" : "Retrieved all CA certificates",
-  "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "N/A",
-  "issuerAlias" : "N/A"
-}
-
-{
-  "timestamp" : "2025-10-22T21:12:56.507Z",
-  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
-  "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761167576508-349",
-  "user" : "biljakatanic7@gmail.com",
-  "role" : "ROLE_ADMIN",
-  "result" : "SUCCESS",
-  "message" : "Retrieved all CA certificates",
-  "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "N/A",
-  "issuerAlias" : "N/A"
-}
-
-{
-  "timestamp" : "2025-10-22T21:13:36.698Z",
-  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
-  "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761167616698-38",
-  "user" : "biljakatanic7@gmail.com",
-  "role" : "ROLE_ADMIN",
-  "result" : "SUCCESS",
-  "message" : "Retrieved all CA certificates",
-  "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "N/A",
-  "issuerAlias" : "N/A"
-}
-
-{
-  "timestamp" : "2025-10-22T21:14:26.225Z",
-  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
-  "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761167666225-309",
-  "user" : "biljakatanic7@gmail.com",
-  "role" : "ROLE_ADMIN",
-  "result" : "SUCCESS",
-  "message" : "Retrieved all CA certificates",
-  "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "N/A",
-  "issuerAlias" : "N/A"
-}
-
-{
-  "timestamp" : "2025-10-22T21:19:50.487Z",
-  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
-  "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761167990488-921",
-  "user" : "biljakatanic7@gmail.com",
-  "role" : "ROLE_ADMIN",
-  "result" : "SUCCESS",
-  "message" : "Retrieved all CA certificates",
-  "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "N/A",
-  "issuerAlias" : "N/A"
-}
-
-{
-  "timestamp" : "2025-10-22T21:20:58.257Z",
-  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
-  "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761168058258-834",
-  "user" : "biljakatanic7@gmail.com",
-  "role" : "ROLE_ADMIN",
-  "result" : "SUCCESS",
-  "message" : "Retrieved all CA certificates",
-  "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "N/A",
-  "issuerAlias" : "N/A"
-}
-
-{
-  "timestamp" : "2025-10-22T21:21:27.174Z",
-  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
-  "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761168087174-328",
-  "user" : "biljakatanic7@gmail.com",
-  "role" : "ROLE_ADMIN",
-  "result" : "SUCCESS",
-  "message" : "Retrieved all CA certificates",
-  "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "N/A",
-  "issuerAlias" : "N/A"
-}
-
-{
-  "timestamp" : "2025-10-22T21:21:40.812Z",
-  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
-  "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761168100812-379",
-  "user" : "biljakatanic7@gmail.com",
-  "role" : "ROLE_ADMIN",
-  "result" : "SUCCESS",
-  "message" : "Retrieved all CA certificates",
-  "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "N/A",
-  "issuerAlias" : "N/A"
-}
-
-{
-  "timestamp" : "2025-10-22T21:21:47.742Z",
-  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
-  "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761168107742-60",
-  "user" : "biljakatanic7@gmail.com",
-  "role" : "ROLE_ADMIN",
-  "result" : "SUCCESS",
-  "message" : "Retrieved all CA certificates",
-  "ipAddress" : "0:0:0:0:0:0:0:1",
-  "certificateId" : "N/A",
-  "certificateCN" : "N/A",
-  "issuerAlias" : "N/A"
+  "certificateId" : "11",
+  "certificateCN" : "organi",
+  "issuerAlias" : "Issuer ID: 7"
 }

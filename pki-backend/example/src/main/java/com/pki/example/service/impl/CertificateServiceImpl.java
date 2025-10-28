@@ -82,6 +82,7 @@ public class CertificateServiceImpl implements CertificateService {
             PrivateKey issuerPrivateKey = subjectKeyPair.getPrivate();
             String issuerDn = subjectDn;
 
+            request.isCA = true;
 
             // 7) Generiši X.509
             X509Certificate x509;
@@ -130,7 +131,8 @@ public class CertificateServiceImpl implements CertificateService {
                     new X509Certificate[]{x509},
                     subjectKeyPair.getPrivate(),
                     alias,
-                    userId.intValue()
+                    userId.intValue(),
+                    request.isEndEntity // ⚠️ ovde dodaj
             );
 
 // 2. Certificate entitet čuva samo referencu
@@ -173,18 +175,21 @@ public class CertificateServiceImpl implements CertificateService {
         }
 
         if (request.isIntermediate) {
-            if (!issuer.isRoot()) {
-                throw new RuntimeException("Intermediate certificate must be issued only by root cert");
+            if (!issuer.isCA()) {
+                throw new RuntimeException("Issuer must be a CA to issue an intermediate certificate.");
             }
-
-            if (!request.isCA) {
-                throw new RuntimeException("Intermediate certificate must have isCA=true to issue other certificates.");
-            }
-
             if (request.isRoot) {
                 throw new RuntimeException("Certificate cannot be both root and intermediate.");
             }
         }
+
+        // Automatska logika za tip sertifikata
+        if (Boolean.FALSE.equals(request.isCA)) {
+            request.isEndEntity = true;
+            request.isRoot = false;
+            request.isIntermediate = false;
+        }
+
 
         if (request.isEndEntity) {
             if (!issuer.isIntermediate()) {
@@ -294,7 +299,8 @@ public class CertificateServiceImpl implements CertificateService {
                 chainList.toArray(new X509Certificate[0]),
                 subjectKeyPair.getPrivate(),
                 alias,
-                userId.intValue()
+                userId.intValue(),
+                request.isEndEntity // ⚠️ ovde dodaj
         );
 
 // 2. Certificate entitet čuva samo referencu
@@ -434,4 +440,25 @@ public class CertificateServiceImpl implements CertificateService {
         )).collect(Collectors.toList());
     }
 
+    @Transactional(readOnly = true)
+    public List<CertificateResponseDTO> getAllCACertificatesByOrg(String organization) {
+        return certificateRepository.findAllByOrganizationList(organization).stream().map(c->new CertificateResponseDTO(
+                c.getId(),
+                c.getAlias(),
+                c.getSerialNumber(),
+                c.getCn(),
+                c.getO(),
+                c.getOu(),
+                c.getC(),
+                c.getIssuer(),
+                c.getStartDate(),
+                c.getEndDate(),
+                c.getIssuerId(),
+                c.isRoot(),
+                c.isIntermediate(),
+                c.isEndEntity(),
+                c.isCA(),
+                c.isRevoked()
+        )).collect(Collectors.toList());
+    }
 }

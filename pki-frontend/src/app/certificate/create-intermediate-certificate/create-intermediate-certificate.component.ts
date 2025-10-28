@@ -73,7 +73,7 @@ export class CreateIntermediateCertificateComponent implements OnInit{
       isRoot: [false],
       isIntermediate: [true],
       isEndEntity: [false],
-      isCA: [true],
+      isCA: [],
       extensions: this.fb.control({})
     });
 
@@ -102,7 +102,7 @@ export class CreateIntermediateCertificateComponent implements OnInit{
         isRoot: false,
         isIntermediate: true,
         isEndEntity: false,
-        isCA: true,
+        isCA: this.intermediateForm.value.isCA,
         extensions: this.intermediateForm.value.extensions || {}
       };
 

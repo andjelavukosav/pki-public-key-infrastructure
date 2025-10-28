@@ -1,0 +1,58 @@
+<form [formGroup]="templateForm" (ngSubmit)="onSubmit()">
+  <div class="form-container" @slideIn>
+    <h2>Create Certificate Template</h2>
+    
+    <mat-form-field>
+      <mat-label>Template Name</mat-label>
+      <input matInput formControlName="name" placeholder="Web Server Template" />
+      <mat-error *ngIf="templateForm.get('name')?.hasError('required')">
+        Name is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Common Name (CN) Pattern</mat-label>
+      <input matInput formControlName="commonNameRegex" placeholder="*.example.com" />
+      <mat-hint>Pattern za validaciju CN novog sertifikata</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Subject Alternative Names (SANs) Pattern</mat-label>
+      <input matInput formControlName="subjectAltNameRegex" placeholder="*.example.com, example.com" />
+      <mat-hint>Pattern za validaciju SAN ekstenzije</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>TTL - Validity (days)</mat-label>
+      <input matInput type="number" formControlName="ttlDays" min="1" placeholder="365" />
+      <mat-hint>Maksimalno trajanje sertifikata u danima</mat-hint>
+      <mat-error *ngIf="templateForm.get('ttlDays')?.invalid">
+        Must be a positive number.
+      </mat-error>
+    </mat-form-field>
+
+    <div class="checkbox-group">
+      <label>Key Usage:</label>
+      <span class="checkbox-description">Podrazumevana vrednost Key Usage ekstenzije</span>
+      <mat-checkbox *ngFor="let usage of keyUsageOptions"
+                    [value]="usage"
+                    (change)="onCheckboxChange($event, 'keyUsage')">
+        {{ usage }}
+      </mat-checkbox>
+    </div>
+
+    <div class="checkbox-group">
+      <label>Extended Key Usage:</label>
+      <span class="checkbox-description">Podrazumevana vrednost Extended Key Usage ekstenzije</span>
+      <mat-checkbox *ngFor="let eku of extKeyUsageOptions"
+                    [value]="eku"
+                    (change)="onCheckboxChange($event, 'extendedKeyUsage')">
+        {{ eku }}
+      </mat-checkbox>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" class="btnRegister">
+      Create Template
+    </button>
+  </div>
+</form>

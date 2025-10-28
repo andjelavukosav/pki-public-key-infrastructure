@@ -26,12 +26,16 @@ import { AuthInterceptor } from './auth/interceptor';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-
+import {MatDividerModule} from '@angular/material/divider'
 import { CertificateListComponent } from './certificate/certificate-list/certificate-list.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { PendingCsrListComponent } from './componets/pending-csr-list/pending-csr-list.component'
+import { CreateTemplateComponent } from './certificate/create-template/create-template.component'
+import{MatCheckboxModule} from '@angular/material/checkbox';
+import { CaCertificateListComponent } from './certificate/ca-certificate-list/ca-certificate-list.component'
+import { ActiveSessionsComponent } from './active-sessions/active-sessions.component'
 
 
 @NgModule({
@@ -51,6 +55,9 @@ import { PendingCsrListComponent } from './componets/pending-csr-list/pending-cs
     CreateIntermediateCertificateComponent,
     CertificateListComponent,
     PendingCsrListComponent,
+    CreateTemplateComponent,
+    CaCertificateListComponent,
+    ActiveSessionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,6 +76,8 @@ import { PendingCsrListComponent } from './componets/pending-csr-list/pending-cs
     MatCardModule,
     MatProgressSpinnerModule,
     MatSlideToggleModule,
+    MatDividerModule, 
+    MatCheckboxModule
 
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],

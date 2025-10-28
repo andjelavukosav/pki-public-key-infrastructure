@@ -40,4 +40,9 @@ export class NavBarComponent implements OnInit {
   isLoggedAdmin(): boolean{
     return this.user?.role==='ADMIN';
   }
+
+  isLoggedCA(): boolean{
+    return this.user?.role==='CA_USER';
+  }
+
 }

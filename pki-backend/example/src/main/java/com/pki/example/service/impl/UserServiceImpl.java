@@ -25,6 +25,7 @@ import java.util.Base64;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.Lob;
 import java.security.SecureRandom;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -195,6 +196,10 @@ public class UserServiceImpl implements UserService {
         mailSender.send(msg);
     }
 
+    public User findById(Long id)
+    {
+        return userRepo.findUserById(id);
+    }
 
 
     public User findById(Integer id)

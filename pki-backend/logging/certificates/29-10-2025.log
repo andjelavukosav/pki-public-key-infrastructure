@@ -1,0 +1,14 @@
+{
+  "timestamp" : "2025-10-28T23:29:48.844Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761694188844-604",
+  "user" : "biljakatanic7@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}

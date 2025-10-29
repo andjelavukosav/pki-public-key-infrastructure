@@ -39,7 +39,7 @@ export class CsrRequestComponent implements OnInit {
         Validators.max(this.maxDuration)
       ]]
     });
-/*
+
     // Učitaj CA listu
     this.certificateService.getCACertificates().subscribe({
       next: (data) => {
@@ -53,7 +53,7 @@ export class CsrRequestComponent implements OnInit {
         });
       }
     });
- */
+ 
     // Ažuriraj max duration kada se CA selektuje
     this.csrForm.get('selectedCaId')?.valueChanges.subscribe(caId => {
       if (caId) {
@@ -144,7 +144,7 @@ export class CsrRequestComponent implements OnInit {
     formData.append('privateKeyFile', this.csrForm.get('privateKeyFile')?.value);
     formData.append('selectedCaId', this.csrForm.get('selectedCaId')?.value);
     formData.append('requestedDurationDays', this.csrForm.get('requestedDurationDays')?.value);
-/*
+
     this.csrService.uploadCSR(formData).subscribe({
       next: (res) => {
         this.uploadStatus = res.status;
@@ -162,7 +162,7 @@ export class CsrRequestComponent implements OnInit {
           horizontalPosition: 'center'
         });
       } 
-    }); */
+    }); 
   }   
 
   getErrorMessage(fieldName: string): string {

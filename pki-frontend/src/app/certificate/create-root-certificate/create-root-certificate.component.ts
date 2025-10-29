@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CertificateRequest } from '../model/certificateRequest';
+import { CertificateRequest } from '../model/certificate-request';
 import { CertificateService } from '../service/certificate.service';
 import { UserService } from 'src/app/service/user.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';

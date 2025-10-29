@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public class CertificateSigningRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     // Metadata
     private String filename;        // originalnog .pem fajla
@@ -24,7 +24,8 @@ public class CertificateSigningRequest {
     private Integer keySize;
 
     // Request parametri
-    private Long selectedCaId;      // koji CA je odabran
+    @Column(name = "selected_ca_id")
+    private Integer selectedCaId;   // koji CA je odabran
     private Integer requestedDurationDays;
 
 
@@ -38,17 +39,17 @@ public class CertificateSigningRequest {
     private String rejectionReason;
 
     // Rezultat
-    private Long issuedCertificateId; // ID izdatog sertifikata
+    private Integer issuedCertificateId; // ID izdatog sertifikata
     private LocalDateTime processedAt;
     private Integer processedByUserId; // ko je odobrio/odbio
 
     public CertificateSigningRequest(){}
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -108,11 +109,11 @@ public class CertificateSigningRequest {
         this.keySize = keySize;
     }
 
-    public Long getSelectedCaId() {
+    public Integer getSelectedCaId() {
         return selectedCaId;
     }
 
-    public void setSelectedCaId(Long selectedCaId) {
+    public void setSelectedCaId(Integer selectedCaId) {
         this.selectedCaId = selectedCaId;
     }
 
@@ -140,11 +141,11 @@ public class CertificateSigningRequest {
         this.rejectionReason = rejectionReason;
     }
 
-    public Long getIssuedCertificateId() {
+    public Integer getIssuedCertificateId() {
         return issuedCertificateId;
     }
 
-    public void setIssuedCertificateId(Long issuedCertificateId) {
+    public void setIssuedCertificateId(Integer issuedCertificateId) {
         this.issuedCertificateId = issuedCertificateId;
     }
 

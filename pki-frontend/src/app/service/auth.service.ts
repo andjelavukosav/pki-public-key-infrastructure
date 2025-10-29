@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { UserRegistration } from '../model/user-registration';
 import { LoginRequest } from '../model/user-login-request';
 import { LoginResponse } from '../model/user-login-response';
 import { jwtDecode } from 'jwt-decode';
 import { AuthUser } from '../model/auth-user.model';
 import { UserRole } from '../model/user.model';
+import { DecodedToken } from '../model/decoded-token.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,8 @@ export class AuthService {
 
   private baseUrl = 'http://localhost:8080/api/auth'; 
   private tokenKey = 'access_token';
+    private currentUserSubject = new BehaviorSubject<DecodedToken | null>(this.loadUserFromToken());
+
 
   constructor(private http: HttpClient) { }
 
@@ -90,6 +93,40 @@ export class AuthService {
       headers=headers.set('Authorization',`Bearer ${token}`);
     }
     return headers;
+  }
+
+  getCurrentUser(): DecodedToken|null{
+    return this.currentUserSubject.value;
+  }
+
+  logout(){
+    localStorage.removeItem('jwtToken');
+    this.currentUserSubject.next(null);
+  }
+
+  private loadUserFromToken(): DecodedToken | null {
+    const token = this.getToken();
+    if(token){
+      try{
+        const decoded = jwtDecode<DecodedToken>(token);
+
+        if(this.isTokenExpired(decoded)){
+          this.logout();
+          return null;
+        }
+
+        return decoded;
+        }
+      catch
+          {
+              return null;
+          }
+    }
+    return null;
+  }
+
+  private isTokenExpired(decoded: DecodedToken): boolean{
+    return decoded.exp*1000 < Date.now();
   }
 
 }

@@ -4,11 +4,10 @@ import com.pki.example.validation.ValidationConstants;
 
 import javax.validation.constraints.*;
 
-
 public class CsrDecisionDTO {
     @NotNull(message = "CSR ID is required")
     @Positive(message = "CSR ID must be positive")
-    private Long csrId;
+    private Long csrId;  // PROMENI SA Integer NA Long
 
     private boolean approved;
 
@@ -23,11 +22,11 @@ public class CsrDecisionDTO {
 
     public CsrDecisionDTO() {}
 
-    public Long getCsrId() {
+    public Long getCsrId() {  // PROMENI SA Integer NA Long
         return csrId;
     }
 
-    public void setCsrId(Long csrId) {
+    public void setCsrId(Long csrId) {  // PROMENI SA Integer NA Long
         this.csrId = csrId;
     }
 

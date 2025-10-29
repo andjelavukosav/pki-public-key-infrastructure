@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CertificateService } from '../service/certificate.service';
 import { UserService } from 'src/app/service/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CertificateRequest } from '../model/certificateRequest';
+import { CertificateRequest } from '../model/certificate-request';
 
 @Component({
   selector: 'app-create-intermediate-certificate',

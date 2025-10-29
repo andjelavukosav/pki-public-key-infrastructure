@@ -35,7 +35,8 @@ import { PendingCsrListComponent } from './componets/pending-csr-list/pending-cs
 import { CreateTemplateComponent } from './certificate/create-template/create-template.component'
 import{MatCheckboxModule} from '@angular/material/checkbox';
 import { CaCertificateListComponent } from './certificate/ca-certificate-list/ca-certificate-list.component'
-import { ActiveSessionsComponent } from './active-sessions/active-sessions.component'
+import { ActiveSessionsComponent } from './active-sessions/active-sessions.component';
+import { EeCertificateListComponent } from './certificate/ee-certificate-list/ee-certificate-list.component'
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { ActiveSessionsComponent } from './active-sessions/active-sessions.compo
     CreateTemplateComponent,
     CaCertificateListComponent,
     ActiveSessionsComponent,
+    EeCertificateListComponent,
   ],
   imports: [
     BrowserModule,

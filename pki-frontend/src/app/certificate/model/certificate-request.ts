@@ -10,4 +10,5 @@ export interface CertificateRequest{
     isEndEntity: boolean,
     isCA: boolean,
     extensions: { [key: string]: string };
+    revoked?: boolean;
 }

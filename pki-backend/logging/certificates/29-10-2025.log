@@ -223,3 +223,363 @@
   "certificateCN" : "N/A",
   "issuerAlias" : "N/A"
 }
+
+{
+  "timestamp" : "2025-10-29T00:57:51.058Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761699471058-785",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T01:08:04.034Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761700084034-639",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T01:50:53.002Z",
+  "eventType" : "CERTIFICATE_REVOKE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761702653002-62",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "FAILURE",
+  "message" : "Failed to revoke certificate: class com.fasterxml.jackson.databind.node.NullNode cannot be cast to class com.fasterxml.jackson.databind.node.ObjectNode (com.fasterxml.jackson.databind.node.NullNode and com.fasterxml.jackson.databind.node.ObjectNode are in unnamed module of loader 'app')",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "5",
+  "certificateCN" : "UNKNOWN",
+  "issuerAlias" : "UNKNOWN"
+}
+
+{
+  "timestamp" : "2025-10-29T01:53:59.639Z",
+  "eventType" : "CERTIFICATE_REVOKE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761702839639-308",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "FAILURE",
+  "message" : "Failed to revoke certificate: class com.fasterxml.jackson.databind.node.NullNode cannot be cast to class com.fasterxml.jackson.databind.node.ObjectNode (com.fasterxml.jackson.databind.node.NullNode and com.fasterxml.jackson.databind.node.ObjectNode are in unnamed module of loader 'app')",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "5",
+  "certificateCN" : "UNKNOWN",
+  "issuerAlias" : "UNKNOWN"
+}
+
+{
+  "timestamp" : "2025-10-29T01:56:30.862Z",
+  "eventType" : "CERTIFICATE_REVOKE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761702990862-233",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "FAILURE",
+  "message" : "Failed to revoke certificate: class com.fasterxml.jackson.databind.node.NullNode cannot be cast to class com.fasterxml.jackson.databind.node.ObjectNode (com.fasterxml.jackson.databind.node.NullNode and com.fasterxml.jackson.databind.node.ObjectNode are in unnamed module of loader 'app')",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "5",
+  "certificateCN" : "UNKNOWN",
+  "issuerAlias" : "UNKNOWN"
+}
+
+{
+  "timestamp" : "2025-10-29T02:01:43.563Z",
+  "eventType" : "CERTIFICATE_REVOKE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761703303563-353",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "FAILURE",
+  "message" : "Failed to revoke certificate: class com.fasterxml.jackson.databind.node.NullNode cannot be cast to class com.fasterxml.jackson.databind.node.ObjectNode (com.fasterxml.jackson.databind.node.NullNode and com.fasterxml.jackson.databind.node.ObjectNode are in unnamed module of loader 'app')",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "5",
+  "certificateCN" : "UNKNOWN",
+  "issuerAlias" : "UNKNOWN"
+}
+
+{
+  "timestamp" : "2025-10-29T02:04:03.297Z",
+  "eventType" : "CERTIFICATE_REVOKE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761703443297-948",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "FAILURE",
+  "message" : "Failed to revoke certificate: class com.fasterxml.jackson.databind.node.NullNode cannot be cast to class com.fasterxml.jackson.databind.node.ObjectNode (com.fasterxml.jackson.databind.node.NullNode and com.fasterxml.jackson.databind.node.ObjectNode are in unnamed module of loader 'app')",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "5",
+  "certificateCN" : "UNKNOWN",
+  "issuerAlias" : "UNKNOWN"
+}
+
+{
+  "timestamp" : "2025-10-29T02:06:56.337Z",
+  "eventType" : "CERTIFICATE_REVOKE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761703616337-847",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "FAILURE",
+  "message" : "Failed to revoke certificate: class com.fasterxml.jackson.databind.node.NullNode cannot be cast to class com.fasterxml.jackson.databind.node.ObjectNode (com.fasterxml.jackson.databind.node.NullNode and com.fasterxml.jackson.databind.node.ObjectNode are in unnamed module of loader 'app')",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "5",
+  "certificateCN" : "UNKNOWN",
+  "issuerAlias" : "UNKNOWN"
+}
+
+{
+  "timestamp" : "2025-10-29T02:16:59.779Z",
+  "eventType" : "CERTIFICATE_REVOKE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761704219779-920",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "FAILURE",
+  "message" : "Failed to revoke certificate: class com.fasterxml.jackson.databind.node.NullNode cannot be cast to class com.fasterxml.jackson.databind.node.ObjectNode (com.fasterxml.jackson.databind.node.NullNode and com.fasterxml.jackson.databind.node.ObjectNode are in unnamed module of loader 'app')",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "5",
+  "certificateCN" : "UNKNOWN",
+  "issuerAlias" : "UNKNOWN"
+}
+
+{
+  "timestamp" : "2025-10-29T02:22:09.938Z",
+  "eventType" : "CERTIFICATE_REVOKE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761704529938-983",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "FAILURE",
+  "message" : "Failed to revoke certificate: class com.fasterxml.jackson.databind.node.NullNode cannot be cast to class com.fasterxml.jackson.databind.node.ObjectNode (com.fasterxml.jackson.databind.node.NullNode and com.fasterxml.jackson.databind.node.ObjectNode are in unnamed module of loader 'app')",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "5",
+  "certificateCN" : "UNKNOWN",
+  "issuerAlias" : "UNKNOWN"
+}
+
+{
+  "timestamp" : "2025-10-29T02:23:54.641Z",
+  "eventType" : "CERTIFICATE_REVOKE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761704634641-168",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "FAILURE",
+  "message" : "Failed to revoke certificate: class com.fasterxml.jackson.databind.node.NullNode cannot be cast to class com.fasterxml.jackson.databind.node.ObjectNode (com.fasterxml.jackson.databind.node.NullNode and com.fasterxml.jackson.databind.node.ObjectNode are in unnamed module of loader 'app')",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "5",
+  "certificateCN" : "UNKNOWN",
+  "issuerAlias" : "UNKNOWN"
+}
+
+{
+  "timestamp" : "2025-10-29T02:30:56.063Z",
+  "eventType" : "CERTIFICATE_REVOKE_FAILED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761705056063-179",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "FAILURE",
+  "message" : "Failed to revoke certificate: class com.fasterxml.jackson.databind.node.NullNode cannot be cast to class com.fasterxml.jackson.databind.node.ObjectNode (com.fasterxml.jackson.databind.node.NullNode and com.fasterxml.jackson.databind.node.ObjectNode are in unnamed module of loader 'app')",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "5",
+  "certificateCN" : "UNKNOWN",
+  "issuerAlias" : "UNKNOWN"
+}
+
+{
+  "timestamp" : "2025-10-29T02:34:34.031Z",
+  "eventType" : "CERTIFICATE_REVOKED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761705274031-966",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "SUCCESS",
+  "message" : "Certificate revoked successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "5",
+  "certificateCN" : "test.local",
+  "issuerAlias" : "Issuer ID: 4"
+}
+
+{
+  "timestamp" : "2025-10-29T02:39:17.229Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761705557230-875",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "2",
+  "certificateCN" : "int",
+  "issuerAlias" : "CN=root, O=rooot, OU=rooot, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-29T02:40:57.863Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761705657863-823",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "2",
+  "certificateCN" : "int",
+  "issuerAlias" : "CN=root, O=rooot, OU=rooot, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-29T02:41:56.021Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761705716021-556",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "2",
+  "certificateCN" : "int",
+  "issuerAlias" : "CN=root, O=rooot, OU=rooot, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-29T02:44:24.419Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761705864419-300",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T02:44:45.413Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761705885413-833",
+  "user" : "maja@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T02:46:52.639Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761706012639-284",
+  "user" : "maja@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T02:46:57.461Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761706017461-972",
+  "user" : "maja@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T02:47:24.642Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761706044643-714",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T02:48:37.240Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761706117240-965",
+  "user" : "maja@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T02:49:55.623Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761706195623-478",
+  "user" : "maja@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T02:53:59.080Z",
+  "eventType" : "CERTIFICATE_REVOKED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761706439080-220",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "SUCCESS",
+  "message" : "Certificate revoked successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "6",
+  "certificateCN" : "test.local",
+  "issuerAlias" : "Issuer ID: 4"
+}

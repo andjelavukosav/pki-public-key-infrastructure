@@ -1,10 +1,221 @@
+
 {
-  "timestamp" : "2025-10-28T23:29:48.844Z",
+  "timestamp" : "2025-10-29T00:10:41.203Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761696641203-399",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "1",
+  "certificateCN" : "root",
+  "issuerAlias" : "SELF_SIGNED"
+}
+
+{
+  "timestamp" : "2025-10-29T00:11:06.096Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761696666096-119",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "1",
+  "certificateCN" : "root",
+  "issuerAlias" : "CN=root, O=rooot, OU=rooot, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-29T00:11:26.863Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761696686863-869",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "2",
+  "certificateCN" : "int",
+  "issuerAlias" : "Issuer ID: 1"
+}
+
+{
+  "timestamp" : "2025-10-29T00:11:29.975Z",
   "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
   "category" : "CERTIFICATE_MANAGEMENT",
-  "eventId" : "1761694188844-604",
-  "user" : "biljakatanic7@gmail.com",
+  "eventId" : "1761696689975-212",
+  "user" : "ana@gmail.com",
   "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T00:15:13.583Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761696913583-661",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T00:19:35.750Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761697175750-144",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T00:20:20.207Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761697220207-788",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "3",
+  "certificateCN" : "FTN",
+  "issuerAlias" : "SELF_SIGNED"
+}
+
+{
+  "timestamp" : "2025-10-29T00:20:31.585Z",
+  "eventType" : "CERTIFICATE_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761697231585-109",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Retrieved certificate details",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "3",
+  "certificateCN" : "FTN",
+  "issuerAlias" : "CN=FTN, O=FTN, OU=FTN, C=RS"
+}
+
+{
+  "timestamp" : "2025-10-29T00:20:48.575Z",
+  "eventType" : "CERTIFICATE_ISSUED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761697248575-938",
+  "user" : "ana@gmail.com",
+  "role" : "ROLE_ADMIN",
+  "result" : "SUCCESS",
+  "message" : "Certificate issued successfully",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "4",
+  "certificateCN" : "FTN",
+  "issuerAlias" : "Issuer ID: 3"
+}
+
+{
+  "timestamp" : "2025-10-29T00:22:12.048Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761697332048-680",
+  "user" : "maja@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T00:22:46.572Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761697366572-745",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T00:26:44.921Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761697604921-538",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T00:28:35.373Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761697715373-225",
+  "user" : "maja@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T00:28:37.980Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761697717980-835",
+  "user" : "maja@gmail.com",
+  "role" : "ROLE_CA_USER",
+  "result" : "SUCCESS",
+  "message" : "Retrieved all CA certificates for organization: FTN",
+  "ipAddress" : "0:0:0:0:0:0:0:1",
+  "certificateId" : "N/A",
+  "certificateCN" : "N/A",
+  "issuerAlias" : "N/A"
+}
+
+{
+  "timestamp" : "2025-10-29T00:30:08.891Z",
+  "eventType" : "CA_CERTIFICATE_LIST_ACCESSED",
+  "category" : "CERTIFICATE_MANAGEMENT",
+  "eventId" : "1761697808891-230",
+  "user" : "andjelavukosav3@gmail.com",
+  "role" : "ROLE_USER",
   "result" : "SUCCESS",
   "message" : "Retrieved all CA certificates",
   "ipAddress" : "0:0:0:0:0:0:0:1",

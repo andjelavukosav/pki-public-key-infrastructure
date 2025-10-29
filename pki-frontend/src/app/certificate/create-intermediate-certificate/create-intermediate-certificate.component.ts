@@ -17,6 +17,9 @@ export class CreateIntermediateCertificateComponent implements OnInit{
   issuerId!: number;
   maxDays!: number;
 
+  templates: any[] = [];
+  selectedTemplateId: number | null = null;
+  
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -79,52 +82,135 @@ export class CreateIntermediateCertificateComponent implements OnInit{
 
     const currentUser = this.authService.getAuthenticatedUser();
     this.userId = currentUser ? currentUser.id : null;
+    this.loadTemplates();
   }
+
+  loadTemplates(): void {
+    const issuerId = this.issuerId; // već imaš issuer-a ako se radi o intermediate sertifikatu
+
+    this.certificateService.getTemplatesByIssuer(issuerId).subscribe({
+      next: (data) => {
+        this.templates = data;
+        console.log('Loaded templates:', data);
+      },
+      error: (err) => console.error('Error loading templates', err)
+    });
+  }
+
+  // onTemplateSelected(templateId: number): void {
+  //   const template = this.templates.find(t => t.id === templateId);
+  //   if (!template) return;
+
+  //   // Popuni formu sa vrednostima iz šablona
+  //   this.intermediateForm.patchValue({
+  //     durationInDays: template.ttlDays,
+  //     extensions: {
+  //       keyUsage: template.keyUsage,
+  //       extendedKeyUsage: template.extendedKeyUsage
+  //     }
+  //   });
+
+  //   // Ako želiš regex validaciju:
+  //   if (template.commonNameRegex) {
+  //     this.intermediateForm.get('cn')?.setValidators([
+  //       Validators.required,
+  //       Validators.pattern(template.commonNameRegex)
+  //     ]);
+  //   }
+
+  //   if (template.subjectAltNameRegex) {
+  //     this.intermediateForm.get('subjectAltName')?.setValidators([
+  //       Validators.pattern(template.subjectAltNameRegex)
+  //     ]);
+  //   }
+
+  //   this.intermediateForm.updateValueAndValidity();
+  // }
+
+  onTemplateSelected(templateId: number): void {
+    const template = this.templates.find(t => t.id === templateId);
+    if (!template) return;
+
+    // Patchuj CN polje u formi - uzmi vrednost iz commonNameRegex
+    // Ako regex izgleda kao "*.example.com", možeš ostaviti ceo string ili uzeti primer vrednosti
+    let cnExample = template.commonNameRegex;
+
+    // Opcionalno: ako regex ima wildcard, zameni ga nečim konkretnim za prikaz
+    // npr. "*.example.com" -> "my.example.com"
+    if (cnExample.startsWith('*')) {
+      cnExample = cnExample.replace('*', 'my');
+    }
+
+    this.intermediateForm.patchValue({
+      cn: cnExample,
+      durationInDays: template.ttlDays,
+      extensions: {
+        keyUsage: template.keyUsage,
+        extendedKeyUsage: template.extendedKeyUsage
+      }
+    });
+
+    // Ne dodaj validator pattern odmah ako samo želiš da popuniš CN
+    this.intermediateForm.updateValueAndValidity();
+  }
+
 
   onSubmit() {
-    if (this.intermediateForm.invalid) {
-      this.intermediateForm.markAllAsTouched();
-      this.snackBar.open('Please fix all errors before submitting', 'Close', {
-        duration: 3000,
-        horizontalPosition: 'center'
-      });
-      return;
-    }
-
-    if (this.userId !== null) {
-      const dto: CertificateRequest = {
-        cn: this.intermediateForm.value.cn,
-        o: this.intermediateForm.value.o,
-        ou: this.intermediateForm.value.ou,
-        c: this.intermediateForm.value.c,
-        issuerId: this.issuerId,
-        durationInDays: this.intermediateForm.value.durationInDays,
-        isRoot: false,
-        isIntermediate: true,
-        isEndEntity: false,
-        isCA: this.intermediateForm.value.isCA,
-        extensions: this.intermediateForm.value.extensions || {}
-      };
-
-      this.certificateService.issueCertificate(dto).subscribe({
-        next: res => {
-          console.log('Intermediate certificate issued' + res);
-          this.snackBar.open('Intermediate certificate created', 'Close', {
-            duration: 4000,
-            horizontalPosition: 'center'
-          });
-          this.intermediateForm.reset({ durationInDays: 1, isCA: true });
-        },
-        error: err => {
-          console.error('Error during making certificate', err);
-          this.snackBar.open('Error during certificate issue', 'Close', {
-            duration: 4000,
-            horizontalPosition: 'center'
-          });
-        }
-      });
-    }
+  if (this.intermediateForm.invalid) {
+    this.intermediateForm.markAllAsTouched();
+    this.snackBar.open('Please fix all errors before submitting', 'Close', {
+      duration: 3000,
+      horizontalPosition: 'center'
+    });
+    return;
   }
+
+  if (this.userId !== null) {
+    const formExtensions = this.intermediateForm.value.extensions || {};
+    const formattedExtensions: { [key: string]: string } = {};
+
+    Object.keys(formExtensions).forEach(key => {
+      const value = formExtensions[key];
+      if (Array.isArray(value)) {
+        formattedExtensions[key] = value.join(','); // npr. "digitalSignature,keyEncipherment"
+      } else {
+        formattedExtensions[key] = value;
+      }
+    });
+
+    const dto: CertificateRequest = {
+      cn: this.intermediateForm.value.cn,
+      o: this.intermediateForm.value.o,
+      ou: this.intermediateForm.value.ou,
+      c: this.intermediateForm.value.c,
+      issuerId: this.issuerId,
+      durationInDays: this.intermediateForm.value.durationInDays,
+      isRoot: false,
+      isIntermediate: true,
+      isEndEntity: false,
+      isCA: this.intermediateForm.value.isCA,
+      extensions: formattedExtensions
+    };
+
+    this.certificateService.issueCertificate(dto).subscribe({
+      next: res => {
+        console.log('Intermediate certificate issued', res);
+        this.snackBar.open('Intermediate certificate created', 'Close', {
+          duration: 4000,
+          horizontalPosition: 'center'
+        });
+        this.intermediateForm.reset({ durationInDays: 1, isCA: true });
+      },
+      error: err => {
+        console.error('Error during making certificate', err);
+        this.snackBar.open('Error during certificate issue', 'Close', {
+          duration: 4000,
+          horizontalPosition: 'center'
+        });
+      }
+    });
+  }
+}
 
   getErrorMessage(fieldName: string): string {
     const control = this.intermediateForm.get(fieldName);
@@ -145,6 +231,10 @@ export class CreateIntermediateCertificateComponent implements OnInit{
   hasError(fieldName: string): boolean {
     const control = this.intermediateForm.get(fieldName);
     return !!(control && control.invalid && control.touched);
+  }
+
+  get selectedTemplate() {
+    return this.templates.find(t => t.id === this.selectedTemplateId);
   }
 
 }

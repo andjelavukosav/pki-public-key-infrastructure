@@ -1,5 +1,7 @@
 package com.pki.example.service.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pki.example.DTO.CertificateRequestDTO;
 import com.pki.example.DTO.CertificateResponseDTO;
 import com.pki.example.config.CustomUserDetails;
@@ -124,8 +126,15 @@ public class CertificateServiceImpl implements CertificateService {
             certificate.setEndEntity(request.isEndEntity);
             certificate.setCA(request.isCA);
             certificate.setRevoked(false);
-            certificate.setExtensions(String.valueOf(request.extensions)); // možeš JSON stringify ako želiš
-
+            //certificate.setExtensions(String.valueOf(request.extensions)); // možeš JSON stringify ako želiš
+            ObjectMapper mapper = new ObjectMapper();
+            String extensionsJson = null;
+            try {
+                extensionsJson = mapper.writeValueAsString(request.extensions);
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            }
+            certificate.setExtensions(extensionsJson);
            // 1. Cuvanje u keystore
             KeyStoreMeta meta = keyStoreService.createAndStoreKeyStore(
                     new X509Certificate[]{x509},
@@ -288,7 +297,15 @@ public class CertificateServiceImpl implements CertificateService {
         certificate.setEndEntity(request.isEndEntity);
         certificate.setCA(request.isCA);
         certificate.setRevoked(false);
-        certificate.setExtensions(String.valueOf(request.extensions));
+        //certificate.setExtensions(String.valueOf(request.extensions));
+        ObjectMapper mapper = new ObjectMapper();
+        String extensionsJson = null;
+        try {
+            extensionsJson = mapper.writeValueAsString(request.extensions);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+        certificate.setExtensions(extensionsJson);
         certificate.setIssuerId(issuer.getId()); // DODATO: čuvaj issuer ID!
 
         // Gradi kompletan chain

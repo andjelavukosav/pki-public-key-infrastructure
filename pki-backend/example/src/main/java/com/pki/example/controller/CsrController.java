@@ -108,7 +108,7 @@ public class CsrController {
 
     @GetMapping("/pending")
     @PreAuthorize("hasRole('CA')")
-    public ResponseEntity<List<CertificateSigningRequest>> getPendingCSRs(@RequestParam("userId") Integer userId) {
+    public ResponseEntity<List<CertificateSigningRequest>> getPendingCSRs(@RequestParam("userId") Long userId) {
         // Fetch the user's organization using userId
         User user = userService.findById(userId);
         String organization = user.getOrganization();
@@ -121,7 +121,7 @@ public class CsrController {
     @PreAuthorize("hasRole('CA')")
     public ResponseEntity<?> processCSRDecision(
             @Valid @RequestBody CsrDecisionDTO decision,
-            @RequestParam("userId") Integer userId,  // PROMENIO SA Long NA Integer
+            @RequestParam("userId") Long userId,  // PROMENIO SA Long NA Integer
             HttpServletRequest request) {
 
         String ipAddress = getClientIpAddress(request);

@@ -41,6 +41,7 @@ export class CertificateService {
   }
 
 
+
   private getAuthHeaders(): HttpHeaders {
     const token = this.authService.getToken();
     let headers = new HttpHeaders();
@@ -77,5 +78,11 @@ export class CertificateService {
 
     return this.http.get<any[]>(`${this.apiUrl}/caOrg`, { headers, params });
   }
+
+  getTemplatesByIssuer(issuerId: number) {
+    const headers = this.authService.getAuthHeaders(); // ako koristiš token-autentifikaciju
+    return this.http.get<any[]>(`${this.apiTemplateUrl}/by-issuer/${issuerId}`, { headers });
+  }
+
 
 }

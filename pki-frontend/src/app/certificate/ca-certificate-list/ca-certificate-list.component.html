@@ -24,13 +24,13 @@
      <mat-card-actions>
         <button mat-raised-button class="certButtons" color="primary" 
                 (click)="createIntermediate(cert)"
-                [disabled]="!cert.ca">
+                [disabled]="!cert.ca || cert.revoked">
             Create Intermediate or End-Entity
         </button>
 
         <button mat-raised-button class="certButtons" color="warn" 
                 (click)="createTemplate(cert)"
-                [disabled]="!cert.ca">
+                [disabled]="!cert.ca || cert.revoked">
             Create Template
         </button>
         </mat-card-actions>

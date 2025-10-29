@@ -31,7 +31,7 @@
         class="certButtons"
         color="primary"
         (click)="createIntermediate(cert)"
-        [disabled]="!cert.ca"
+        [disabled]="!cert.ca || cert.revoked"
       >
         Create Intermediate or End-Entity
       </button>

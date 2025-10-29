@@ -16,6 +16,7 @@ export class CreateIntermediateCertificateComponent implements OnInit{
   userId!: number | null;
   issuerId!: number;
   maxDays!: number;
+  currentUserRole: string | null = null;
 
   templates: any[] = [];
   selectedTemplateId: number | null = null;
@@ -82,6 +83,7 @@ export class CreateIntermediateCertificateComponent implements OnInit{
 
     const currentUser = this.authService.getAuthenticatedUser();
     this.userId = currentUser ? currentUser.id : null;
+    this.currentUserRole = currentUser ? currentUser.role : null; // pretpostavimo da postoji role
     this.loadTemplates();
   }
 

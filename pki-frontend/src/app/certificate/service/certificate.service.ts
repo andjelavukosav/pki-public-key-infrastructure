@@ -84,5 +84,22 @@ export class CertificateService {
     return this.http.get<any[]>(`${this.apiTemplateUrl}/by-issuer/${issuerId}`, { headers });
   }
 
+  downloadCertificate(id: number): Observable<Blob> {
+    return this.http.get(`${this.apiUrl}/download-public/${id}`, { responseType: 'blob' });
+  }
+
+  revokeCertificate(certificateId: number, reason: string): Observable<any> {
+    const headers = this.authService.getAuthHeaders();
+    return this.http.put(`${this.apiUrl}/${certificateId}/revoke`, { reason }, { headers });
+  }
+
+
+  getCACertificatesByUser(): Observable<any[]> {
+    const headers = this.authService.getAuthHeaders();
+    const userId = this.authService.getCurrentUser()?.userId
+
+    const params = { userId: userId?.toString() || ''}
+    return this.http.get<any[]>(`${this.apiUrl}/by-user`, { headers, params});
+  }
 
 }

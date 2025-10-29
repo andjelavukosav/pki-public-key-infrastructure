@@ -2,7 +2,7 @@
   <div class="form-container" @slideIn>
 
     <!-- 🔹 Dropdown za izbor šablona -->
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" *ngIf="currentUserRole === 'CA_USER'">
       <mat-label>Select Template (optional)</mat-label>
       <mat-select [(value)]="selectedTemplateId" (selectionChange)="onTemplateSelected($event.value)">
         <mat-option *ngFor="let t of templates" [value]="t.id">
@@ -13,13 +13,12 @@
     </mat-form-field>
 
     <!-- 🔹 Ovdje dodaj ovaj deo -->
-    <div *ngIf="selectedTemplate" class="template-details">
+    <div *ngIf="selectedTemplate && currentUserRole === 'CA_USER'" class="template-details">
       <h4>Template Details:</h4>
       <p><strong>TTL:</strong> {{ selectedTemplate.ttlDays }} days</p>
       <p><strong>Key Usage:</strong> {{ selectedTemplate.keyUsage.join(', ') }}</p>
       <p><strong>Extended Key Usage:</strong> {{ selectedTemplate.extendedKeyUsage.join(', ') }}</p>
     </div>
-
 
 
     <mat-label>Subject</mat-label>

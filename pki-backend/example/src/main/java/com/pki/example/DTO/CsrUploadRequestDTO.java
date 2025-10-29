@@ -22,7 +22,7 @@ public class CsrUploadRequestDTO {
 
     @NotNull(message = "CA selection is required")
     @Positive(message = "Selected CA ID must be positive")
-    private Long selectedCaId;
+    private Integer selectedCaId;  // PROMENIO SA Long NA Integer
 
     @NotNull(message = "Duration is required")
     @Min(value = ValidationConstants.MIN_DURATION_DAYS,
@@ -33,7 +33,7 @@ public class CsrUploadRequestDTO {
 
     public CsrUploadRequestDTO() {}
 
-    public CsrUploadRequestDTO(MultipartFile csrFile, Long selectedCaId, Integer requestedDurationDays) {
+    public CsrUploadRequestDTO(MultipartFile csrFile, Integer selectedCaId, Integer requestedDurationDays) {
         this.csrFile = csrFile;
         this.selectedCaId = selectedCaId;
         this.requestedDurationDays = requestedDurationDays;
@@ -47,19 +47,18 @@ public class CsrUploadRequestDTO {
         this.csrFile = csrFile;
     }
 
-    public Long getSelectedCaId() {
+
+    public Integer getSelectedCaId() {
         return selectedCaId;
     }
 
-    public void setSelectedCaId(Long selectedCaId) {
+    public void setSelectedCaId(Integer selectedCaId) {
         this.selectedCaId = selectedCaId;
-    }
-
-    public Integer getRequestedDurationDays() {
-        return requestedDurationDays;
     }
 
     public void setRequestedDurationDays(Integer requestedDurationDays) {
         this.requestedDurationDays = requestedDurationDays;
     }
+
+    public Integer getRequestedDurationDays() { return requestedDurationDays; }
 }

@@ -436,6 +436,28 @@ public class CertificateServiceImpl implements CertificateService {
     }
 
     @Transactional(readOnly = true)
+    public List<CertificateResponseDTO> getAllCACertificates() {
+        return certificateRepository.findByIsCATrue().stream().map(c->new CertificateResponseDTO(
+                c.getId(),
+                c.getAlias(),
+                c.getSerialNumber(),
+                c.getCn(),
+                c.getO(),
+                c.getOu(),
+                c.getC(),
+                c.getIssuer(),
+                c.getStartDate(),
+                c.getEndDate(),
+                c.getIssuerId(),
+                c.isRoot(),
+                c.isIntermediate(),
+                c.isEndEntity(),
+                c.isCA(),
+                c.isRevoked()
+        )).collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
     public List<CertificateResponseDTO> getAllCACertificatesByOrg(String organization) {
         return certificateRepository.findAllByOrganizationList(organization).stream().map(c->new CertificateResponseDTO(
                 c.getId(),

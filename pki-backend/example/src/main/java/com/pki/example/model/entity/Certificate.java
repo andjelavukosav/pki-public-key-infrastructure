@@ -8,7 +8,7 @@ public class Certificate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String alias;
     private String serialNumber;
     private String cn;
@@ -39,7 +39,7 @@ public class Certificate {
     public Certificate() {
     }
 
-    public Certificate(int id, String alias, String serialNumber,String cn,String o,String ou, String c, String issuer,Integer issuerId,boolean isRoot,boolean isIntermediate,boolean isEndEntity,boolean isCA, LocalDate startDate, LocalDate endDate, boolean revoked, String extensions, Integer keyStoreMetaId) {
+    public Certificate(Integer id, String alias, String serialNumber,String cn,String o,String ou, String c, String issuer,Integer issuerId,boolean isRoot,boolean isIntermediate,boolean isEndEntity,boolean isCA, LocalDate startDate, LocalDate endDate, boolean revoked, String extensions, Integer keyStoreMetaId) {
         this.id = id;
         this.alias = alias;
         this.serialNumber = serialNumber;
@@ -80,11 +80,11 @@ public class Certificate {
         this.keyStoreMetaId = keyStoreMetaId;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

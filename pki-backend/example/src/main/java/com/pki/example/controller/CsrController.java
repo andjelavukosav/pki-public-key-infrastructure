@@ -48,10 +48,14 @@ public class CsrController {
             @NotNull(message = "CSR file is required")
             MultipartFile csrFile,
 
+            @RequestParam("privateKeyFile")
+            @NotNull(message = "Private key file is required")
+            MultipartFile privateKeyFile,
+
             @RequestParam("selectedCaId")
             @NotNull(message = "CA selection is required")
             @Positive(message = "Selected CA ID must be positive")
-            Long selectedCaId,
+            Integer selectedCaId,  // PROMENIO SA Long NA Integer
 
             @RequestParam("requestedDurationDays")
             @NotNull(message = "Duration is required")
@@ -73,17 +77,24 @@ public class CsrController {
                     .body("CSR file must have .csr or .pem extension");
         }
 
-        // Manual validation for file size
         if (csrFile.getSize() > ValidationConstants.MAX_FILE_SIZE) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body(ValidationConstants.FILE_SIZE_EXCEEDED_MSG);
         }
 
-        // Create request DTO
         CsrUploadRequestDTO request = new CsrUploadRequestDTO();
         request.setCsrFile(csrFile);
         request.setSelectedCaId(selectedCaId);
         request.setRequestedDurationDays(duration);
+
+        System.out.println("=== CSR Upload Request ===");
+        System.out.println("Selected CA ID: " + selectedCaId);
+        System.out.println("Requested Duration (days): " + duration);
+        System.out.println("CSR file name: " + csrFile.getOriginalFilename());
+        System.out.println("CSR file size: " + csrFile.getSize());
+        System.out.println("Private key file name: " + privateKeyFile.getOriginalFilename());
+        System.out.println("Private key file size: " + privateKeyFile.getSize());
+        System.out.println("==========================");
 
         CsrUploadResponseDTO response = csrService.uploadCSR(request);
         return ResponseEntity.ok(response);
@@ -110,24 +121,21 @@ public class CsrController {
     @PreAuthorize("hasRole('CA')")
     public ResponseEntity<?> processCSRDecision(
             @Valid @RequestBody CsrDecisionDTO decision,
-            @RequestParam("userId") Integer userId, // dolazi sa frontenda
+            @RequestParam("userId") Integer userId,  // PROMENIO SA Long NA Integer
             HttpServletRequest request) {
 
         String ipAddress = getClientIpAddress(request);
         String role = getCurrentUserRole();
 
         try {
-            // Fetch username ili User objekat preko userId
             User caUser = userService.findById(userId);
             if (caUser == null) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                         .body("CA user not found for provided userId");
             }
 
-            // Prosledi username ili ID u servis
             csrService.processCSRDecision(decision, caUser.getEmail());
 
-            // Možeš vratiti neki DTO sa statusom
             return ResponseEntity.ok(
                     Map.of(
                             "status", "SUCCESS",
@@ -147,7 +155,6 @@ public class CsrController {
                     );
         }
     }
-
 
 
     private String getClientIpAddress(HttpServletRequest request) {
@@ -174,4 +181,3 @@ public class CsrController {
         return "UNKNOWN";
     }
 }
-

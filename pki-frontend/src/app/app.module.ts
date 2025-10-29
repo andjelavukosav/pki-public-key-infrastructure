@@ -31,6 +31,7 @@ import { CertificateListComponent } from './certificate/certificate-list/certifi
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { PendingCsrListComponent } from './componets/pending-csr-list/pending-csr-list.component'
 import { CreateTemplateComponent } from './certificate/create-template/create-template.component'
 import{MatCheckboxModule} from '@angular/material/checkbox';
 import { CaCertificateListComponent } from './certificate/ca-certificate-list/ca-certificate-list.component'
@@ -53,6 +54,7 @@ import { ActiveSessionsComponent } from './active-sessions/active-sessions.compo
     CreateRootCertificateComponent,
     CreateIntermediateCertificateComponent,
     CertificateListComponent,
+    PendingCsrListComponent,
     CreateTemplateComponent,
     CaCertificateListComponent,
     ActiveSessionsComponent,

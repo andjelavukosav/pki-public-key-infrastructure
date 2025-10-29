@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CertificateResponse } from '../model/certificateResponse';
+import { CertificateResponse } from '../model/certificate-response';
 import { CertificateService } from '../service/certificate.service';
 import { Router } from '@angular/router';
 

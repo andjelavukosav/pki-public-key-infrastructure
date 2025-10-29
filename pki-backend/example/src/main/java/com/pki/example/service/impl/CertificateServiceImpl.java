@@ -2,12 +2,14 @@ package com.pki.example.service.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.pki.example.DTO.CertificateRequestDTO;
 import com.pki.example.DTO.CertificateResponseDTO;
 import com.pki.example.config.CustomUserDetails;
 import com.pki.example.model.entity.Certificate;
 import com.pki.example.model.entity.KeyStoreMeta;
 import com.pki.example.repository.CertificateRepository;
+import com.pki.example.service.CRLService;
 import com.pki.example.service.CertificateGenerator;
 import com.pki.example.service.CertificateService;
 import com.pki.example.service.KeyStoreService;
@@ -32,11 +34,13 @@ import java.util.stream.Collectors;
 public class CertificateServiceImpl implements CertificateService {
     private final CertificateRepository certificateRepository;
     private final KeyStoreService keyStoreService;
+    private final CRLService crlService;
 
     @Autowired
-    public CertificateServiceImpl(CertificateRepository certificateRepository, KeyStoreService keyStoreService) {
+    public CertificateServiceImpl(CertificateRepository certificateRepository, KeyStoreService keyStoreService, CRLService crlService) {
         this.certificateRepository = certificateRepository;
         this.keyStoreService = keyStoreService;
+        this.crlService = crlService;
     }
     public CertificateResponseDTO issueCertificate(CertificateRequestDTO request) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -477,5 +481,36 @@ public class CertificateServiceImpl implements CertificateService {
                 c.isCA(),
                 c.isRevoked()
         )).collect(Collectors.toList());
+    }
+
+    public void revokeCertificate(int id, String reason) {
+        Certificate cert = certificateRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Certificate not found"));
+
+        cert.setRevoked(true);
+
+        /*ObjectNode extJson;
+        try {
+            extJson = cert.getExtensions() != null
+                    ? (ObjectNode) new ObjectMapper().readTree(cert.getExtensions())
+                    : new ObjectMapper().createObjectNode();
+        } catch (JsonProcessingException e) {
+            extJson = new ObjectMapper().createObjectNode();
+        }
+
+        extJson.put("revocationReason", reason);
+        extJson.put("revocationDate", LocalDate.now().toString());
+        cert.setExtensions(extJson.toString());
+*/
+        cert.setExtensions(reason);
+        certificateRepository.save(cert);
+
+        //dodavanje u crl
+        crlService.addRevocation((long)cert.getId(), cert.getSerialNumber(), reason);
+    }
+
+    @Transactional
+    public List<Certificate> getEndEntityCertificatesForUser(Integer userId) {
+        return certificateRepository.findEndEntityCertificatesByUserId(userId);
     }
 }

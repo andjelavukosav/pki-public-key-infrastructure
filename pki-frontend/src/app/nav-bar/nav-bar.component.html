@@ -15,6 +15,7 @@
       <button class="nav-button logout-button" *ngIf="isLoggedAdmin()" [routerLink]="['certificateList']">All certificates</button>
       <button class="nav-button logout-button" (click)="csrRequest()">CSR</button>
       <button class="nav-button logout-button" (click)="csrPending()">PendingCSR</button>
+      <button class="nav-button logout-button"  *ngIf="isLoggedUser()" [routerLink]="['/password-manager']">Password Manager</button>
       <button class="nav-button logout-button" *ngIf="isLoggedCA()" [routerLink]="['ca-certificateList']">CA certificates</button>
     </ng-container>
   </div>

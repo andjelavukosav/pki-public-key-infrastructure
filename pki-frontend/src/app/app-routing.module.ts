@@ -14,6 +14,7 @@ import { PendingCsrListComponent } from './componets/pending-csr-list/pending-cs
 import { CaCertificateListComponent } from './certificate/ca-certificate-list/ca-certificate-list.component';
 import { CreateTemplateComponent } from './certificate/create-template/create-template.component';
 import { ActiveSessionsComponent } from './active-sessions/active-sessions.component';
+import { PasswordManagerComponent } from './password-manager/password-manager.component';
 
 const routes: Routes = [
     { path: 'register', component: UserRegistrationComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
     { path: 'ca-certificateList', component:CaCertificateListComponent},
     { path: 'active-sessions', component: ActiveSessionsComponent},
     { path: 'create-template', component:CreateTemplateComponent},
+    { path: 'password-manager', component:PasswordManagerComponent},
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     //{ path: '**', redirectTo: 'login' },
 
